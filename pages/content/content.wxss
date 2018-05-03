@@ -1,9 +1,0 @@
-.content{
-  width: 100%;
-  height:100%;
-  border:3rpx solid red;
-}
-.content-header{
-  color:red;
-  font-size:30rpx;
-}

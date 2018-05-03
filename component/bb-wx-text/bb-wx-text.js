@@ -4,9 +4,15 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    innerText: {
+    text: {
       type: String,
       value: 'default value',
+    },
+    selectable:{
+      type:Boolean
+    },
+    decode:{
+      type:Boolean
     }
   },
 
