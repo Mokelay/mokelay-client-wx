@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<view class='items-list'>
+     <view class='list-title'>欢迎大家加如小练习</view>
+      <view class='pro-item' wx:for="{{prolist}}">
+          <image class='item-logo' src='{{item.logo}}'></image>
+          <view class='pro-con'>
+            <view class='pro-title'>{{item.title}}</view>
+            <text class='pro-text'>{{item.text}}</text>
+            <view class='pro-footer'>{{item.footer}}</view>
+          </view>
+      </view>
+</view>
