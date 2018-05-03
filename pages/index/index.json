@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "小练习列表",
   "usingComponents": {
     "bb-wx-text": "../../component/bb-wx-text/bb-wx-text"
   }

@@ -3,6 +3,9 @@
     "pages/index/index",
     "pages/logs/logs"
   ],
+  "usingComponents": {
+    "bb-wx-text": "component/bb-wx-text/bb-wx-text"
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor":"#000000",
@@ -10,6 +13,7 @@
     "navigationBarTextStyle":"#00FF00"
   },
   "tabBar": {
+    "position":"top",
     "color": "#000000",
     "selectedColor": "#FF0000",
     "list": [
