@@ -6,22 +6,16 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor":"#000000",
-    "navigationBarTitleText": "我的第一个小程序",
-    "navigationBarTextStyle":"red"
+    "navigationBarTitleText": "TY",
+    "navigationBarTextStyle":"#00FF00"
   },
   "tabBar": {
-    "color": "black",
-    "selectedColor": "red",
+    "color": "#000000",
+    "selectedColor": "#FF0000",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页"
-        
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "列表"
-       
       },
       {
         "pagePath": "pages/logs/logs",
