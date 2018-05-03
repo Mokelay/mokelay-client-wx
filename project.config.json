@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
-	"appid": "wxb4dfe78160155d23",
+	"appid": "touristappid",
 	"projectname": "ty-client-wx",
 	"isGameTourist": false,
 	"condition": {

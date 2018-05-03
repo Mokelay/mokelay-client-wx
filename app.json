@@ -2,9 +2,11 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs"
+ 
   ],
   "usingComponents": {
     "bb-wx-text": "component/bb-wx-text/bb-wx-text"
+   
   },
   "window":{
     "backgroundTextStyle":"light",

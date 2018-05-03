@@ -1,1 +1,4 @@
 /* component/bb-wx-text/bb-wx-text.wxss */
+.text{
+  color:red;
+}

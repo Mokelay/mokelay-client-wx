@@ -25,29 +25,7 @@ Page({
         text: '每天学习小练习',
         footer: 'asasa'
       },
-      {
-        logo: '/img/2.jpg',
-        title: '小练习',
-        text: '每天学习小练习',
-        footer: 'asasa'
-      },
-      {
-        logo: '/img/1.jpg',
-        title: '小练习',
-        text: '每天学习小练习',
-        footer: 'asasa'
-      }, {
-        logo: '/img/2.jpg',
-        title: '小练习',
-        text: '每天学习小练习',
-        footer: 'asasa'
-      },
-      {
-        logo: '/img/1.jpg',
-        title: '小练习',
-        text: '每天学习小练习',
-        footer: 'asasa'
-      },
+   
     ]
 
   },
