@@ -1,7 +1,6 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "usingComponents": {},
   "window":{
@@ -20,7 +19,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/index/index",
         "text": "我的"
       }
     ]
