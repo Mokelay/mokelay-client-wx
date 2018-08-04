@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "bb-wx-text": "../../component/bb-wx-text/bb-wx-text"
+    "bb": "../../component/bb/bb",
+    "bb-text": "../../component/bb-text/bb-text"
     },
    "compoent": [
   ],
