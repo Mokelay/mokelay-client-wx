@@ -1,7 +1,8 @@
 {
   "usingComponents": {
-    "bb": "../../component/bb/bb",
-    "bb-text": "../../component/bb-text/bb-text"
+    "bb": "../../buildingblock/bb/bb",
+    "bb-page": "../../buildingblock/bb-page/bb-page",
+    "bb-text": "../../buildingblock/bb-text/bb-text"
     },
    "compoent": [
   ],

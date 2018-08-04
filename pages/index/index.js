@@ -6,9 +6,19 @@ const app = getApp()
 
 Page({
   data: {
+    content:null
   },
   onLoad: function (options) {
+    var t = this;
     var pageAlias = this.options['alias'];
+    if (!pageAlias || pageAlias.length == 0 ){
+      wx.showToast({
+        title: "请设置页面别名", 
+        mask: true, 
+        icon: "none" 
+        });
+      return;
+    }
 
     wx.request({
       url: 'http://www.mokelay.com/config/load-page-data',
@@ -32,6 +42,9 @@ Page({
         });
 
         console.log(content);
+        t.setData({
+          content:content
+        })
       }
     });
   }

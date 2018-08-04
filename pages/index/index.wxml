@@ -1,1 +1,5 @@
-<bb-text id="dot" text="呵呵">aaa</bb-text>
+<view>
+  <view wx:for="{{content}}" wx:key="{{item.uuid}}">
+    {{item.uuid}}
+  </view>
+</view>
