@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "bb-text": "../../buildingblock/bb-text/bb-text"
+  }
 }

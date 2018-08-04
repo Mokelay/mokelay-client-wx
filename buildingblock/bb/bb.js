@@ -4,7 +4,18 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    value: {
+      type: null
+    },
+    alias: {
+      type: String
+    },
+    attributes: {
+      type: Object
+    },
+    on: {
+      type: Object
+    }
   },
 
   /**
@@ -14,10 +25,13 @@ Component({
 
   },
 
+  ready:function(){
+    // console.log("bb is ready");
+  },
+
   /**
    * 组件的方法列表
    */
   methods: {
-
   }
 })

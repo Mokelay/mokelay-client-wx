@@ -1,12 +1,12 @@
 //获取应用实例
-var util = require("../../utils/util.js");
+var util = require("../../lib/util.js");
 
 // console.log(pageAlias);
 const app = getApp()
 
 Page({
   data: {
-    content:null
+    pageAlias:null
   },
   onLoad: function (options) {
     var t = this;
@@ -19,33 +19,8 @@ Page({
         });
       return;
     }
-
-    wx.request({
-      url: 'http://www.mokelay.com/config/load-page-data',
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: {
-        alias: pageAlias
-      },
-      dataType:"json",
-      method:'POST',
-      success:function(res){
-        var data = res.data['data'];
-        console.log(data);
-        var page = data['page'];
-        var layoutObject = JSON.parse(page['layoutObject']);
-        var content = JSON.parse(page['content']);
-
-        wx.setNavigationBarTitle({
-          title: layoutObject['title']
-        });
-
-        console.log(content);
-        t.setData({
-          content:content
-        })
-      }
+    this.setData({
+      pageAlias: pageAlias
     });
   }
 })

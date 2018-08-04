@@ -1,2 +1,11 @@
 <!--component/bb/bb.wxml-->
-<text>component/bb/bb.wxml</text>
+
+<!-- <template></template> -->
+
+<template name="bb-text">
+  <bb-text value="{{value}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+</template>
+
+<view>
+	<template is="{{alias}}" data="{{...attributes}}"/>
+</view>

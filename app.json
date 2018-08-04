@@ -9,21 +9,6 @@
     "navigationBarBackgroundColor":"#000000",
     "navigationBarTextStyle":"#00FF00"
   },
-  "tabBar": {
-    "position":"bottom",
-    "color": "#000000",
-    "selectedColor": "#FF0000",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "我的"
-      }
-    ]
-  },
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
