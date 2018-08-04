@@ -1,11 +1,1 @@
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
-    </swiper-item>
-  </block>
-</swiper>
-
- <bb-wx-text>this is wx text</bb-wx-text> 
- <!-- <bb-wx-view></bb-wx-view> -->
+<bb-wx-text id="dot" text="呵呵">aaa</bb-wx-text>

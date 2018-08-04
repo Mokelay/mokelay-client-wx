@@ -4,13 +4,13 @@
   ],
   "usingComponents": {},
   "window":{
+    "navigationBarTitleText": "加载中....",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor":"#000000",
-    "navigationBarTitleText": "TY",
     "navigationBarTextStyle":"#00FF00"
   },
   "tabBar": {
-    "position":"top",
+    "position":"bottom",
     "color": "#000000",
     "selectedColor": "#FF0000",
     "list": [
@@ -30,4 +30,3 @@
   },
   "debug": true
 }
-

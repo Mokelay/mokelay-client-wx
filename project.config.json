@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
-	"appid": "touristappid",
+	"appid": "wx9f4c252fc910e928",
 	"projectname": "ty-client-wx",
 	"isGameTourist": false,
 	"condition": {
@@ -24,13 +24,25 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "带参数编译",
+					"pathName": "pages/index/index",
+					"query": "alias=wx-test-page",
+					"scene": "1001"
+				}
+			]
 		}
 	}
 }

@@ -1,37 +1,38 @@
-//index.js
 //获取应用实例
+var util = require("../../utils/util.js");
+
+// console.log(pageAlias);
 const app = getApp()
 
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
-    indicatorDots: false,
-    autoplay: false,
-    interval: 5000,
-    duration: 1000
   },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
-    })
+  onLoad: function (options) {
+    var pageAlias = this.options['alias'];
+
+    wx.request({
+      url: 'http://www.mokelay.com/config/load-page-data',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        alias: pageAlias
+      },
+      dataType:"json",
+      method:'POST',
+      success:function(res){
+        var data = res.data['data'];
+        console.log(data);
+        var page = data['page'];
+        var layoutObject = JSON.parse(page['layoutObject']);
+        var content = JSON.parse(page['content']);
+
+        wx.setNavigationBarTitle({
+          title: layoutObject['title']
+        });
+
+        console.log(content);
+      }
+    });
   }
 })

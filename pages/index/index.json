@@ -3,7 +3,10 @@
     "bb-wx-text": "../../component/bb-wx-text/bb-wx-text"
     },
    "compoent": [
-  ]
- 
+  ],
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
 }
  
