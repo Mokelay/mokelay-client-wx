@@ -1,0 +1,2 @@
+<!--buildingblock/bb-img/bb-img.wxml-->
+<image src="{{src}}"></image>
