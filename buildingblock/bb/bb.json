@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "bb-text": "../../buildingblock/bb-text/bb-text"
+    "bb-text": "../../buildingblock/bb-text/bb-text",
+    "bb-img": "../../buildingblock/bb-img/bb-img",
+    "bb-uuid": "../../buildingblock/bb-uuid/bb-uuid"
   }
 }

@@ -2,8 +2,16 @@
 
 <!-- <template></template> -->
 
+<template name="bb-img">
+  <view>bb-img</view>
+</template>
+
 <template name="bb-text">
   <bb-text value="{{value}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+</template>
+
+<template name="bb-uuid">
+  <view>bb-uuid</view>
 </template>
 
 <view>
