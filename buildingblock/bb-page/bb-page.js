@@ -47,6 +47,8 @@ Component({
         t.setData({
           content: content
         });
+
+        console.log(content);
       });
   },
 

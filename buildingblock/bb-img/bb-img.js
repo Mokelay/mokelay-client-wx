@@ -7,6 +7,14 @@ Component({
     src:{
       type:String,
       value:""
+    },
+    cssStyle:{
+      type:Object,
+      value:{
+        display:"block",
+        margin:"auto",
+        overflow:"hidden"
+      }
     }
   },
 

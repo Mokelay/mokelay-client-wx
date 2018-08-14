@@ -3,7 +3,7 @@
 <!-- <template></template> -->
 
 <template name="bb-img">
-  <view>bb-img</view>
+  <bb-img src="{{src}}" cssStyle="{{cssStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">
