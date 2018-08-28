@@ -3,11 +3,11 @@
 <!-- <template></template> -->
 
 <template name="bb-img">
-  <bb-img src="{{src}}" cssStyle="{{cssStyle}}"></bb-img>
+  <bb-img src="{{src}}" class="{{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">
-  <bb-text value="{{value}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+  <bb-text value="{{value}}" class="{{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
 </template>
 
 <template name="bb-uuid">
@@ -15,5 +15,5 @@
 </template>
 
 <view>
-	<template is="{{alias}}" data="{{...attributes}}"/>
+	<template is="{{alias}}" data="{{uuid:uuid,...attributes}}"/>
 </view>

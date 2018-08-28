@@ -1,0 +1,19 @@
+{
+  "name": "ty-client-wx",
+  "version": "1.0.0",
+  "description": "魔颗粒小程序",
+  "main": "app.js",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@code.greatbee.com:ty/ty-client-wx.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

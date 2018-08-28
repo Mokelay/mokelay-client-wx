@@ -13,6 +13,9 @@ Component({
     attributes: {
       type: Object
     },
+    uuid: {
+      type: String
+    },
     on: {
       type: Object
     }
@@ -22,7 +25,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+     
   },
 
   ready:function(){
