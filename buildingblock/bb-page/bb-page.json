@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "bb": "../../buildingblock/bb/bb"
+    "bb": "../../buildingblock/bb/bb",
+    "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation"
   }
 }

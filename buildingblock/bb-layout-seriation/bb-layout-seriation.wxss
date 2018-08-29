@@ -1,0 +1,10 @@
+/* buildingblock/bb-layout-seriation.wxss */
+.df{
+    display:flex;
+}
+.db{
+    display:block;
+}
+.dn{
+    display:none;
+}

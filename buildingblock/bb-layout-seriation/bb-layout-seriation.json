@@ -4,7 +4,7 @@
     "bb-text": "../../buildingblock/bb-text/bb-text",
     "bb-img": "../../buildingblock/bb-img/bb-img",
     "bb-uuid": "../../buildingblock/bb-uuid/bb-uuid",
-    "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation",
+    "bb": "../../buildingblock/bb/bb",
     "bb-input": "../../buildingblock/bb-input/bb-input"
   }
 }

@@ -13,8 +13,8 @@ Component({
     attributes: {
       type: Object
     },
-    uuid: {
-      type: String
+    bb: {
+      type: Object
     },
     on: {
       type: Object
@@ -25,7 +25,18 @@ Component({
    * 组件的初始数据
    */
   data: {
-     
+     cssStyle:""
+  },
+
+  //设置css样式
+  attached:function(){
+    let t=this;
+    if (t.data.bb && t.data.bb.layout){
+      let _css = getApp().globalData._TY_Tool.setSimpleStyle(t.data.bb.layout);
+      t.setData({
+        cssStyle: _css
+      });
+    }
   },
 
   ready:function(){

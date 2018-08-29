@@ -11,3 +11,11 @@
 <template name="bb-uuid">
   <view>bb-uuid</view>
 </template>
+
+<template name="bb-layout-seriation">
+  <bb-layout-seriation horizontal="{{horizontal}}" content="{{content}}" layoutType="{{layoutType}}" distributeBlock="{{distributeBlock}}" class="bb {{uuid}}" ></bb-layout-seriation>
+</template>
+
+<template name="bb-input">
+  <bb-input value="{{value}}" class="bb {{uuid}}" style="{{cssStyle}}" option="{{option}}"></bb-input>
+</template>
