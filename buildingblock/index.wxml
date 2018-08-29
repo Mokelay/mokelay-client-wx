@@ -19,3 +19,7 @@
 <template name="bb-input">
   <bb-input value="{{value}}" class="bb {{uuid}}" style="{{cssStyle}}" option="{{option}}"></bb-input>
 </template>
+
+<template name="bb-indep-dialog">
+  <bb-indep-dialog value="{{value}}" class="bb {{uuid}}" title="{{title}}"  content="{{content}}" isShow="{{isShow}}" showConfirmButton="{{showConfirmButton}}" showCancelButton="{{showCancelButton}}" confirmButtonText="{{confirmButtonText}}" cancelButtonText="{{cancelButtonText}}" message="{{message}}"></bb-indep-dialog>
+</template>
