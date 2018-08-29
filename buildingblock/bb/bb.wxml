@@ -2,17 +2,7 @@
 
 <!-- <template></template> -->
 
-<template name="bb-img">
-  <bb-img src="{{src}}" class="bb {{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
-</template>
-
-<template name="bb-text">
-  <bb-text value="{{value}}" class="bb {{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
-</template>
-
-<template name="bb-uuid">
-  <view>bb-uuid</view>
-</template>
+<import src="../index.wxml"/>
 
 <view>
 	<template is="{{alias}}" data="{{uuid:uuid,...attributes}}"/>

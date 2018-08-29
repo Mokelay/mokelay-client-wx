@@ -1,0 +1,13 @@
+<!-- 后面所有的组件 注册到这里，需要用到模板直接引入这个wxml文件即可 -->
+
+<template name="bb-img">
+  <bb-img src="{{src}}" class="bb {{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
+</template>
+
+<template name="bb-text">
+  <bb-text value="{{value}}" class="bb {{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+</template>
+
+<template name="bb-uuid">
+  <view>bb-uuid</view>
+</template>
