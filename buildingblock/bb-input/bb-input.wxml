@@ -1,3 +1,3 @@
 <!--buildingblock/bb-input/bb-input.wxml-->
 
-<input value="{{valueBase}}" placeholder="{{option.placeholder}}" type="{{option.type}}" disabled="{{option.disabled}}" maxlength="{{option.maxLen||10000}}" bindinput="inputEvent" bindblur="blurEvent" bindfocus="focusEvent" bindconfirm="confirmEvent" auto-focus/>
+<input wx:if="{{isShow}}" value="{{valueBase}}" placeholder="{{option.placeholder}}" type="{{option.type}}" disabled="{{option.disabled}}" maxlength="{{option.maxLen||10000}}" bindinput="inputEvent" bindblur="blurEvent" bindfocus="focusEvent" bindconfirm="confirmEvent" auto-focus/>

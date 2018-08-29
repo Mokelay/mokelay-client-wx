@@ -4,4 +4,4 @@
 
 <import src="../index.wxml"/>
 
-<template is="{{alias}}" data="{{uuid:bb.uuid,layout:bb.layout,animation:bb.animation,interactives:bb.interactives,cssStyle:cssStyle,...attributes}}"/>
+<template is="{{alias}}" data="{{uuid:bb.uuid,layout:bb.layout,animation:bb.animation,interactives:bb.interactives,cssStyle:cssStyle,publicEventEmit:publicEventEmit,...attributes}}"/>

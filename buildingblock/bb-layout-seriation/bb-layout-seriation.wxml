@@ -1,10 +1,7 @@
 
-
-<import src="../index.wxml"/>
-
 <view class="{{itemClass}}">
   <view wx:for="{{realContent}}"  wx:for-index="index" wx:key="{{item.uuid}}">
-      <bb alias="{{item.alias}}" class="bb " bb="{{item}}" attributes="{{item.attributes}}"></bb>
+      <bb alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
   </view>
 </view>
 

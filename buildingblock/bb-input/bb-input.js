@@ -24,7 +24,8 @@ Component({
    */
   data: {
     valueBase:"",
-    realOption:{}
+    realOption:{},
+    isShow:true
   },
   //此时可以setData
   attached: function () {
@@ -38,6 +39,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    //输入事件
     inputEvent:function(event){
       let val = event.detail.value;
       this.setData({
@@ -51,6 +53,38 @@ Component({
     blurEvent:function(event){
     },
     confirmEvent:function(event){
+    },
+    //影藏积木
+    hideFn:function(){
+      this.setData({
+        isShow:false
+      });
+    },
+    //显示积木
+    showFn:function(){
+      this.setData({
+        isShow:true
+      });
+    },
+    //禁用
+    disabledFn:function(){
+      this.data.realOption.disabled = true;
+    },
+    //启用
+    enabledFn:function(){
+      this.data.realOption.disabled = false;
+    },
+    //外部取值
+    getValue: function () {
+      return this.data.valueBase;
+    },
+    //外部设值
+    setValue: function (val) {
+      this.setData({
+        valueBase : val
+      });
+      this.triggerEvent('input', val);
+      this.triggerEvent('change', val);
     }
 
   }

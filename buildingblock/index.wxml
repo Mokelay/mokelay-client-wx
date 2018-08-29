@@ -1,11 +1,11 @@
 <!-- 后面所有的组件 注册到这里，需要用到模板直接引入这个wxml文件即可 -->
 
 <template name="bb-img">
-  <bb-img src="{{src}}" class="bb {{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
+  <bb-img src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" cssStyle="{{cssStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">
-  <bb-text value="{{value}}" class="bb {{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+  <bb-text value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" style="{{cssStyle}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
 </template>
 
 <template name="bb-uuid">
@@ -13,9 +13,9 @@
 </template>
 
 <template name="bb-layout-seriation">
-  <bb-layout-seriation horizontal="{{horizontal}}" content="{{content}}" layoutType="{{layoutType}}" distributeBlock="{{distributeBlock}}" class="bb {{uuid}}" ></bb-layout-seriation>
+  <bb-layout-seriation horizontal="{{horizontal}}" style="{{cssStyle}}" content="{{content}}" layoutType="{{layoutType}}" distributeBlock="{{distributeBlock}}" id="{{uuid}}" class="bb {{uuid}}" ></bb-layout-seriation>
 </template>
 
 <template name="bb-input">
-  <bb-input value="{{value}}" class="bb {{uuid}}" style="{{cssStyle}}" option="{{option}}"></bb-input>
+  <bb-input value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:input="publicEventEmit" bind:change="publicEventEmit" style="{{cssStyle}}" option="{{option}}"></bb-input>
 </template>
