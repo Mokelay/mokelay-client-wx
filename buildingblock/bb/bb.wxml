@@ -3,11 +3,11 @@
 <!-- <template></template> -->
 
 <template name="bb-img">
-  <bb-img src="{{src}}" class="{{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
+  <bb-img src="{{src}}" class="bb {{uuid}}" cssStyle="{{cssStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">
-  <bb-text value="{{value}}" class="{{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+  <bb-text value="{{value}}" class="bb {{uuid}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
 </template>
 
 <template name="bb-uuid">

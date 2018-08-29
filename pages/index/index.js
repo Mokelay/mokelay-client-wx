@@ -22,5 +22,7 @@ Page({
     this.setData({
       pageAlias: pageAlias
     });
+    //将当前组件对象放到全局变量中
+    app.globalData._TY_Root = this;
   }
 })
