@@ -1,0 +1,6 @@
+<modal hidden="{{!isShow}}" title="{{title}}" confirm-text="{{confirmButtonText}}" show-cancel="{{showCancelButton}}" cancel-text="{{cancelButtonText}}" bindcancel="cancel" bindconfirm="confirm">
+  <text>{{message}}</text>
+  <view wx:for="{{content}}" wx:key="{{item.uuid}}">
+    <bb alias="{{item.alias}}" class="bb {{item.uuid}}" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+  </view>
+</modal>

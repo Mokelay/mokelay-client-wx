@@ -13,7 +13,8 @@ Component({
       type: null
     },
     alias: {
-      type: String
+      type: String,
+      value:"bb-img"
     },
     attributes: {
       type: Object
@@ -45,7 +46,7 @@ Component({
   },
 
   ready:function(){
-    // console.log("bb is ready");
+    console.log(this);
   },
 
   /**
