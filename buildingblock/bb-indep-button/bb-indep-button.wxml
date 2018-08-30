@@ -1,4 +1,3 @@
 <!--buildingblock/bb-indep-button/bb-indep-button.wxml-->
 
-<button wx:if="{{isShow}}" style="{{domStyle}}" type="{{button.type}}" size="{{button.size}}" loading="{{button.loading}}" plain="{{button.plain||false}}"
-		disabled="{{realOptions.disabled}}" bindtap="btnClick" hover-class="other-button-hover">{{button.text||'确定'}}</button>
+<button wx:if="{{isShow}}" style="{{domStyle}}" type="{{realButton.type}}" size="{{realButton.size}}" loading="{{realButton.loading}}" plain="{{realButton.plain||false}}" disabled="{{realOptions.disabled}}" bindtap="btnClick" hover-class="other-button-hover">{{realButton.text||'确定'}}</button>

@@ -36,7 +36,10 @@ Component({
         disabledStyle:{}  //禁用状态样式
      */
     options:{
-      type:Object
+      type:Object,
+      value:{
+        disabled: false
+      }
     }
   },
   /**
@@ -45,12 +48,14 @@ Component({
   data: {
     external:{},//外部参数
     realOptions:{},//基础配置
+    realButton:{},
     isShow:true
   },
 
   attached:function(){
     this.setData({
-      realOptions: this.properties.options
+      realOptions: this.properties.options,
+      realButton:this.properties.button
     });
   },
 
@@ -68,25 +73,52 @@ Component({
     //按钮点击事件
     btnClick:function(event){
       let t=this;
-      app.globalData._TY_Tool.resolveButton(button, app.globalData._TY_Tool.buildTplParams(this));
-      t.triggerEvent('buttonClick', {}, {button:button,bb:t});
-      t.triggerEvent('click', {}, { button: button, bb: t });
+      app.globalData._TY_Tool.resolveButton(t.data.realButton, app.globalData._TY_Tool.buildTplParams(t));
+      t.triggerEvent('buttonClick', {}, { button: t.data.realButton,bb:t});
+      t.triggerEvent('click', {}, { button: t.data.realButton, bb: t });
     },
     //隐藏积木
     hideFn() {
-      this.data.isShow = false;
+      this.setData({
+        isShow:false
+      });
     },
     //展示积木
     showFn() {
-      this.data.isShow = true;
+      this.setData({
+        isShow: true
+      });
     },
     //禁用积木
     disabledFn() {
-      this.data.realOptions.disabled = true;
+      let realOptions = this.data.realOptions;
+      realOptions.disabled = true;
+      this.setData({
+        realOptions: realOptions
+      });
     },
     //启用积木
     enabledFn() {
-      this.data.realOptions.disabled = false;
+      let realOptions = this.data.realOptions;
+      realOptions.disabled = false;
+      this.setData({
+        realOptions: realOptions
+      });
+    },
+    //显示loading
+    showLoading:function(){
+      let realButton = this.data.realButton;
+      realButton.loading = true;
+      this.setData({
+        realButton: realButton
+      });
+    },
+    hideLoading:function(){
+      let realButton = this.data.realButton;
+      realButton.loading = false;
+      this.setData({
+        realButton: realButton
+      });
     }
   }
 })
