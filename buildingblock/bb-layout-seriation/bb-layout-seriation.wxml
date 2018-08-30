@@ -1,6 +1,6 @@
 
 <view class="{{itemClass}}">
-  <view wx:for="{{realContent}}"  wx:for-index="index" wx:key="{{item.uuid}}">
+  <view wx:for="{{realContent}}" style="{{layouts&&layouts[index]?layouts[index]:''}}" wx:for-index="index" wx:key="{{item.uuid}}">
       <bb alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
   </view>
 </view>
