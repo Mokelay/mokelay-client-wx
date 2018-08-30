@@ -46,7 +46,7 @@ Component({
   },
 
   ready:function(){
-    console.log(this);
+    
   },
 
   /**
