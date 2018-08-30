@@ -1,0 +1,4 @@
+<!--buildingblock/bb-indep-button/bb-indep-button.wxml-->
+
+<button style="{{domStyle}}" type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>

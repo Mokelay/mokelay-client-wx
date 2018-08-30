@@ -6,6 +6,7 @@
     "bb-uuid": "../../buildingblock/bb-uuid/bb-uuid",
     "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation",
     "bb-input": "../../buildingblock/bb-input/bb-input",
-    "bb-indep-dialog":"../../buildingblock/bb-indep-dialog/bb-indep-dialog"
+    "bb-indep-dialog":"../../buildingblock/bb-indep-dialog/bb-indep-dialog",
+    "bb-indep-button": "../../buildingblock/bb-indep-button/bb-indep-button"
   }
 }

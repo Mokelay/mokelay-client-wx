@@ -25,3 +25,7 @@
 <template name="bb-indep-dialog">
   <bb-indep-dialog value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" title="{{title}}"  content="{{content}}" isShow="{{isShow}}"  style="{{domStyle}}" showConfirmButton="{{showConfirmButton}}" showCancelButton="{{showCancelButton}}" confirmButtonText="{{confirmButtonText}}" cancelButtonText="{{cancelButtonText}}" message="{{message}}"></bb-indep-dialog>
 </template>
+
+<template name="bb-indep-button">
+  <bb-indep-button id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" option="{{option}}"></bb-indep-button>
+</template>

@@ -1,0 +1,4 @@
+/* buildingblock/bb-indep-button/bb-indep-button.wxss */
+/* 引入iconfont 图库 */
+@import "../../lib/iconfont/iconfont.wxss";
+
