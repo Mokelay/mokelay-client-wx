@@ -1,0 +1,1 @@
+<switch wx:if="{{isShow}}" checked="{{valueBase}}" bindchange="change" style="{{domStyle}}"/>
