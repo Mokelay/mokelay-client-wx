@@ -1,11 +1,13 @@
 <!-- 后面所有的组件 注册到这里，需要用到模板直接引入这个wxml文件即可 -->
-
+<!-- 
+  注意：有的组件需要将css样式传到内部渲染，比如bb-img，样式需要直接在image标签上渲染，此时bb-img组件需要加一个domStyle属性，并将bb生成domStyle传进去
+ -->
 <template name="bb-img">
-  <bb-img src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" cssStyle="{{cssStyle}}"></bb-img>
+  <bb-img src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">
-  <bb-text value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" style="{{cssStyle}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
+  <bb-text value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" style="{{domStyle}}" defaultValTpl="{{defaultValTpl}}"></bb-text>
 </template>
 
 <template name="bb-uuid">
@@ -13,13 +15,13 @@
 </template>
 
 <template name="bb-layout-seriation">
-  <bb-layout-seriation horizontal="{{horizontal}}" style="{{cssStyle}}" content="{{content}}" layoutType="{{layoutType}}" distributeBlock="{{distributeBlock}}" id="{{uuid}}" class="bb {{uuid}}" ></bb-layout-seriation>
+  <bb-layout-seriation horizontal="{{horizontal}}" style="{{domStyle}}" content="{{content}}" layoutType="{{layoutType}}" distributeBlock="{{distributeBlock}}" id="{{uuid}}" class="bb {{uuid}}" ></bb-layout-seriation>
 </template>
 
 <template name="bb-input">
-  <bb-input value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:input="publicEventEmit" bind:change="publicEventEmit" style="{{cssStyle}}" option="{{option}}"></bb-input>
+  <bb-input value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" bind:input="publicEventEmit" bind:change="publicEventEmit" domStyle="{{domStyle}}" option="{{option}}"></bb-input>
 </template>
 
 <template name="bb-indep-dialog">
-  <bb-indep-dialog value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" title="{{title}}"  content="{{content}}" isShow="{{isShow}}" showConfirmButton="{{showConfirmButton}}" showCancelButton="{{showCancelButton}}" confirmButtonText="{{confirmButtonText}}" cancelButtonText="{{cancelButtonText}}" message="{{message}}"></bb-indep-dialog>
+  <bb-indep-dialog value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" title="{{title}}"  content="{{content}}" isShow="{{isShow}}"  style="{{domStyle}}" showConfirmButton="{{showConfirmButton}}" showCancelButton="{{showCancelButton}}" confirmButtonText="{{confirmButtonText}}" cancelButtonText="{{cancelButtonText}}" message="{{message}}"></bb-indep-dialog>
 </template>

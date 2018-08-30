@@ -31,7 +31,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-     cssStyle:""
+     domStyle:""
   },
 
   //设置css样式
@@ -40,7 +40,7 @@ Component({
     if (t.data.bb && t.data.bb.layout){
       let _css = getApp().globalData._TY_Tool.setSimpleStyle(t.data.bb.layout);
       t.setData({
-        cssStyle: _css
+        domStyle: _css
       });
     }
   },

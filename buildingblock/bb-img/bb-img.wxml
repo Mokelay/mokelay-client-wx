@@ -1,4 +1,4 @@
 <!--buildingblock/bb-img/bb-img.wxml-->
-<image src="{{src}}"></image>
+<image style="{{domStyle}}" src="{{src}}"></image>
 <!-- <img src="{{src}}"/> -->
 <!-- 123 -->

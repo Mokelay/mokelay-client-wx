@@ -16,6 +16,10 @@ Component({
         placeholder: "请输入内容",
         maxLen: 1000000000
       }
+    },
+    //渲染样式
+    domStyle:{
+      type:String
     }
   },
 
@@ -31,8 +35,8 @@ Component({
   attached: function () {
     let t = this;
     this.setData({
-      valueBase: t.data.value,
-      realOption: t.data.option
+      valueBase: t.properties.value,
+      realOption: t.properties.option
     });
   },
   /**
