@@ -15,6 +15,9 @@ App({
     console.log("hide..");
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    _TY_APIHost:"http://www.mokelay.com",
+    _TY_ContentPath:"/config"
+
   }
 })

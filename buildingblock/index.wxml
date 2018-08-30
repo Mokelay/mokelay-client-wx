@@ -27,5 +27,5 @@
 </template>
 
 <template name="bb-indep-button">
-  <bb-indep-button id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" option="{{option}}"></bb-indep-button>
+  <bb-indep-button id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" option="{{option}}" bind:buttonClick="publicEventEmit" bind:click="publicEventEmit" button="{{button}}"></bb-indep-button>
 </template>
