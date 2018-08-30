@@ -24,5 +24,8 @@ Page({
     });
     //将当前组件对象放到全局变量中
     app.globalData._TY_Root = this;
+  },
+  onShow:function(){
+    app.globalData._TY_Root = this;
   }
 })
