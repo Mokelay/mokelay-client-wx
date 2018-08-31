@@ -33,3 +33,7 @@
 <template name="bb-vant-switch">
   <bb-vant-switch id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" defaultValTpl="{{defaultValTpl}}" option="{{option}}"></bb-vant-switch>
 </template>
+
+<template name="bb-indep-form">
+  <bb-indep-form id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" content="{{content}}" commitDs="{{commitDs}}" formDataDs="{{formDataDs}}" option="{{option}}"></bb-indep-form>
+</template>
