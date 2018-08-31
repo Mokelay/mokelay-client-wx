@@ -37,11 +37,11 @@ Component({
       function(res){
         var data = res.data['data'];
         var page = data['page'];
-        var layoutObject = JSON.parse(page['layoutObject']);
-        var content = JSON.parse(page['content']);
+        var layoutObject = page['layoutObject']&&JSON.parse(page['layoutObject']);
+        var content = page['content']&&JSON.parse(page['content']);
 
         wx.setNavigationBarTitle({
-          title: layoutObject['title']
+          title: layoutObject&&layoutObject['title']||'加载中....'
         });
 
         t.setData({
