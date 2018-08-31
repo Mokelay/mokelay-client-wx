@@ -16,6 +16,7 @@ Component({
           size:'small',//按钮大小
           icon:'icon',//按钮图标
           text:'按钮文字',//
+          theme:'vc',//按钮主题 默认、验证码
           loading:true,//小程序特有，按钮loading 效果！！！！
           action:'url 地址跳转|| execute-ds执行接口',
           url:''跳转地址 action:'url’时有效
@@ -74,8 +75,8 @@ Component({
     btnClick:function(event){
       let t=this;
       app.globalData._TY_Tool.resolveButton(t.data.realButton, app.globalData._TY_Tool.buildTplParams(t));
-      t.triggerEvent('buttonClick', {}, { button: t.data.realButton,bb:t});
-      t.triggerEvent('click', {}, { button: t.data.realButton, bb: t });
+      t.triggerEvent('buttonClick', { button: t.data.realButton, bb: t}, {});
+      t.triggerEvent('click', { button: t.data.realButton, bb: t }, {});
     },
     //隐藏积木
     hideFn() {
@@ -113,12 +114,64 @@ Component({
         realButton: realButton
       });
     },
+    //影藏loading
     hideLoading:function(){
       let realButton = this.data.realButton;
       realButton.loading = false;
       this.setData({
         realButton: realButton
       });
+    },
+    //修改按钮文案
+    changeText:function(...args){
+      let t=this;
+      args.forEach((val, key) => {
+        if (val.type == 'custom') {
+          let _text = val.arguments;
+          let realButton = this.data.realButton;
+          realButton.text = _text;
+          this.setData({
+            realButton: realButton
+          });
+        }
+      });
+    },
+    /**
+     * 按钮文案倒计时 显示
+     * text 文案
+     * time 时间
+     */
+    countDown: function (...args){
+      let t = this;
+      let params = {};
+      args.forEach((val, key) => {
+        if (val.type == 'custom') {
+          params = val.arguments;
+        }
+      });
+      params.text = params.text ? params.text:'重新发送';
+      let num = params.time ? params.time : 60;
+      let timeIndex = setInterval(()=>{
+        num--;
+        if(num<0){
+          if (timeIndex){
+            clearInterval(timeIndex);  
+          }
+          let realButton = t.data.realButton;
+          realButton.text = t.properties.button.text;
+          t.setData({
+            realButton: realButton
+          });
+          t.enabledFn();
+        }else{
+          const _text = params.text + "(" + num+")";
+          let realButton = t.data.realButton;
+          realButton.text = _text;
+          t.setData({
+            realButton: realButton
+          });
+        }
+      },1000);
     }
   }
 })
