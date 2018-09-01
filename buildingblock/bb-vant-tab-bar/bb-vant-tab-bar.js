@@ -167,6 +167,7 @@ Component({
       field.url = field.url || field.to
       if (!field.url.split("/")[1]) {
         field.url = currentUrl.split("=")[0] + "=" + field.url;
+        field.url = field.url[0] == "/" ? field.url : "/" + field.url;
       }
       // field.url = wx._TY_Tool.tpl(field.url, this);
     });

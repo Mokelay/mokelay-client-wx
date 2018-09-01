@@ -9,6 +9,7 @@
   border-style: solid;
   border-color: rgb(229, 229, 229);
   border-width: 1px 0px 0px;
+  z-index: 999;
 }
 .bb-vant-tab-bar .menu-item{  
   flex: 1;
