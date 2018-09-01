@@ -109,13 +109,6 @@ Component({
   methods: {
     transferList: function (val) {
       let t = this;
-      // val = [{
-      //   title:'title1',
-      //   img:'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
-      // }, {
-      //     title: 'title2',
-      //     img: 'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
-      //   }]
       let result = [];
       if (val) {
         if (typeof (val) === 'string') {
@@ -258,8 +251,56 @@ Component({
     //加载数据
     loadData:function(){
       let t=this;
-      //渲染
-      t.renderItem();
+      if (t.properties.ds) {
+        if (!t.properties.closePullLoading){
+          wx.showLoading({
+            title: '加载中',
+          })
+        }
+        //如果配置的ds说明是动态的数据
+        app.globalData._TY_Tool.getDSData(t.ds, app.globalData._TY_Tool.buildTplParams(t), function (map) {
+          if (!t.properties.closePullLoading) {
+            wx.hideLoading();
+          }
+          map.forEach(function (item) {
+            var _list = [];
+            if (item['valueKey'].split('.').length > 1) {//支持定制接口
+              _list = item['value']
+            } else {
+              if (item['value'] && item['value']['currentRecords']) {
+                _list = item['value']['currentRecords'];
+                const totalPage = item['value']['totalPages'];
+                if (t.data.page >= totalPage) {
+                  t.data.end = true;
+                } else {
+                  t.data.end = false;
+                }
+              } else if (item['value'] && item['value']['list']) {
+                _list = item['value']['list'];
+              } else {
+                _list = item['value'];
+              }
+            }
+            if (t.data.page > 1) {
+              t.data.list = t.data.list.concat(_list);
+            } else {
+              t.data.list = _list;
+            }
+            t.data.loading = false;
+            //渲染
+            t.renderItem();
+            //加载完数据
+            t.triggerEvent("loaded", {bb:t});
+          });
+        }, function (code, msg) {
+          if (!t.properties.closePullLoading) {
+            wx.hideLoading();
+          }
+        });
+      }else{
+        //渲染
+        t.renderItem();
+      }
     },
     /**
      *  渲染li  item
@@ -345,7 +386,20 @@ Component({
     },
     //item点击事件
     itemClick:function(event){
-      debugger;
+      const t=this;
+      let row = event.currentTarget.dataset.row;
+      t.triggerEvent("itemClick",{item:row,bb:t});
+    },
+    /**
+     * 外部级联
+     */
+    linkage: function (...data) {
+      if (data) {
+        this.external['linkage'] = data;
+        //外部参数请求数据，重新恢复到第一页
+        this.data.page = 1;
+        this.loadData();
+      }
     },
   }
 })
