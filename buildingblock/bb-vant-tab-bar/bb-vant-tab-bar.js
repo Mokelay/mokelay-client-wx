@@ -1,41 +1,52 @@
-// buildingblock/bb-vant-cell/bb-vant-cell.js
+// buildingblock/bb-vant-tab-bar/bb-vant-tab-bar.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    //内容
+    //v-model 当前索引
     value: {
-      type: [Number, String]
+      type: Number
     },
-    /*模板默认值*/
-    defaultValTpl: {
-      type: [String, Number, Boolean]
-    },
-    /*其他属性配置
-        {
-            icon:String 左侧图标,
-            title:String 左侧标题,
-            label:String 标题下方的描述信息,
-            required:Boolean 是否显示表单必填星号,
-            isLink:Boolean 展示右侧箭头并开启点击反馈
-            center:Boolean 使内容垂直居中
-            url:""  跳转链接
-            clickable:Boolean 开启点击反馈
-            valueStyle:{}
-         }
+    /*静态标签数据
+        [{
+            text:"标签名称"  标签名称
+            icon:"chat", 图标
+            dot:false, 显示小红点
+            info:"String || Number" 图标右上角提示信息
+            url:"String" 跳转链接
+            to:"String || Object"   路由跳转对象，同 vue-router 的 to
+            replace:false  跳转时是否替换当前history
+            iconStyle:{},  图标样式
+            textStyle:{}   字体样式
+
+        }]
     */
-    option: {
+    fields: {
+      type: Array
+    },
+    valueKey: {
+      type:Object,
+      value:{
+        text: "text",
+        icon: "icon",
+        dot: "dot",
+        info: "info",
+        url: "url",
+        iconStyle: "iconStyle",
+        textStyle: "textStyle",
+      }
+    },
+    //动态标签数据
+    fieldsDs: {
       type: Object
     },
-    /*
-    content:积木数据,
+    /*  自定义图标
         content:[{                      //页面内容
                 uuid:'',
                 alias:'',                   //积木别名
                 aliasName:'',               //中文名称
-                group:'',                   //对应slot  空 对应 内容 icon  自定义icon  title   自定义title  right-icon  自定义右侧按钮，默认是arrow
-
+                group:'',                   //对应图标的text
                 attributes:{
                     attributeName:''    //表单项键值别名
                     rules:[]            //验证规则
@@ -84,12 +95,32 @@ Component({
             }]
     */
     content: {
-      type: Array,
-
+      type: Array
     },
-    //动态内容
+    /*动态自定义图标*/
     contentDs: {
       type: Object
+    },
+    /*激活的样式
+        {
+            iconStyle:{},
+            textStyle:{}
+        }
+    */
+    activeStyle: {
+      type: Object,
+      value:{
+        iconStyle: {
+          font: {
+            color: "#0091ea"
+          },
+        },
+        textStyle: {
+          font: {
+            color: "#0091ea"
+          },
+        }
+      }
     }
   },
 
@@ -97,6 +128,53 @@ Component({
    * 组件的初始数据
    */
   data: {
+    realFields: [{
+      text: '标签1',
+      icon: 'ty-yy_ty',
+      url: "/pages/index/index?alias=wx-test-page",
+      iconStyle: {},
+      textStyle: {}
+    }, {
+        text: '标签2',
+        icon: 'ty-yy_ty',
+        url: "/pages/index/index?alias=xy_partner_home",
+        iconStyle: {},
+        textStyle: {}
+      }, {
+        text: '标签3',
+        icon: 'ty-yy_ty',
+        url: "/pages/index/index?alias=xy_partner_my",
+        iconStyle: {},
+        textStyle: {}
+      }],
+    realActiveStyle:{
+      iconStyle: {
+        color: "#0091ea"
+      },
+      textStyle: {
+        color: "#0091ea"
+      }
+    },
+    currentUrl:""
+  },
+  attached: function () {
+    const newField = this.properties.fields;
+    const activeStyle = this.properties.activeStyle;
+    const currentUrl = wx._TY_Tool.getCurrentUrl();
+    newField.forEach((field,key)=>{
+      field.iconStyle = wx._TY_Tool.setStyle(null,{layout: field.iconStyle});
+      field.textStyle = wx._TY_Tool.setStyle(null, {layout: field.textStyle });
+      // field.url = wx._TY_Tool.tpl(field.url, this);
+    });
+    const newActiveStyle = {
+      iconStyle: wx._TY_Tool.setStyle(null, {layout: activeStyle.iconStyle}),
+      textStyle: wx._TY_Tool.setStyle(null, {layout: activeStyle.textStyle})
+    }
+    this.setData({
+      realFlields: newField,
+      realActiveStyle:newActiveStyle,
+      currentUrl: currentUrl
+    })
 
   },
 
@@ -104,42 +182,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    getData() {
-      const t = this;
-      if (t.properties.formDataDs) {
-        t.loading = true;
-        wx._TY_Tool.getDSData(t.properties.formDataDs, wx._TY_Tool.buildTplParams(t), function (data) {
-          data.forEach((item) => {
-            t.loading = false;
-            let _value = {};
-            if (item['value'] && item['value']['currentRecords']) {
-              _value = item['value']['currentRecords'];
-              const totalPage = item['value']['totalPages'];
-              if (t.page >= totalPage) {
-                t.end = true;
-              } else {
-                t.end = false;
-              }
-            } else if (item['value'] && item['value']['list']) {
-              _value = item['value']['list'];
-            } else {
-              _value = item['value'];
-            }
-            t.setData({
-              formData: _value
-            });
-            t.triggerEvent("afterLoadData", t);
-          });
-        }, function (code, msg) {
-          t.loading = false;
-        });
-      }
-    },
-    goUrl: function () {
-      const url = wx.tpl(this.option.url, t);
-      wx.navigateTo({
-        url: url
-      })
-    }
+
   }
 })
