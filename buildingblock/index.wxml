@@ -65,3 +65,7 @@
 <template name="bb-hyperlink">
   <bb-hyperlink id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" contentValue="{{contentValue}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-hyperlink>
 </template>
+
+<template name="bb-vant-field">
+  <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" domStyle="{{domStyle}}"></bb-vant-field>
+</template>
