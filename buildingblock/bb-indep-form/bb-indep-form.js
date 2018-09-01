@@ -97,10 +97,10 @@ Component({
   },
   created:function(){
   },
-  ready: function () {
+  attached: function () {
     this.getData();
   },
-  attached: function () {
+  ready: function () {
   },
   /**
    * 组件的方法列表
@@ -139,7 +139,6 @@ Component({
     },
     //动态获取卡片内容
     getData() {
-      debugger
       const t = this;
       if (t.properties.formDataDs) {
         t.loading = true;

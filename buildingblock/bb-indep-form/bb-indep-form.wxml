@@ -1,6 +1,6 @@
 <form class="bb_indep_form" bindsubmit="commit" bindreset="formReset">
   <view class="form_item" wx:for="{{content}}" wx:key="{{item.uuid}}">
     <view class="section__title">{{item.aliasName}}</view>
-    <bb alias="{{item.alias}}" id="{{uuid}}" class="bb {{item.uuid}} section__editor" bb="{{item}}" attributes="{{item.attributes}}" bind:input="input" bind:change="change"  bind:blur="blur"></bb>
+    <bb alias="{{item.alias}}" id="{{uuid}}" class="bb {{item.uuid}} section__editor" bb="{{item}}" attributes="{{item.attributes}}" bindinput="triggerPublicEvent" bindchange="triggerPublicEvent" value="{{formData[item.attributes.aliasName]}}"></bb>
   </view>
 </form>

@@ -1,6 +1,6 @@
 /* buildingblock/bb-indep-form/bb-indep-form.wxss */
 .bb_indep_form .form_item{
-  height: 88rpx;
+  height: 130rpx;
   widows: 100%;
   background-color: #fff;
   padding: 20rpx 30rpx;
