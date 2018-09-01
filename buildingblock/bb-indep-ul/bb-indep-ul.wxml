@@ -1,7 +1,9 @@
 <!--buildingblock/bb-indep-ul/bb-indep-ul.wxml-->
 
  <scroll-view class="clearfix" scroll-y style="height:400rpx; {{domStyle}}" bindscrolltolower="lower">
-    <view >
+    
+  <view wx:for="{{list}}" wx:for-index="_index" wx:key="{{item}}" data-row="{{item}}" bindtap='itemClick' style="{{randerData[_index].style}}">
+        <bb wx:for="{{randerData[_index].content}}" wx:for-index="index" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+  </view>
 
-    </view>
   </scroll-view>

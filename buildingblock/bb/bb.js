@@ -16,9 +16,11 @@ Component({
       type: String,
       value:"bb-img"
     },
+    //渲染content 的属性
     attributes: {
       type: Object
     },
+    //content的某一项
     bb: {
       type: Object
     },

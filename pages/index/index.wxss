@@ -23,6 +23,8 @@ navigator,
 image,
 map {
   box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 56rpx;
 }
 /* *, *:before, *:after {
   box-sizing: inherit;

@@ -40,7 +40,7 @@
 					"id": 0,
 					"name": "带参数编译",
 					"pathName": "pages/index/index",
-					"query": "alias=wx-test-page",
+					"query": "alias=xy_partner_home",
 					"scene": "1001"
 				}
 			]
