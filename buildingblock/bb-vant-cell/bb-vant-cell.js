@@ -141,11 +141,10 @@ Component({
       }
     },
     goUrl: function () {
-      debugger
       let url = this.properties.option.url;
       const currentUrl = wx._TY_Tool.getCurrentUrl();
       if (this.properties.option.url.split("#/")[1]) {
-        url = currentUrl.split("=")[0] + url.split("#/")[1]
+        url = currentUrl.split("=")[0] + "=" + url.split("#/")[1]
       }
       // const url = wx.tpl(this.option.url, t);
       wx.navigateTo({
