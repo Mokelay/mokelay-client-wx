@@ -39,5 +39,5 @@
 </template>
 
 <template name="bb-indep-ul">
-  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}"></bb-indep-ul>
+  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" columns="{{columns}}" theme="{{theme}}" itemContent="{{itemContent}}" staticList="{{staticList}}" ds="{{ds}}" itemStyle="{{itemStyle}}" firstItemStyle="{{firstItemStyle}}" lastItemStyle="{{lastItemStyle}}" pageConfig="{{pageConfig}}" closePullLoading="{{closePullLoading}}" fixedHeight="{{fixedHeight}}" lazy="{{lazy}}"></bb-indep-ul>
 </template>

@@ -1,4 +1,6 @@
 // buildingblock/bb-indep-ul/bb-indep-ul.js
+
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -74,6 +76,7 @@ Component({
     list:[],
     external:{},
     realContent:[],
+    randerData:[],//页面渲染需要的属性，用属性代替vue的render方法逻辑
     pageSize: 10,
     page: 1,
     end: false,//是否加载结束
@@ -83,13 +86,15 @@ Component({
     let t=this;
     t.setData({
       list: t.transferList(t.properties.staticList),
-      page: t.properties.pageConfig.page,
-      pageSize: t.properties.pageConfig.pageSize,
+      page: t.properties.pageConfig&&t.properties.pageConfig.page||1,
+      pageSize: t.properties.pageConfig&&t.properties.pageConfig.pageSize||10,
       realContent:t.properties.itemContent
     });
     if (!t.properties.lazy) {
       //加载数据
       t.loadData();
+    }else{
+      t.renderItem();
     }
   },
   //热面ready事件
@@ -104,14 +109,13 @@ Component({
   methods: {
     transferList: function (val) {
       let t = this;
-      val = [{
-        title:'title1',
-        img:'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
-      }, {
-          title: 'title2',
-          img: 'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
-        }]
-
+      // val = [{
+      //   title:'title1',
+      //   img:'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
+      // }, {
+      //     title: 'title2',
+      //     img: 'http://imgsrc.baidu.com/imgad/pic/item/e1fe9925bc315c60f4aa8f2787b1cb134954773f.jpg'
+      //   }]
       let result = [];
       if (val) {
         if (typeof (val) === 'string') {
@@ -253,7 +257,95 @@ Component({
     },
     //加载数据
     loadData:function(){
+      let t=this;
+      //渲染
+      t.renderItem();
+    },
+    /**
+     *  渲染li  item
+     * [{
+     *  content:[],
+     *  style:""
+     * }]
+     */
+    renderItem: function () {
+      let t = this;
+      let result = [];
+      if (!t.data.list || t.data.list.length <= 0 || !t.data.realContent || t.data.realContent.length <= 0) {
+        return result;
+      }
+      t.data.list.forEach((item, index) => {
+        let _item = {
+          content: [],
+          style: ""
+        };
+        if (item['hide']) {
+          result.push(_item);
+          return true;
+        }
+        //数据解析到模板中去
+        let _content = app.globalData._TY_Tool.tpl(JSON.stringify(t.data.realContent), app.globalData._TY_Tool.buildTplParams(t, {
+          rowData: item
+        }));
+        if (!_content) {
+          console.error("错误提示:", "列表组件没有配置模板或者没有匹配到参数");
+          result.push(_item);
+          return true;
+        }
+        /*
+            兼容 ul包含ul的情况
+            子的ul中模板用<#= ... #>代替，否则第一层就会被模板参数替换
+        */
+        const reg = /<#=(.*?)#>/g;
+        if (_content.match(reg)) {
+          //如果字符串中含有<#=...#> 这样的标识，转换成 <%=...%>
+          _content = _content.replace(reg, function () {
+            return "<%=" + arguments[1] + "%>"
+          })
+        }
+        //设置content
+        _item.content = JSON.parse(_content);
 
+        let clazz = [];
+        let _style = {}
+        if (t.properties.theme === 'line') {
+          //如果是line的话，li是flex布局
+          _style = {
+            "display": "-webkit - box",
+            "display": "-webkit - flex",
+            "display": "flex",
+            "-webkit-box-orient": "horizontal",
+            "-webkit-flex-flow": "row wrap",
+            "flex-flow": "row wrap"
+          }
+        }
+        const col = Number(t.properties.columns);
+        if (col > 1) {
+          _style = {
+            width: 1 / col * 100 + "%",
+            float: "left"
+          }
+        }
+        let _cssStyle = Object.assign({}, app.globalData._TY_Tool.setSimpleStyle(t.properties.itemStyle, true), _style);
+        if (index == 0 && t.properties.firstItemStyle) {
+          //第一个的样式
+          _cssStyle = Object.assign(_cssStyle, app.globalData._TY_Tool.setSimpleStyle(t.properties.firstItemStyle, true), _style);
+        } else if (index == t.data.list.length - 1 && t.properties.lastItemStyle) {
+          //最后一个的样式
+          _cssStyle = Object.assign(_cssStyle, app.globalData._TY_Tool.setSimpleStyle(t.properties.lastItemStyle, true), _style);
+        }
+        //设置样式
+        _item.style = app.globalData._TY_Tool.cssToString(_cssStyle);
+        result.push(_item);
+      });
+      //修改data randerData
+      t.setData({
+        randerData: result
+      });
+    },
+    //item点击事件
+    itemClick:function(event){
+      debugger;
     },
   }
 })
