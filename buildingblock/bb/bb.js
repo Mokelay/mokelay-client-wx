@@ -64,6 +64,7 @@ Component({
     //公共事件触发
     publicEventEmit:function(e){
       let t=this;
+      t.triggerEvent(e.type, e);
       const eventType = e.type;
       let args = e.detail;
       let val = args.value||'';

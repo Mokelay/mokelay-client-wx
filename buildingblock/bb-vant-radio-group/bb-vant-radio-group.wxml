@@ -1,0 +1,5 @@
+<radio-group class="radio-group" bindchange="change">
+  <label class="radio" wx:for="{{realFields}}">
+    <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.text}}
+  </label>
+</radio-group>
