@@ -407,5 +407,19 @@ Component({
         this.loadData();
       }
     },
+    navigateTo: function (...args) {
+      let t=this;
+      const params = args[0];
+      args.forEach((val, key) => {
+        if (val.type == 'custom') {
+          let url = val.arguments;
+          url = app.globalData._TY_Tool.tpl(url, app.globalData._TY_Tool.buildTplParams(t, params));
+          wx.navigateTo({
+            url: url
+          });
+        }
+      });
+    }
+    
   }
 })
