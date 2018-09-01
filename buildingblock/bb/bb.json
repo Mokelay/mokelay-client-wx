@@ -14,8 +14,8 @@
     "bb-vant-radio-group": "../../buildingblock/bb-vant-radio-group/bb-vant-radio-group",
     "bb-words": "../../buildingblock/bb-words/bb-words",
     "bb-photo-single": "../../buildingblock/bb-photo-single/bb-photo-single",
-    "bb-hyperlink": "../../buildingblock/bb-hyperlink/bb-hyperlink"
-    
+    "bb-hyperlink": "../../buildingblock/bb-hyperlink/bb-hyperlink",
+    "bb-vant-cell": "../../buildingblock/bb-vant-cell/bb-vant-cell"
     
   }
 }

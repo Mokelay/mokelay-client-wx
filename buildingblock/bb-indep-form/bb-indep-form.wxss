@@ -1,11 +1,12 @@
 /* buildingblock/bb-indep-form/bb-indep-form.wxss */
 .bb_indep_form .form_item{
-  height: 130rpx;
+  height: 88rpx;
   widows: 100%;
   background-color: #fff;
-  padding: 20rpx 30rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
   border: 1px solid #f5f5f5;
-  line-height: 88rpx;
+  /* line-height: 88rpx; */
   display: flex;
   align-items: center;
 }
