@@ -12,6 +12,8 @@
     "bb-indep-ul": "../../buildingblock/bb-indep-ul/bb-indep-ul",
     "bb-indep-form": "../../buildingblock/bb-indep-form/bb-indep-form",
     "bb-vant-radio-group": "../../buildingblock/bb-vant-radio-group/bb-vant-radio-group",
-    "bb-words": "../../buildingblock/bb-words/bb-words"
+    "bb-words": "../../buildingblock/bb-words/bb-words",
+    "bb-photo-single": "../../buildingblock/bb-photo-single/bb-photo-single"
+    
   }
 }

@@ -1,0 +1,6 @@
+<!--buildingblock/bb-photo-single/bb-photo-single.wxml-->
+
+<view class="bb-photo-single" style="{{domStyle}}">
+  <image src="{{src}}" ></image>
+</view>
+

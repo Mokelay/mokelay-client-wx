@@ -32,6 +32,7 @@ Component({
     t.setData({
       realText: t.properties.value || t.properties.text,
     });
+    t.getData();
   },
 
   /**
@@ -52,7 +53,10 @@ Component({
       if (t.properties.textDs) {
         app.globalData._TY_Tool.getDSData(t.properties.textDs, app.globalData._TY_Tool.buildTplParams(t), function (map) {
           map.forEach((val, key) => {
-            t.data.realText = val.value;
+            // t.data.realText = val.value;
+            t.setData({
+              realText: val.value,
+            });
           })
         }, function (code, msg) {
         });

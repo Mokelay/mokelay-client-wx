@@ -1,0 +1,9 @@
+/* buildingblock/bb-photo-single/bb-photo-single.wxss */
+.bb-photo-single{
+    overflow:hidden;
+    margin: auto;
+}
+.bb-photo-single image{
+    width: 100%;
+    height: 100%;
+}

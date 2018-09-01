@@ -28,6 +28,15 @@ map {
   box-sizing: inherit;
 } */
 
+bb-layout-seriation,
+bb-indep-button,
+bb-indep-dialog,
+bb-indep-form,
+bb-indep-ul,
+bb-page{
+  display:block;
+}
+
 image {
   height: auto;
   max-width: 100%;
