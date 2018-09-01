@@ -160,10 +160,14 @@ Component({
   attached: function () {
     const newField = this.properties.fields;
     const activeStyle = this.properties.activeStyle;
-    const currentUrl = wx._TY_Tool.getCurrentUrl();
+    let currentUrl = wx._TY_Tool.getCurrentUrl();
     newField.forEach((field,key)=>{
       field.iconStyle = wx._TY_Tool.setStyle(null,{layout: field.iconStyle});
       field.textStyle = wx._TY_Tool.setStyle(null, {layout: field.textStyle });
+      field.url = field.url || field.to
+      if (!field.url.split("/")[1]) {
+        field.url = currentUrl.split("=")[0] + "=" + field.url;
+      }
       // field.url = wx._TY_Tool.tpl(field.url, this);
     });
     const newActiveStyle = {
@@ -171,7 +175,7 @@ Component({
       textStyle: wx._TY_Tool.setStyle(null, {layout: activeStyle.textStyle})
     }
     this.setData({
-      realFlields: newField,
+      realFields: newField,
       realActiveStyle:newActiveStyle,
       currentUrl: currentUrl
     })
