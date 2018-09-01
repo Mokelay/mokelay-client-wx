@@ -258,7 +258,7 @@ Component({
           })
         }
         //如果配置的ds说明是动态的数据
-        app.globalData._TY_Tool.getDSData(t.ds, app.globalData._TY_Tool.buildTplParams(t), function (map) {
+        app.globalData._TY_Tool.getDSData(t.properties.ds, app.globalData._TY_Tool.buildTplParams(t), function (map) {
           if (!t.properties.closePullLoading) {
             wx.hideLoading();
           }
@@ -282,9 +282,15 @@ Component({
               }
             }
             if (t.data.page > 1) {
-              t.data.list = t.data.list.concat(_list);
+              // t.data.list = t.data.list.concat(_list);
+              t.setData({
+                list: t.data.list.concat(_list)
+              });
             } else {
-              t.data.list = _list;
+              // t.data.list = _list;
+              t.setData({
+                list: _list
+              });
             }
             t.data.loading = false;
             //渲染
