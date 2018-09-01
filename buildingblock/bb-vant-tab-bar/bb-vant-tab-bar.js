@@ -170,7 +170,7 @@ Component({
         field.url = field.url[0] == "/" ? field.url : "/" + field.url;
       }
       if (!field.url.split("alias")[1]){
-        field.url = field.url.split("=")[0] + "alias=" + field.url.split("=")[1]
+        field.url = field.url.split("=")[0] + "?alias=" + field.url.split("=")[1]
       }
       
       // field.url = wx._TY_Tool.tpl(field.url, this);

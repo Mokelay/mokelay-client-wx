@@ -141,6 +141,7 @@ Component({
       }
     },
     goUrl: function () {
+      this.triggerEvent("click",this);
       let url = this.properties.option.url;
       const currentUrl = wx._TY_Tool.getCurrentUrl();
       if (this.properties.option.url.split("#/")[1]) {
@@ -148,7 +149,7 @@ Component({
         url = url[0] == "/" ? url : "/" + url;
       }
       if (!url.split("alias")[1]) {
-        url = url.split("=")[0] + "alias=" + url.split("=")[1]
+        url = url.split("=")[0] + "?alias=" + url.split("=")[1]
       }
       // const url = wx.tpl(this.option.url, t);
       wx.navigateTo({
