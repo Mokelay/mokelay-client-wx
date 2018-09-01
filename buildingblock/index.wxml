@@ -61,3 +61,7 @@
 <template name="bb-vant-tab-bar">
   <bb-vant-tab-bar value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" fields="{{fields}}"></bb-vant-tab-bar>
 </template>
+
+<template name="bb-hyperlink">
+  <bb-hyperlink id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" contentValue="{{contentValue}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-hyperlink>
+</template>
