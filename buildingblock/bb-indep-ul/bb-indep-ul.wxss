@@ -1,1 +1,5 @@
 /* buildingblock/bb-indep-ul/bb-indep-ul.wxss */
+.bb-indep-ul{
+  font-size: 28rpx;
+  line-height: 56rpx;
+}

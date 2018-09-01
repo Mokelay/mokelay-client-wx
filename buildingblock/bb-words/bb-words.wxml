@@ -1,0 +1,3 @@
+<!--buildingblock/bb-words/bb-words.wxml-->
+
+<text style="{{domStyle}}">{{realText}}</text>
