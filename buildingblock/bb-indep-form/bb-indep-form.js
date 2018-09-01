@@ -93,9 +93,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    formData:{}
+  },
+  created:function(){
   },
   ready: function () {
+    this.getData();
   },
   attached: function () {
   },
@@ -103,25 +106,69 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    commit: function (e) {
-      console.log('form发生了submit事件，携带数据为：', e.detail.value)
-      this.triggerEvent("input", e.detail.value);
-      this.triggerEvent("change", e.detail.value);
+    //提交表单
+    commit:function(e) {
+      const t = this;
+      if (t.properties.commitDs) {
+        t.loading = true;
+        wx._TY_Tool.getDSData(t.properties.commitDs, wx._TY_Tool.buildTplParams(t), function (data) {
+          t.triggerEvent("commitSuccess", data);
+        }, function (code, msg) {
+          t.loading = false;
+          t.triggerEvent("commitFail");
+        });
+      }
     },
     formReset: function () {
       console.log('form发生了reset事件')
     },
-    input:function(e){
-      this.triggerEvent("input", e.detail.value);
-      this.triggerEvent("change", e.detail.value);
+    triggerPublicEvent:function(e){
+      const t = this;
+      const value = e.detail.detail;
+      const target = e.detail.target;
+      t.properties.content.forEach((content,key)=>{
+        if(content.uuid == target.id){
+          const newFormData = t.data.formData;
+          newFormData[content.attributes.attributeName] = value;
+          t.setData({
+            formData: newFormData
+          });
+        }
+      })
+      this.triggerEvent(e.detail.type, value);
     },
-    change: function (e) {
-      this.triggerEvent("input", e.detail.value);
-      this.triggerEvent("change", e.detail.value);
-    },
-    blur: function (e) {
-      this.triggerEvent("input", e.detail.value);
-      this.triggerEvent("change", e.detail.value);
+    //动态获取卡片内容
+    getData() {
+      debugger
+      const t = this;
+      if (t.properties.formDataDs) {
+        t.loading = true;
+        wx._TY_Tool.getDSData(t.properties.formDataDs, wx._TY_Tool.buildTplParams(t), function (data) {
+          data.forEach((item) => {
+            t.loading = false;
+            let _value = {};
+            if (item['value'] && item['value']['currentRecords']) {
+              _value = item['value']['currentRecords'];
+              const totalPage = item['value']['totalPages'];
+              if (t.page >= totalPage) {
+                t.end = true;
+              } else {
+                t.end = false;
+              }
+            } else if (item['value'] && item['value']['list']) {
+              _value = item['value']['list'];
+            } else {
+              _value = item['value'];
+            }
+            t.setData({
+              formData: _value
+            });
+            t.triggerEvent("afterLoadData", t);
+          });
+        }, function (code, msg) {
+          t.loading = false;
+        });
+      }
     },
   }
 })
