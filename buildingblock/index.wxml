@@ -37,3 +37,7 @@
 <template name="bb-indep-form">
   <bb-indep-form id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" content="{{content}}" commitDs="{{commitDs}}" formDataDs="{{formDataDs}}" option="{{option}}"></bb-indep-form>
 </template>
+
+<template name="bb-indep-ul">
+  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}"></bb-indep-ul>
+</template>

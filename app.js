@@ -18,6 +18,6 @@ App({
     userInfo: null,
     _TY_APIHost:"http://xiaoyi.mokelay.cn",
     _TY_ContentPath:"/config"
-
+    
   }
 })

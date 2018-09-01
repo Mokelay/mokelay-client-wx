@@ -1,0 +1,7 @@
+<!--buildingblock/bb-indep-ul/bb-indep-ul.wxml-->
+
+ <scroll-view class="clearfix" scroll-y style="height:400rpx; {{domStyle}}" bindscrolltolower="lower">
+    <view >
+
+    </view>
+  </scroll-view>

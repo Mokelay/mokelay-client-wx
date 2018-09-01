@@ -27,5 +27,9 @@ Page({
   },
   onShow:function(){
     app.globalData._TY_Root = this;
+  },
+  //上拉触底事件
+  onReachBottom:function(){
+    
   }
 })

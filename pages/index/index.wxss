@@ -1,0 +1,86 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+
+
+
+
+view,
+scroll-view,
+swiper,
+text,
+progress,
+button,
+checkbox-group,
+form,
+input,
+label,
+picker,
+picker-view,
+radio-group,
+slider,
+switch,
+textarea,
+navigator,
+image,
+map {
+  box-sizing: border-box;
+}
+/* *, *:before, *:after {
+  box-sizing: inherit;
+} */
+
+image {
+  height: auto;
+  max-width: 100%;
+}
+
+.clearfix:after{
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfix{
+  zoom:1;
+}
+
+.flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.flex_center{
+    align-items:center;
+}
+.flex_nowrap{
+      flex-wrap: nowrap;
+}
+.flex_col{
+  flex-direction:column;
+}
+.flex1{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: block;
+}
+.flex_wrap {
+    -webkit-box-flex: initial;
+    -webkit-flex: initial;
+    flex: initial;
+    display: block;
+}
+
+/*一行显示不换行 多出的部分省略号*/
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.pointer{
+  cursor:pointer;
+}
+
