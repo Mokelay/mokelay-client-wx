@@ -97,9 +97,14 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    realOption:{}
   },
-
+  created: function () {
+  },
+  attached: function () {
+  },
+  ready: function () {
+  },
   /**
    * 组件的方法列表
    */
@@ -126,7 +131,7 @@ Component({
               _value = item['value'];
             }
             t.setData({
-              formData: _value
+              content: _value
             });
             t.triggerEvent("afterLoadData", t);
           });
@@ -136,7 +141,13 @@ Component({
       }
     },
     goUrl: function () {
-      const url = wx.tpl(this.option.url, t);
+      debugger
+      let url = this.properties.option.url;
+      const currentUrl = wx._TY_Tool.getCurrentUrl();
+      if (this.properties.option.url.split("#/")[1]) {
+        url = currentUrl.split("=")[0] + url.split("#/")[1]
+      }
+      // const url = wx.tpl(this.option.url, t);
       wx.navigateTo({
         url: url
       })

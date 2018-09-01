@@ -11,6 +11,7 @@
   align-items: center;
   padding: 0 30rpx;
   box-sizing: border-box;
+  font-size: 32rpx;
 
 }
 .bb-vant-cell .cell-title{
