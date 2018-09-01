@@ -8,6 +8,7 @@
     "bb-input": "../../buildingblock/bb-input/bb-input",
     "bb-indep-dialog":"../../buildingblock/bb-indep-dialog/bb-indep-dialog",
   "bb-indep-button":"../../buildingblock/bb-indep-button/bb-indep-button",
-"bb-vant-switch":"../../buildingblock/bb-vant-switch/bb-vant-switch"
+"bb-vant-switch":"../../buildingblock/bb-vant-switch/bb-vant-switch",
+"bb-indep-form": "../../buildingblock/bb-indep-form/bb-indep-form"
   }
 }

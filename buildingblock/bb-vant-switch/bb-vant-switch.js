@@ -42,9 +42,8 @@ Component({
    */
   methods: {
     change:function(e){
-      e.detail.value;
-      this.$emit("input", e.detail.value);
-      this.$emit("change", e.detail.value);
+      this.triggerEvent("input", e.detail.value);
+      this.triggerEvent("change", e.detail.value);
     },
     hideFn() {
       this.isShow = false;
