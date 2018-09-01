@@ -53,3 +53,7 @@
 <template name="bb-photo-single">
   <bb-photo-single src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-photo-single>
 </template>
+
+<template name="bb-hyperlink">
+  <bb-hyperlink id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" contentValue="{{contentValue}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-hyperlink>
+</template>
