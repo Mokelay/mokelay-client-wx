@@ -67,7 +67,7 @@
 </template>
 
 <template name="bb-indep-textarea">
-  <bb-indep-textarea id="{{uuid}}" class="bb {{uuid}}" placeholder="{{placeholder}}" showText="{{showText}}" styleConfig="{{styleConfig}}" style="{{domStyle}}" option="{{option}}" bind:input="publicEventEmit" bind:change="publicEventEmit"></bb-indep-textarea>
+  <bb-indep-textarea id="{{uuid}}" class="bb {{uuid}}" placeholder="{{placeholder||'请输入...'}}" showText="{{showText}}" styleConfig="{{styleConfig}}" style="{{domStyle}}" option="{{option}}" bind:input="publicEventEmit" bind:change="publicEventEmit"></bb-indep-textarea>
 </template>
 
 <template name="bb-vant-field">
