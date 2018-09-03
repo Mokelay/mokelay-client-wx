@@ -16,7 +16,9 @@
     "bb-photo-single": "../../buildingblock/bb-photo-single/bb-photo-single",
     "bb-hyperlink": "../../buildingblock/bb-hyperlink/bb-hyperlink",
     "bb-vant-cell": "../../buildingblock/bb-vant-cell/bb-vant-cell",
-    "bb-indep-textarea": "../../buildingblock/bb-indep-textarea/bb-indep-textarea"
+    "bb-indep-textarea": "../../buildingblock/bb-indep-textarea/bb-indep-textarea",
+    "bb-vant-tab-bar": "../../buildingblock/bb-vant-tab-bar/bb-vant-tab-bar",
+    "bb-vant-field": "../../buildingblock/bb-vant-field/bb-vant-field"
     
   }
 }

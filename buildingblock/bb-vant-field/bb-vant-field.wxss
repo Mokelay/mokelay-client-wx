@@ -1,4 +1,4 @@
-/* buildingblock/bb-vant-cell/bb-vant-cell.wxss */
+/* buildingblock/bb-vant-field/bb-vant-field.wxss */
 @import "../../lib/iconfont/iconfont.wxss";
 
 .bb-vant-cell{
@@ -12,7 +12,6 @@
   padding: 0 30rpx;
   box-sizing: border-box;
   font-size: 32rpx;
-
 }
 .bb-vant-cell .cell-title{
   min-width: 92rpx;

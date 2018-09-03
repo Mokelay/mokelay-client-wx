@@ -2,6 +2,6 @@
 <view class="bb-vant-cell" bindtap="goUrl">
   <icon size="10" class="iconfont {{option.icon}}"></icon>
   <text class="cell-title">{{option.title}}</text>
-  <text class="cell-value">{{value}}</text>
+  <text class="cell-value">{{value || ""}}</text>
   <view wx:if="{{option.isLink}}" size="10" class="iconfont ty-icon_jiangtoul_right-copy isLink"></view>
 </view>

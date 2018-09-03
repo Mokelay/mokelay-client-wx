@@ -1,0 +1,22 @@
+/* buildingblock/bb-vant-tab-bar/bb-vant-tab-bar.wxss */
+@import "../../lib/iconfont/iconfont.wxss";
+.bb-vant-tab-bar{
+  display: flex;
+  position: fixed;  
+  width: 100%;  
+  padding: 0px 2%; 
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(229, 229, 229);
+  border-width: 1px 0px 0px;
+  z-index: 999;
+}
+.bb-vant-tab-bar .menu-item{  
+  flex: 1;
+  display: inline-block;
+  text-align: center;  
+  padding-top: 8px;  
+}    
+.tabbar_text{
+  font-size: 28rpx
+}

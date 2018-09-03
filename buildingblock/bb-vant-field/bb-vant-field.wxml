@@ -1,0 +1,6 @@
+<!--buildingblock/bb-vant-field/bb-vant-field.wxml-->
+<view class="bb-vant-cell" bindtap="goUrl">
+  <icon size="10" class="iconfont {{realOption.icon}}" bindtap="clickIcon"></icon>
+  <text class="cell-title">{{realOption.label}}</text>
+  <input class="cell-value" value="{{value}}" placeholder="{{realOption.placeholder}}" focus="{{focus}}" bindinput="input" bindfocus="focus" bindblur="blur"/>
+</view>
