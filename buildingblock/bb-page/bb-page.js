@@ -48,7 +48,7 @@ Component({
           content: content
         });
 
-        console.log(content);
+        // console.log(content);
       });
   },
 

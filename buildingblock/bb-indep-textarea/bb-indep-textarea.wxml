@@ -1,0 +1,4 @@
+<!--buildingblock/bb-indep-textarea/bb-indep-textarea.wxml-->
+
+  <textarea class="bb-indep-textarea" wx:if="{{isShow}}" value="{{value}}" placeholder="{{placeholder}}" style="height:6rem;{{}}" disabled="{{option.disabled}}" placeholder-class="bb-indep-textarea-placeholder" maxlength="{{showText}}" bindblur="change" />
+

@@ -21,7 +21,24 @@ switch,
 textarea,
 navigator,
 image,
-map {
+map,
+bb-layout-seriation,
+bb-hyperlink,
+bb-img,
+bb-indep-dialog,
+bb-indep-button,
+bb-indep-form,
+bb-indep-ul,
+bb-input,
+bb-page,
+bb-photo-single,
+bb-text,
+bb-uuid,
+bb-vant-cell,
+bb-vant-radio-group,
+bb-vant-switch,
+bb-words,
+bb-indep-textarea{
   box-sizing: border-box;
 }
 /* *, *:before, *:after {
@@ -35,6 +52,12 @@ bb-indep-form,
 bb-indep-ul,
 bb-page{
   display:block;
+}
+
+page {
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
 }
 
 image {
