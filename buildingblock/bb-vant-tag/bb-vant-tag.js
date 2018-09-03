@@ -189,6 +189,8 @@ Component({
         });
       }
       t.triggerEvent('itemClick', { value: t._calculateSelected(), item: current });
+      t.triggerEvent('input', { value: t._calculateSelected()});
+      t.triggerEvent('change', { value: t._calculateSelected()});
       //刷新页面
       t.buildListCss();
     },
