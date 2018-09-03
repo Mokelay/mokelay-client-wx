@@ -73,3 +73,7 @@
 <template name="bb-vant-field">
   <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" domStyle="{{domStyle}}"></bb-vant-field>
 </template>
+
+<template name="bb-vant-tag">
+  <bb-vant-tag id="{{uuid}}" class="bb {{uuid}}" tagDs="{{tagDs}}" value="{{value}}" tags="{{tags}}" isActive="{{isActive}}" multiple="{{multiple}}" cssStyle="{{cssStyle}}" activeStyle="{{activeStyle}}" radius="{{radius}}" domStyle="{{domStyle}}"></bb-vant-tag>
+</template>

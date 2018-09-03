@@ -17,27 +17,7 @@ Component({
       value:-1
     },
     styleConfig:{
-      type:Object,
-      value: {
-        fontFamily: '',
-        fontSize: '28rpx',
-        fontColor: '#9a9a9a',
-        bold: false,
-        italic: false,
-        underline: false,
-        textAlign: 'left',
-        lingHeight: 1.5,
-        letterSpacing: 0,
-        borderWidth: 1,
-        borderColor: "#6298D8",
-        borderStyle: "solid",
-        borderRadius: "4rpx",
-        width: "100%",
-        resize: "none",
-        height: "100rpx",
-        padding: "10rpx",
-        margin: "",
-      }
+      type:Object
     },
     //基础配置
     option:{
@@ -68,6 +48,28 @@ Component({
   methods: {
     transferCss:function(val){
       const t = this;
+      if (!val){
+        val = {
+          fontFamily: '',
+          fontSize: '28rpx',
+          fontColor: '#9a9a9a',
+          bold: false,
+          italic: false,
+          underline: false,
+          textAlign: 'left',
+          lingHeight: 1.5,
+          letterSpacing: 0,
+          borderWidth: 1,
+          borderColor: "#6298D8",
+          borderStyle: "solid",
+          borderRadius: "4rpx",
+          width: "100%",
+          resize: "none",
+          height: "100rpx",
+          padding: "10rpx",
+          margin: "",
+        };
+      }
       const styles = {
         "border-radius": val.borderRadius,
         "padding": val.padding,
@@ -89,6 +91,7 @@ Component({
         'text-align': val.textAlign
       }
       return styles;
+      
     },
     //改变 blur
     change:function(e){
