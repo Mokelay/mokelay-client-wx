@@ -108,19 +108,7 @@ Component({
         }
     */
     activeStyle: {
-      type: Object,
-      value:{
-        iconStyle: {
-          font: {
-            color: "#0091ea"
-          },
-        },
-        textStyle: {
-          font: {
-            color: "#0091ea"
-          },
-        }
-      }
+      type: Object
     }
   },
 
@@ -160,10 +148,12 @@ Component({
   attached: function () {
     const newField = this.properties.fields;
     const activeStyle = this.properties.activeStyle;
+    const activeIconStyle = activeStyle.iconStyle;
+    const activeTextStyle = activeStyle.textStyle;
     let currentUrl = wx._TY_Tool.getCurrentUrl();
     newField.forEach((field,key)=>{
-      field.iconStyle = wx._TY_Tool.setStyle(null,{layout: field.iconStyle});
-      field.textStyle = wx._TY_Tool.setStyle(null, {layout: field.textStyle });
+      field.iconStyle = wx._TY_Tool.setStyle(false,{layout: field.iconStyle});
+      field.textStyle = wx._TY_Tool.setStyle(false, {layout: field.textStyle });
       field.url = field.url || field.to
       if (!field.url.split("/")[1]) {
         field.url = currentUrl.split("=")[0] + "=" + field.url;
@@ -176,12 +166,12 @@ Component({
       // field.url = wx._TY_Tool.tpl(field.url, this);
     });
     const newActiveStyle = {
-      iconStyle: wx._TY_Tool.setStyle(null, {layout: activeStyle.iconStyle}),
-      textStyle: wx._TY_Tool.setStyle(null, {layout: activeStyle.textStyle})
+      iconStyle: wx._TY_Tool.setStyle(false,{layout: activeIconStyle}),
+      textStyle: wx._TY_Tool.setStyle(false,{layout: activeTextStyle})
     }
     this.setData({
-      realFields: newField,
-      realActiveStyle:newActiveStyle,
+      realFields: newField.length ? newField : this.data.realFields,
+      realActiveStyle: activeStyle ? newActiveStyle : this.data.realActiveStyle,
       currentUrl: currentUrl
     })
 

@@ -74,6 +74,10 @@
   <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" domStyle="{{domStyle}}"></bb-vant-field>
 </template>
 
+<template name="bb-vant-cell-picker">
+  <bb-vant-cell-picker id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" hrefValue="{{hrefValue}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" ></bb-vant-cell-picker>
+</template>
+
 <template name="bb-vant-tag">
   <bb-vant-tag id="{{uuid}}" class="bb {{uuid}}" tagDs="{{tagDs}}" value="{{value}}" tags="{{tags}}" isActive="{{isActive}}" multiple="{{multiple}}" cssStyle="{{cssStyle}}" activeStyle="{{activeStyle}}" bind:itemClick="publicEventEmit" radius="{{radius}}" domStyle="{{domStyle}}"></bb-vant-tag>
 </template>
@@ -81,5 +85,4 @@
 <template name="bb-vant-checkbox">
   <bb-vant-checkbox id="{{uuid}}" class="bb {{uuid}}" bind:change="publicEventEmit" value="{{value}}" fields="{{fields}}" fieldsDs="{{fieldsDs}}" option="{{option}}" domStyle="{{domStyle}}"></bb-vant-checkbox>
 </template>
-
 

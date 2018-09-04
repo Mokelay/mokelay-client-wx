@@ -1,26 +1,25 @@
 {
-  "component": true,
-  "usingComponents": {
-    "bb-text": "../../buildingblock/bb-text/bb-text",
-    "bb-img": "../../buildingblock/bb-img/bb-img",
-    "bb-uuid": "../../buildingblock/bb-uuid/bb-uuid",
-    "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation",
-    "bb-input": "../../buildingblock/bb-input/bb-input",
-    "bb-indep-dialog":"../../buildingblock/bb-indep-dialog/bb-indep-dialog",
-    "bb-indep-button":"../../buildingblock/bb-indep-button/bb-indep-button",
-    "bb-vant-switch":"../../buildingblock/bb-vant-switch/bb-vant-switch",
-    "bb-indep-ul": "../../buildingblock/bb-indep-ul/bb-indep-ul",
-    "bb-indep-form": "../../buildingblock/bb-indep-form/bb-indep-form",
-    "bb-vant-radio-group": "../../buildingblock/bb-vant-radio-group/bb-vant-radio-group",
-    "bb-words": "../../buildingblock/bb-words/bb-words",
-    "bb-photo-single": "../../buildingblock/bb-photo-single/bb-photo-single",
-    "bb-hyperlink": "../../buildingblock/bb-hyperlink/bb-hyperlink",
-    "bb-vant-cell": "../../buildingblock/bb-vant-cell/bb-vant-cell",
-    "bb-indep-textarea": "../../buildingblock/bb-indep-textarea/bb-indep-textarea",
-    "bb-vant-tab-bar": "../../buildingblock/bb-vant-tab-bar/bb-vant-tab-bar",
-    "bb-vant-field": "../../buildingblock/bb-vant-field/bb-vant-field",
-    "bb-vant-tag": "../../buildingblock/bb-vant-tag/bb-vant-tag",
-    "bb-vant-checkbox": "../../buildingblock/bb-vant-checkbox/bb-vant-checkbox"
-
-  }
+    "component": true,
+    "usingComponents": {
+        "bb-text": "../../buildingblock/bb-text/bb-text",
+        "bb-img": "../../buildingblock/bb-img/bb-img",
+        "bb-uuid": "../../buildingblock/bb-uuid/bb-uuid",
+        "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation",
+        "bb-input": "../../buildingblock/bb-input/bb-input",
+        "bb-indep-dialog": "../../buildingblock/bb-indep-dialog/bb-indep-dialog",
+        "bb-indep-button": "../../buildingblock/bb-indep-button/bb-indep-button",
+        "bb-vant-switch": "../../buildingblock/bb-vant-switch/bb-vant-switch",
+        "bb-indep-ul": "../../buildingblock/bb-indep-ul/bb-indep-ul",
+        "bb-indep-form": "../../buildingblock/bb-indep-form/bb-indep-form",
+        "bb-vant-radio-group": "../../buildingblock/bb-vant-radio-group/bb-vant-radio-group",
+        "bb-words": "../../buildingblock/bb-words/bb-words",
+        "bb-photo-single": "../../buildingblock/bb-photo-single/bb-photo-single",
+        "bb-hyperlink": "../../buildingblock/bb-hyperlink/bb-hyperlink",
+        "bb-vant-cell": "../../buildingblock/bb-vant-cell/bb-vant-cell",
+        "bb-vant-tab-bar": "../../buildingblock/bb-vant-tab-bar/bb-vant-tab-bar",
+        "bb-vant-field": "../../buildingblock/bb-vant-field/bb-vant-field",
+        "bb-vant-cell-picker": "../../buildingblock/bb-vant-cell-picker/bb-vant-cell-picker",
+        "bb-vant-tag": "../../buildingblock/bb-vant-tag/bb-vant-tag",
+        "bb-vant-checkbox": "../../buildingblock/bb-vant-checkbox/bb-vant-checkbox"
+    }
 }
