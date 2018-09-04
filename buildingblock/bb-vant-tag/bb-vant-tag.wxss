@@ -1,0 +1,16 @@
+/* buildingblock/bb-vant-tag/bb-vant-tag.wxss */
+.bb-vant-tag{
+
+}
+
+.bb-vant-tag .tag-item{
+  color:#38f;
+  border:1rpx solid #38f;
+  display: inline-block;
+  padding: 4rpx 10rpx;
+  margin-left:0.6rem;
+}
+
+.bb-vant-tag .tag-item:first-child{
+   margin-left:0rpx;
+}

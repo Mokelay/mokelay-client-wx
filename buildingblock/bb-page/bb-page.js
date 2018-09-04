@@ -26,7 +26,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    content:null
+    content:null,
+    pageStyle:""//页面全局样式
   },
 
   ready:function(){
@@ -43,12 +44,16 @@ Component({
         wx.setNavigationBarTitle({
           title: layoutObject&&layoutObject['title']||'加载中....'
         });
-
+        if (layoutObject && layoutObject.cssStyle){
+          let _css = util.setSimpleStyle(layoutObject.cssStyle);
+          t.setData({
+            pageStyle: _css
+          });
+        }
         t.setData({
           content: content
         });
-
-        console.log(content);
+        // console.log(content);
       });
   },
 

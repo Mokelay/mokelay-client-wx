@@ -1,0 +1,6 @@
+<!--buildingblock/bb-vant-tag/bb-vant-tag.wxml-->
+
+
+<view class="bb-vant-tag" style="{{domStyle}}">
+  <view class="tag-item" wx:for="{{list}}" wx:for-index="index" wx:key="{{index}}" style="{{item.css}}" data-item="{{item}}" data-index="{{index}}" bind:tap="tagClick">{{item.text||'测试'}}</view>
+</view>

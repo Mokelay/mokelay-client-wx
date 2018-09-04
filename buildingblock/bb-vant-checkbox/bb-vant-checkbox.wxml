@@ -1,0 +1,7 @@
+<!--buildingblock/bb-vant-checkbox/bb-vant-checkbox.wxml-->
+
+<checkbox-group style="{{domStyle}}" bindchange="change">
+  <label class="checkbox" wx:for="{{list}}">
+    <checkbox value="{{item.value}}" disabled="{{item.disabled}}" checked="{{item.checked}}"/>{{item.text}}
+  </label>
+</checkbox-group>

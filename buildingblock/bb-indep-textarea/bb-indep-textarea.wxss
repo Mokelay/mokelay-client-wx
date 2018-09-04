@@ -1,0 +1,7 @@
+/* buildingblock/bb-indep-textarea/bb-indep-textarea.wxss */
+.bb-indep-textarea{
+  border-top:1rpx solid #E5E5E5;
+  border-bottom:1rpx solid #E5E5E5;
+  width: 100%;
+  padding:22rpx 33rpx;
+}
