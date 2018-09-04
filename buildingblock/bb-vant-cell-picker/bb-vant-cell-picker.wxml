@@ -1,0 +1,19 @@
+<!--buildingblock/bb-vant-cell-picker/bb-vant-cell-picker.wxml-->
+<view class="bb-vant-cell-picker">
+  <icon size="10" class="iconfont {{realOption.icon}}" bindtap="clickIcon"></icon>
+  <text class="cell-title">{{realOption.title}}</text>
+  <view class="cell-value">
+    <picker wx:if="{{realOption.type == 'area'}}" mode="region" bindchange="regionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{valueText}}
+      </view>
+    </picker>
+    <picker wx:if="{{realOption.type != 'area'}}" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="columnChange" value="{{multiIndex}}" range="{{realColumn}}">
+      <view class="picker">
+        {{valueText}}
+      </view>
+    </picker>
+  </view>
+  <view wx:if="{{realOption.isLink}}" size="10" class="iconfont ty-icon_jiangtoul_right-copy isLink"></view>
+</view>
+

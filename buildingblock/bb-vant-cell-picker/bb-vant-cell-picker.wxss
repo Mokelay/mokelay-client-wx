@@ -1,0 +1,32 @@
+/* buildingblock/bb-vant-cell-picker/bb-vant-cell-picker.wxss */
+@import "../../lib/iconfont/iconfont.wxss";
+
+.bb-vant-cell-picker{
+  border:1rpx solid rgb(229, 229, 229);
+  border-left:none;
+  border-right:none;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+}
+.bb-vant-cell-picker .cell-title{
+  min-width: 92rpx;
+}
+.bb-vant-cell-picker .cell-value{
+  flex: 1;
+  text-align: right;
+  padding: 0 10rpx;
+}
+.bb-vant-cell-picker .picker{
+  display: inline-block;
+  width: 100%;
+}
+.bb-vant-cell-picker .isLink{
+  display: inline-block;
+  width: 30rpx;
+  margin-top: 2rpx;
+}

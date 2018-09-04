@@ -69,3 +69,7 @@
 <template name="bb-vant-field">
   <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" domStyle="{{domStyle}}"></bb-vant-field>
 </template>
+
+<template name="bb-vant-cell-picker">
+  <bb-vant-cell-picker id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" hrefValue="{{hrefValue}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" ></bb-vant-cell-picker>
+</template>
