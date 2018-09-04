@@ -16,7 +16,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    _TY_APIHost:"http://xiaoyi.mokelay.cn",
+    _TY_APIHost:"https://www.mokelay.com",
     _TY_ContentPath:"/config"
     
   }
