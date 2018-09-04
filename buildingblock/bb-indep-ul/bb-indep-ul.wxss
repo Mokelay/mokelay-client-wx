@@ -3,3 +3,49 @@
   font-size: 28rpx;
   line-height: 56rpx;
 }
+
+.bb-indep-ul .touch-item {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom:1px solid #ccc; */
+  width: 100%;
+  overflow: hidden;
+  position:relative;
+}
+.bb-indep-ul .content {
+  width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  /* -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -90px */
+   -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.bb-indep-ul .del {
+  background-color: orangered;
+  width: 90px;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bb-indep-ul .del text{
+  flex:1;
+  text-align: center;
+}
+
+.bb-indep-ul .touch-move-active .content,
+.bb-indep-ul .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}

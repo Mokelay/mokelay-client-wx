@@ -1,6 +1,7 @@
 // buildingblock/bb-indep-ul/bb-indep-ul.js
 
 const app = getApp();
+const SWIPE_WIDTH = 90;//滑块长度
 Component({
   /**
    * 组件的属性列表
@@ -80,7 +81,9 @@ Component({
     pageSize: 10,
     page: 1,
     end: false,//是否加载结束
-    loading: false//是否加载中
+    loading: false,//是否加载中
+    startX:0,//开始距左侧的距离
+    moveLen:0//滑动距离
   },
   attached:function(){
     let t=this;
@@ -312,7 +315,8 @@ Component({
      *  渲染li  item
      * [{
      *  content:[],
-     *  style:""
+     *  style:"",
+     *  swipe:"90"//滑块长度 px
      * }]
      */
     renderItem: function () {
@@ -383,6 +387,7 @@ Component({
         }
         //设置样式
         _item.style = app.globalData._TY_Tool.cssToString(_cssStyle);
+        _item.swipe = 0;//滑块为0
         result.push(_item);
       });
       //修改data randerData
@@ -419,7 +424,65 @@ Component({
           });
         }
       });
-    }
+    },
+    //滑动开始
+    touchstart:function(e){
+      let t=this;
+      // const index = e.currentTarget.dataset.index;
+      t.data.startX = e.changedTouches[0].clientX;
+    },
+    //滑块滑动中
+    touchmove:function(e){
+      let t=this;
+      const index = e.currentTarget.dataset.index;
+      let item = t.data.randerData[index];
+      item.swipe = item.swipe ? item.swipe : 0;
+      let moveX = e.changedTouches[0].clientX;
+      t.data.moveLen = t.data.startX - moveX;
+      console.log("移动距离---" + t.data.moveLen);
+      if (t.data.moveLen>0){
+        //向左滑
+        if (t.data.moveLen - item.swipe < 0){
+          item.swipe = 90;
+        } else if (t.data.moveLen >= SWIPE_WIDTH){
+          item.swipe = 90;
+        }else{
+          item.swipe = item.swipe + t.data.moveLen;
+        }
+      }else{
+        if (item.swipe) {
+          //没有滑动
+          item.swipe = item.swipe + t.data.moveLen;
+        }
+      }
+      let _data = t.data.randerData;
+      _data[index] = item;
+      t.setData({
+        randerData: _data
+      });
+    },
+    //滑块滑动结束
+    touchend:function(e){
+      let t=this;
+      const index = e.currentTarget.dataset.index;
+      let item = t.data.randerData[index];
+      if (item.swipe <= 58 || t.data.moveLen<=-58){
+        item.swipe = 0;
+      }else{
+        item.swipe = 90;
+      }
+      let _data = t.data.randerData;
+      _data[index] = item;
+      t.setData({
+        randerData: _data
+      });
+    },
+    del: function (event){
+      let t=this;
+      let row = event.currentTarget.dataset.row;
+      t.triggerEvent("deleteClick", { item: row, bb: t });
+    },
+
     
   }
 })
