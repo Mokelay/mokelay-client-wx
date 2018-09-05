@@ -12,7 +12,7 @@
   padding: 0 30rpx;
   box-sizing: border-box;
   font-size: 32rpx;
-
+  background-color: #fff;
 }
 .bb-vant-cell .cell-title{
   min-width: 92rpx;
