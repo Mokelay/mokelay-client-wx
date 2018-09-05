@@ -93,11 +93,14 @@ Component({
    * 组件的初始数据
    */
   data: {
-    formData:{}
+    formData:{},
+    isOldData:false,
+    realContent:[]
   },
   created:function(){
   },
   attached: function () {
+    this.checkContentType(this.properties.content);
     this.getData();
   },
   ready: function () {
@@ -169,5 +172,14 @@ Component({
         });
       }
     },
+    checkContentType:function(content){
+      const t = this;
+      if (content[0].alias == "bb-layout-seriation" || content[0].alias.indexOf("vant") != -1){
+        t.setData({
+          isOldData:true,
+          realContent:t.properties.content
+        })
+      }
+    }
   }
 })
