@@ -44,7 +44,9 @@ bb-indep-textarea{
 /* *, *:before, *:after {
   box-sizing: inherit;
 } */
-
+bb-words,
+bb-vant-field,
+bb-vant-cell-picker,
 bb-layout-seriation,
 bb-indep-button,
 bb-indep-dialog,
@@ -52,6 +54,10 @@ bb-indep-form,
 bb-indep-ul,
 bb-page{
   display:block;
+}
+
+bb-vant-switch{
+  display: inline-block;
 }
 
 page {

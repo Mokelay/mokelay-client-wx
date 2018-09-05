@@ -31,7 +31,7 @@
 </template>
 
 <template name="bb-vant-switch">
-  <bb-vant-switch id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" defaultValTpl="{{defaultValTpl}}" option="{{option}}"></bb-vant-switch>
+  <bb-vant-switch id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" domStyle="{{domStyle}}" value="{{value}}" defaultValTpl="{{defaultValTpl}}" option="{{option}}"></bb-vant-switch>
 </template>
 
 <template name="bb-indep-form">
@@ -47,11 +47,11 @@
 </template>
 
 <template name="bb-vant-cell">
-  <bb-vant-cell id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" option="{{option}}" content="{{content}}" contentDs="{{contentDs}}"></bb-vant-cell>
+  <bb-vant-cell id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" value="{{value}}" option="{{option}}" content="{{content}}" contentDs="{{contentDs}}"></bb-vant-cell>
 </template>
 
 <template name="bb-words">
-  <bb-words value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" text="{{text}}" textDs="{{textDs}}" domStyle="{{domStyle}}"></bb-words>
+  <bb-words value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" text="{{text}}" textDs="{{textDs}}" domStyle="{{domStyle}}" style="{{domStyle}}"></bb-words>
 </template>
 
 <template name="bb-photo-single">
@@ -71,11 +71,11 @@
 </template>
 
 <template name="bb-vant-field">
-  <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" domStyle="{{domStyle}}"></bb-vant-field>
+  <bb-vant-field id="{{uuid}}" class="bb {{uuid}}" hrefValue="{{hrefValue}}" value="{{value}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" style="{{domStyle}}"></bb-vant-field>
 </template>
 
 <template name="bb-vant-cell-picker">
-  <bb-vant-cell-picker id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" hrefValue="{{hrefValue}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" ></bb-vant-cell-picker>
+  <bb-vant-cell-picker id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" value="{{value}}" hrefValue="{{hrefValue}}" option="{{option}}" defaultValTpl="{{defaultValTpl}}" ></bb-vant-cell-picker>
 </template>
 
 <template name="bb-vant-tag">
