@@ -11,7 +11,7 @@
 </template>
 
 <template name="bb-uuid">
-  <view>bb-uuid</view>
+  <bb-uuid id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" value="{{value}}" length="{{length}}" radix="{{radix}}"></bb-uuid>
 </template>
 
 <template name="bb-layout-seriation">
