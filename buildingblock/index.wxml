@@ -11,7 +11,7 @@
 </template>
 
 <template name="bb-uuid">
-  <view>bb-uuid</view>
+  <bb-uuid id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" value="{{value}}" length="{{length}}" radix="{{radix}}"></bb-uuid>
 </template>
 
 <template name="bb-layout-seriation">
@@ -43,7 +43,7 @@
 </template>
 
 <template name="bb-indep-ul">
-  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" columns="{{columns}}" theme="{{theme}}" itemContent="{{itemContent}}" staticList="{{staticList}}" ds="{{ds}}" itemStyle="{{itemStyle}}" firstItemStyle="{{firstItemStyle}}" lastItemStyle="{{lastItemStyle}}" pageConfig="{{pageConfig}}" closePullLoading="{{closePullLoading}}" fixedHeight="{{fixedHeight}}" lazy="{{lazy}}" bind:itemClick="publicEventEmit"></bb-indep-ul>
+  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" columns="{{columns}}" theme="{{theme}}" itemContent="{{itemContent}}" staticList="{{staticList}}" ds="{{ds}}" itemStyle="{{itemStyle}}" firstItemStyle="{{firstItemStyle}}" lastItemStyle="{{lastItemStyle}}" pageConfig="{{pageConfig}}" closePullLoading="{{closePullLoading}}" theme="{{theme}}" fixedHeight="{{fixedHeight}}" lazy="{{lazy}}" bind:itemClick="publicEventEmit" bind:deleteClick="publicEventEmit"></bb-indep-ul>
 </template>
 
 <template name="bb-vant-cell">
@@ -86,3 +86,6 @@
   <bb-vant-checkbox id="{{uuid}}" class="bb {{uuid}}" bind:change="publicEventEmit" value="{{value}}" fields="{{fields}}" fieldsDs="{{fieldsDs}}" option="{{option}}" domStyle="{{domStyle}}"></bb-vant-checkbox>
 </template>
 
+<template name="bb-vant-swipe">
+  <bb-vant-swipe id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" images="{{images}}" imageDs="{{imageDs}}" props="{{props}}" option="{{option}}" bind:click="publicEventEmit"></bb-vant-swipe>
+</template>

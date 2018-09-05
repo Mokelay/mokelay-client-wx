@@ -20,6 +20,8 @@
         "bb-vant-field": "../../buildingblock/bb-vant-field/bb-vant-field",
         "bb-vant-cell-picker": "../../buildingblock/bb-vant-cell-picker/bb-vant-cell-picker",
         "bb-vant-tag": "../../buildingblock/bb-vant-tag/bb-vant-tag",
-        "bb-vant-checkbox": "../../buildingblock/bb-vant-checkbox/bb-vant-checkbox"
+        "bb-vant-checkbox": "../../buildingblock/bb-vant-checkbox/bb-vant-checkbox",
+        "bb-vant-swipe": "../../buildingblock/bb-vant-swipe/bb-vant-swipe"
+        
     }
 }

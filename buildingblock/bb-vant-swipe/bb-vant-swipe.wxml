@@ -1,0 +1,10 @@
+<!--buildingblock/bb-vant-swipe/bb-vant-swipe.wxml-->
+
+<swiper indicator-dots="true" style="{{domStyle}}"
+  autoplay="true" interval="{{option.autoplay}}" duration="{{option.duration}}">
+  <block wx:for="{{list}}">
+    <swiper-item data-item="{{item}}" bind:tap="click">
+      <image src="{{item.src}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>

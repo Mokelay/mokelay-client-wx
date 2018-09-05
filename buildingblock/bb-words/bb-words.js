@@ -18,6 +18,9 @@ Component({
     textDs: {
       type: Object
     },
+    value:{
+      type:String
+    }
   },
 
   /**
