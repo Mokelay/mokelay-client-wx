@@ -76,6 +76,26 @@ Component({
           });
         }
       });
+    },
+    /*回退
+        url 跳转地址  不传则回退
+      */
+    goBack:function(...args) {
+      let url;
+      args.forEach((val, key) => {
+        if (val.type == 'custom') {
+          url = val.arguments;
+        }
+      });
+      if (url) {
+        wx.navigateBack({
+          delta: url
+        })
+      } else {
+        wx.navigateBack({
+          delta: 1
+        })
+      }
     }
   }
 })
