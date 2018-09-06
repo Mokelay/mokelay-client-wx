@@ -89,3 +89,7 @@
 <template name="bb-vant-swipe">
   <bb-vant-swipe id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" images="{{images}}" imageDs="{{imageDs}}" props="{{props}}" option="{{option}}" bind:click="publicEventEmit"></bb-vant-swipe>
 </template>
+
+<template name="bb-indep-QR">
+  <bb-indep-QR id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" url="{{url}}" size="{{size}}"></bb-indep-QR>
+</template>

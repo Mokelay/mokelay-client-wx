@@ -1,0 +1,9 @@
+<!--buildingblock/bb-indep-QR/bb-indep-QR.wxml-->
+<view class="container-box">
+    <view class="img-box">
+        <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
+    </view>
+</view>
+<view class="canvas-box">
+  <canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;" canvas-id="mycanvas"/>
+</view>
