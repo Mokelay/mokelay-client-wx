@@ -10,6 +10,9 @@ Component({
     },
     domStyle:{
       type:String
+    },
+    button:{
+      type:Object
     }
   },
 
@@ -28,6 +31,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    //img点击事件
+    imgClick: function () {
+      let t = this;
+      if (t.properties.button) {
+        wx._TY_Tool.resolveButton(t.properties.button, _TY_Tool.buildTplParams(t));
+      }
+      t.triggerEvent("click", t);
+    }
   }
 })
