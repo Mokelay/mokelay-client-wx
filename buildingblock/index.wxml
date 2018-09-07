@@ -93,3 +93,7 @@
 <template name="bb-indep-QR">
   <bb-indep-QR id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" url="{{url}}" size="{{size}}"></bb-indep-QR>
 </template>
+
+<template name="bb-indep-share">
+  <bb-indep-share id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" title="{{title}}" link="{{link}}" imgUrl="{{imgUrl}}" option="{{option}}"></bb-indep-share>
+</template>

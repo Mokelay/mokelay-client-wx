@@ -1,0 +1,19 @@
+/* buildingblock/bb-indep-share/bb-indep-share.wxss */
+
+@import "../../lib/iconfont/iconfont.wxss";
+
+.bb-indep-share{
+  border:none;
+  background:none;
+  display:inline-block;
+  border-radius:0;
+  padding:0;
+  font-size:20px;
+}
+.bb-indep-share:after{
+  border:0;
+}
+
+.bb-indep-share .iconfont{
+  font-size: inherit;
+}
