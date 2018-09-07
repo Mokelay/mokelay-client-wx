@@ -1,0 +1,24 @@
+<!--buildingblock/bb-vant-uploader/bb-vant-uploader.wxml-->
+
+
+<view style="{{domStyle}}" class="bb-vant-uploader" aliasname="上传文件(V)">
+  
+  <view wx:if="{{option.theme=='card'}}" class="van-uploader card" bindtap="upload">
+    <view class="iconfont ty-icon_tianjia"></view>
+  </view>
+
+  <view wx:if="{{option.theme=='custom'}}" class="van-uploader" bindtap="upload">
+    <view wx:for="{{content}}" wx:for-index="index" wx:key="{{item.uuid}}">
+      <bb alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+    </view>
+  </view>
+
+  <view wx:if="{{option.theme=='picture' && !value}}" class="van-uploader" bindtap="upload">
+    <text class="edit">修改</text>
+  </view>
+
+  <view class="uploaded-item" wx:if="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{item}}">
+    <image src="{{item}}" controls="controls" class="uploaded-child"></image>
+    <view class="iconfont ty-icon_cuowu" bindtap="remove" data-index="{{index}}"></view>
+  </view>
+</view>
