@@ -1,6 +1,6 @@
 // component/bb-page/bb-page.js
 var util = require("../../lib/util.js");
-var pages = require("../../package/page/index.js");
+var pkg = require("../../package/index.js");
 
 Component({
   /**
@@ -33,7 +33,7 @@ Component({
 
   ready:function(){
     var t = this;
-    pages.loadPage(this.data.pageAlias).then(function(page){
+    pkg.loadPage(this.data.pageAlias).then(function(page){
       var layoutObject = page['layoutObject']&&JSON.parse(page['layoutObject']);
       var content = page['content']&&JSON.parse(page['content']);
 

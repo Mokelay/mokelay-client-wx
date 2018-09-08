@@ -1,5 +1,5 @@
 //页面数据加载
-var util = require("../../lib/util.js");
+var util = require("../lib/util.js");
 
 module.exports = {
 	/**
@@ -25,7 +25,7 @@ module.exports = {
 	loadLocalPage:function(pageAlias){
 		return new Promise(function(resolve, reject) {
 			try{
-				resolve(require("./"+pageAlias+".js"))
+				resolve(require("./page/"+pageAlias+".js"))
 			}catch(e){
 				reject(e);
 			}
