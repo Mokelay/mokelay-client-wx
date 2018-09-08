@@ -7,6 +7,7 @@ module.exports = {
 	hosts: {
 		'default': "https://www.mokelay.com"
 	},
+	package:false,
 	questionnaireHost: "https://www.mokelay.com/survey",
 	home: "xy_partner_home"
 };

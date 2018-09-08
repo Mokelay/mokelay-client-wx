@@ -1,6 +1,8 @@
 //页面数据加载
 var util = require("../lib/util.js");
 
+const app = getApp()
+
 module.exports = {
 	/**
 		根据页面别名加载页面数据
@@ -8,15 +10,23 @@ module.exports = {
 	loadPage:function(pageAlias){
 		var t = this;
 		return new Promise(function(resolve, reject) {
-			t.loadLocalPage(pageAlias).then(function(value){
-				resolve(value);
-			}).catch(function(e){
+			if(app.globalData._TY_Package){
+				t.loadLocalPage(pageAlias).then(function(value){
+					resolve(value);
+				}).catch(function(e){
+					t.loadRemotePage(pageAlias).then(function(value){
+						resolve(value);
+					}).catch(function(e){
+						reject(e);
+					});
+				});
+			}else{
 				t.loadRemotePage(pageAlias).then(function(value){
 					resolve(value);
 				}).catch(function(e){
 					reject(e);
 				});
-			});
+			}
 		});
 	},
 	/**

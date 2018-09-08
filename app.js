@@ -20,6 +20,7 @@ App({
     userInfo: null,
     _TY_APIHost:env['apiHost'],
     _TY_Home:env['home'],
+    _TY_Package:env['package'],
 
     _TY_ContentPath:"/config",
 
