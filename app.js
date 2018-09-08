@@ -1,5 +1,5 @@
 //app.js
-var env = require("./env/index.js")['default'];
+var env = require("./env/index.js");
 
 App({
   onLaunch: function (options) {

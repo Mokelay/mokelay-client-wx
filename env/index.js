@@ -1,5 +1,5 @@
 //常量配置
-export default {
+module.exports = {
 	name: 'local',
 	apiHost: "https://www.mokelay.com",
 	h5Host: "",
