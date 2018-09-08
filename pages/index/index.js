@@ -10,17 +10,14 @@ Page({
   },
   onLoad: function (options) {
     var t = this;
-    var pageAlias = this.options['alias'];
+    var pageAlias = this.options['alias'] || app.globalData._TY_Home;
     if (!pageAlias || pageAlias.length == 0 ){
-      // wx.showToast({
-      //   title: "请设置页面别名", 
-      //   mask: true, 
-      //   icon: "none" 
-      //   });
-      // return;
-
-      //默认首页
-      pageAlias = "xy_partner_home";
+      wx.showToast({
+        title: "请设置页面别名", 
+        mask: true, 
+        icon: "none" 
+        });
+      return;
     }
     this.setData({
       pageAlias: pageAlias
