@@ -1,5 +1,6 @@
 // component/bb-page/bb-page.js
 var util = require("../../lib/util.js");
+var pages = require("../../package/page/index.js");
 
 Component({
   /**
@@ -32,29 +33,25 @@ Component({
 
   ready:function(){
     var t = this;
-    util.post(
-      '/config/load-page-data', 
-      { alias: this.data.pageAlias },
-      function(res){
-        var data = res.data['data'];
-        var page = data['page'];
-        var layoutObject = page['layoutObject']&&JSON.parse(page['layoutObject']);
-        var content = page['content']&&JSON.parse(page['content']);
+    pages.loadPage(this.data.pageAlias).then(function(page){
+      var layoutObject = page['layoutObject']&&JSON.parse(page['layoutObject']);
+      var content = page['content']&&JSON.parse(page['content']);
 
-        wx.setNavigationBarTitle({
-          title: layoutObject&&layoutObject['title']||'加载中....'
-        });
-        if (layoutObject && layoutObject.cssStyle){
-          let _css = util.setSimpleStyle(layoutObject.cssStyle);
-          t.setData({
-            pageStyle: _css
-          });
-        }
-        t.setData({
-          content: content
-        });
-        // console.log(content);
+      wx.setNavigationBarTitle({
+        title: layoutObject&&layoutObject['title']||'加载中....'
       });
+      if (layoutObject && layoutObject.cssStyle){
+        let _css = util.setSimpleStyle(layoutObject.cssStyle);
+        t.setData({
+          pageStyle: _css
+        });
+      }
+      t.setData({
+        content: content
+      });
+    }).catch(function(e){
+      console.log(e);
+    });
   },
 
   /**
