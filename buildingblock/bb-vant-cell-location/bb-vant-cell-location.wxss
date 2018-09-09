@@ -1,1 +1,6 @@
 /* buildingblock/bb-vant-cell-location/bb-vant-cell-location.wxss */
+
+
+.locationClass .van-cell__left-icon{
+    color:#24C789
+}

@@ -107,5 +107,5 @@
 </template>
 
 <template name="bb-vant-cell-location">
-  <bb-vant-cell-location id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" ></bb-vant-cell-location>
+  <bb-vant-cell-location id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" option="{{option}}" ></bb-vant-cell-location>
 </template>

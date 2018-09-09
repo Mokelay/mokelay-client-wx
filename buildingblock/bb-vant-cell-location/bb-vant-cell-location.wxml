@@ -1,4 +1,4 @@
 <!--buildingblock/bb-vant-cell-location/bb-vant-cell-location.wxml-->
 
 
-<bb-vant-cell option="{{cellOpt}}"></bb-vant-cell>
+<bb-vant-cell style="{{domStyle}}" option="{{cellOpt}}" bindtap="openMap"></bb-vant-cell>

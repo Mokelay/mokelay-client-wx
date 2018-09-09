@@ -143,6 +143,9 @@ Component({
     goUrl: function () {
       this.triggerEvent("click",this);
       let url = this.properties.option.url || "";
+      if (!url){
+        return;
+      }
       const currentUrl = wx._TY_Tool.getCurrentUrl();
       if (this.properties.option.url.split("#/")[1]) {
         url = currentUrl.split("=")[0] + "=" + url.split("#/")[1];
