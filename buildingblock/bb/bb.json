@@ -22,8 +22,7 @@
         "bb-vant-tag": "../../buildingblock/bb-vant-tag/bb-vant-tag",
         "bb-vant-checkbox": "../../buildingblock/bb-vant-checkbox/bb-vant-checkbox",
         "bb-vant-swipe": "../../buildingblock/bb-vant-swipe/bb-vant-swipe",
-        "bb-indep-QR": "../../buildingblock/bb-indep-QR/bb-indep-QR"
-        
-        
+        "bb-indep-QR": "../../buildingblock/bb-indep-QR/bb-indep-QR",
+        "bb-indep-tabs": "../../buildingblock/bb-indep-tabs/bb-indep-tabs"
     }
 }

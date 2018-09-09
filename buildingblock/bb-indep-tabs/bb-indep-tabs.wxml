@@ -1,2 +1,23 @@
 <!--buildingblock/bb-indep-tabs/bb-indep-tabs.wxml-->
-<text>buildingblock/bb-indep-tabs/bb-indep-tabs.wxml</text>
+<view>12345657890</view>
+<view class="{{'bb-tab bb-tab-theme--'+tabTheme+' bb-tab-position--'+tabPosition+' clearfix'}}">
+  <!-- tab头部 -->
+  <view class="bb-tab-header-group">
+    <view class="bb-tab-header" wx:for="{{tabsData}}" wx:for-index="idx" wx:for-item="tabData" wx:key="{{idx}}">
+      <view class="bb-tab-header-scroll clearfix"></view>
+      <view class="bb-tab-header-box">
+        <view class="{{'bb-tab-header-item ' +(p_activeName==tabData.name?'is-active':'')}}" data-tab-name="{{'tab_'+tabData.name}}" data-name="{{tabData.name}}" bindtap="tabClick">
+          <text>{{tabData.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- tab内容 -->
+  <view class="bb-tab-panel-box" wx:for="{{tabsData}}" wx:for-index="idx" wx:for-item="tabData" wx:key="{{idx}}">
+    <view class="{{'bb-tab-panel '+(p_activeName==tabData.name?'tab-show':'tab-hide')}}">
+      <view wx:for="{{bbContent}}" wx:key="{{item.uuid}}" wx:if="{{tabData.name == item.group}}">
+        <bb alias="{{item.alias}}" class="bb {{item.uuid}}" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+      </view>
+    </view>
+  </view>
+</view>
