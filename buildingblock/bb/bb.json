@@ -25,6 +25,8 @@
         "bb-indep-QR": "../../buildingblock/bb-indep-QR/bb-indep-QR",
         "bb-indep-tabs": "../../buildingblock/bb-indep-tabs/bb-indep-tabs",
         "bb-indep-share": "../../buildingblock/bb-indep-share/bb-indep-share",
-        "bb-vant-uploader": "../../buildingblock/bb-vant-uploader/bb-vant-uploader"
+        "bb-vant-uploader": "../../buildingblock/bb-vant-uploader/bb-vant-uploader",
+        "bb-vant-cell-location": "../../buildingblock/bb-vant-cell-location/bb-vant-cell-location"
+        
     }
 }

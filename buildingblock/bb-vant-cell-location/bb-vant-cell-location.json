@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bb-vant-cell": "../../buildingblock/bb-vant-cell/bb-vant-cell"
+  }
+}
