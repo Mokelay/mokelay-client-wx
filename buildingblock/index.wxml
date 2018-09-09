@@ -94,6 +94,14 @@
   <bb-indep-QR id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" url="{{url}}" size="{{size}}"></bb-indep-QR>
 </template>
 
+<template name="bb-indep-share">
+  <bb-indep-share id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" title="{{title}}" link="{{link}}" imgUrl="{{imgUrl}}" option="{{option}}"></bb-indep-share>
+</template>
+
+<template name="bb-vant-uploader">
+  <bb-vant-uploader id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" disabled="{{disabled}}" maxSize="{{maxSize}}" content="{{content}}" uploadDs="{{uploadDs}}" option="{{option}}"></bb-vant-uploader>
+</template>
+
 <template name="bb-indep-tabs">
   <bb-indep-tabs id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" tabTheme="{{tabTheme}}" activeName="{{activeName}}" tabPosition="{{tabPosition}}" tabIconStyle="{{tabIconStyle}}" tabs="{{tabs}}" content="{{content}}" itemStyle="{{itemStyle}}" activeItemStyle="{{activeItemStyle}}" headerStyle="{{headerStyle}}" panelStyle="{{panelStyle}}" hidePanel="{{hidePanel}}" textProp="{{textProp}}" valueProp="{{valueProp}}"></bb-indep-tabs>
 </template>

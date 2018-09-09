@@ -1,0 +1,5 @@
+<!--buildingblock/bb-indep-share/bb-indep-share.wxml-->
+
+<button wx:if="{{show}}" class="bb-indep-share" style="{{domStyle}}" open-type="share">
+  <view class="iconfont {{option.icon}}">{{option.text}}</view>
+</button>

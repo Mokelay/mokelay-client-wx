@@ -24,5 +24,7 @@
         "bb-vant-swipe": "../../buildingblock/bb-vant-swipe/bb-vant-swipe",
         "bb-indep-QR": "../../buildingblock/bb-indep-QR/bb-indep-QR",
         "bb-indep-tabs": "../../buildingblock/bb-indep-tabs/bb-indep-tabs"
+        "bb-indep-share": "../../buildingblock/bb-indep-share/bb-indep-share",
+        "bb-vant-uploader": "../../buildingblock/bb-vant-uploader/bb-vant-uploader"
     }
 }
