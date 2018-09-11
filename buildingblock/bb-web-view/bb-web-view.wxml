@@ -1,0 +1,3 @@
+<!--buildingblock/bb-web-view/bb-web-view.wxml-->
+
+<web-view wx:if="{{src}}" src="{{src}}"></web-view>
