@@ -86,7 +86,7 @@ Component({
     },
     getLocationName(latitude, longitude) {
       const t = this;
-      const ak = t.data.option.ak ? t.data.option.ak:"HycR3XEV2OG3zLRM6AF2jo2iBsjgiqVo";  //xlx
+      const ak = t.data.option&&t.data.option.ak ? t.data.option.ak:"HycR3XEV2OG3zLRM6AF2jo2iBsjgiqVo";  //xlx
       const url = `http://api.map.baidu.com/geocoder/v2/?location=${latitude},${longitude}&output=json&pois=1&ak=${ak}`;
       wx.request({
         data: {},
