@@ -15,6 +15,7 @@ Component({
     /*其他属性配置
         {
             icon:String 左侧图标,
+            rightIcon:String 右侧图标,
             title:String 左侧标题,
             label:String 标题下方的描述信息,
             required:Boolean 是否显示表单必填星号,
@@ -22,7 +23,9 @@ Component({
             center:Boolean 使内容垂直居中
             url:""  跳转链接
             clickable:Boolean 开启点击反馈
-            valueStyle:{}
+            valueStyle:{},
+            isScanCode:false,
+            scanBuzz:""
          }
     */
     option: {
@@ -142,6 +145,9 @@ Component({
     },
     goUrl: function () {
       this.triggerEvent("click",this);
+      if (this.properties.option.isScanCode) {
+        this.scanQRCode();
+      }
       let url = this.properties.option.url || "";
       if (!url){
         return;
@@ -158,6 +164,19 @@ Component({
       wx.navigateTo({
         url: url
       })
+    },
+    scanQRCode(successFn) {
+      const t = this;
+      wx._TY_Tool.scanQRCode((res) => {
+        if (t.properties.option.scanBuzz) {
+          wx._TY_Tool.loadBuzz(t.properties.option.scanBuzz, function (code) {
+            t.util = util;
+            eval(code);
+          });
+        } else if (successFn) {
+          successFn(res);
+        }
+      });
     }
   }
 })

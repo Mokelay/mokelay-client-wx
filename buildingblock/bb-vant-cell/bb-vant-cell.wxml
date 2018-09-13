@@ -4,4 +4,5 @@
   <text class="cell-title">{{option.title}}</text>
   <text class="cell-value">{{value || ""}}</text>
   <view wx:if="{{option.isLink}}" size="10" class="iconfont ty-icon_jiangtoul_right-copy isLink"></view>
+  <view wx:if="{{option.rightIcon}}" size="10" class="iconfont {{option.rightIcon}} isLink"></view>
 </view>
