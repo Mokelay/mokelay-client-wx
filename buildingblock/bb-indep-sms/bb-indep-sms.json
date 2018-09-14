@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bb-vant-field": "../../buildingblock/bb-vant-field/bb-vant-field",
+    "bb-indep-button": "../../buildingblock/bb-indep-button/bb-indep-button"
+  }
+}

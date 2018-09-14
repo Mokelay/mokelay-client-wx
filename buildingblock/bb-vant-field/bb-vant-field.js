@@ -77,7 +77,6 @@ Component({
     },
     //输入事件
     input(e) {
-      debugger
       this.triggerEvent('input', e.detail.value);
       this.triggerEvent('change', e.detail.value);
     },

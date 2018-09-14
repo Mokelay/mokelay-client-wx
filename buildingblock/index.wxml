@@ -117,3 +117,7 @@
 <template name="bb-indep-wx-login">
   <bb-indep-wx-login id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" returnUserinfo="{{returnUserinfo}}" ds="{{ds}}"></bb-indep-wx-login>
 </template>
+
+<template name="bb-indep-sms">
+  <bb-indep-sms id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" ></bb-indep-sms>
+</template>

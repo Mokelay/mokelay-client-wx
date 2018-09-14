@@ -28,7 +28,8 @@
         "bb-vant-uploader": "../../buildingblock/bb-vant-uploader/bb-vant-uploader",
         "bb-vant-cell-location": "../../buildingblock/bb-vant-cell-location/bb-vant-cell-location",
         "bb-web-view": "../../buildingblock/bb-web-view/bb-web-view",
-        "bb-indep-wx-login": "../../buildingblock/bb-indep-wx-login/bb-indep-wx-login"
+        "bb-indep-wx-login": "../../buildingblock/bb-indep-wx-login/bb-indep-wx-login",
+        "bb-indep-sms": "../../buildingblock/bb-indep-sms/bb-indep-sms"
         
     }
 }
