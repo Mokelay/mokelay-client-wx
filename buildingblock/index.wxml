@@ -113,3 +113,7 @@
 <template name="bb-web-view">
   <bb-web-view id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" ></bb-web-view>
 </template>
+
+<template name="bb-indep-wx-login">
+  <bb-indep-wx-login id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" returnUserinfo="{{returnUserinfo}}" ds="{{ds}}"></bb-indep-wx-login>
+</template>

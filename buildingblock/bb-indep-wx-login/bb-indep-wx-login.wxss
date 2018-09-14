@@ -1,0 +1,21 @@
+/* buildingblock/bb-indep-wx-login/bb-indep-wx-login.wxss */
+
+.wx-login-box{
+  margin-top: 40%;
+}
+
+.wx-login-avatar{
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  display: block;
+  margin:0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wx-login-name{
+  width: 100%;
+  text-align: center;
+  display: block;
+  line-height: 80rpx;
+}

@@ -22,6 +22,8 @@ App({
     _TY_Home:env['home'],
     _TY_Package:env['package'],
 
+    _TY_SSOURL: env['ssoURL'],
+
     _TY_ContentPath:"/config",
 
     _TY_Share:{
