@@ -1,16 +1,27 @@
 // buildingblock/bb-indep-QR/bb-indep-QR.js
 var QR = require('../../lib/qrcode/qrcode.js');
+var app = getApp();
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
+    /*二维码类型
+        default 默认 wx微信小程序二维码
+    */
+    qrType: {
+      type: String
+    },
     url: {
       type: Boolean
     },
     //大小
     size: {
       type: Number
+    },
+    //微信配置
+    wxOptions: {
+      type: Object
     }
   },
 
@@ -23,6 +34,15 @@ Component({
     canvasHidden: false,
     maskHidden: true,
     imagePath: '',
+    realWxOptions: {
+      //参数
+      scene: "pageAlias",
+      //页面
+      page: "pages/index/index",
+      //透明底色
+      is_hyaline: false
+    },
+    sizeStyle:""
   },
   attached: function () {
     const t = this;
@@ -33,12 +53,26 @@ Component({
     }
     t.data.realUrl = realUrl;
     t.data.realSize = t.properties.size || 200;
+    t.data.realWxOptions = t.properties.wxOptions ? t.properties.wxOptions : t.data.realWxOptions;
   },
   ready: function () {
-    // 页面初始化 options为页面跳转所带来的参数
-    var size = this.setCanvasSize();//动态设置画布大小
-    var initUrl = this.data.realUrl;
-    this.createQrCode(initUrl, "mycanvas", size.w, size.h, this);
+    const t = this;
+    if (t.properties.qrType == "wx") {
+      const scene = encodeURIComponent(t.data.realWxOptions.scene);
+      const page = encodeURIComponent(t.data.realWxOptions.page);
+      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline}`
+      t.setData({
+        imagePath: url
+      })
+    }else{
+      // 页面初始化 options为页面跳转所带来的参数
+      var size = this.setCanvasSize();//动态设置画布大小
+      var initUrl = this.data.realUrl;
+      this.setData({
+        sizeStyle: `height:${size.w}px;width:${size.h}px;`
+      });
+      this.createQrCode(initUrl, "mycanvas", size.w, size.h, this);
+    }
   },
   /**
    * 组件的方法列表
