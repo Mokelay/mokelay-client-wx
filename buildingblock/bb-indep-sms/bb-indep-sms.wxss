@@ -1,0 +1,22 @@
+/* buildingblock/bb-indep-sms/bb-indep-sms.wxss */
+.bb-indep-sms {
+  display: block;
+  position: relative;
+}
+.bb-indep-sms .bb-vant-field {
+  width: 100%;
+  display: inline-block;
+}
+.bb-indep-sms .bb-indep-button {
+  font-size: 12px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 10rpx;
+  width: 260rpx;
+  height: 60rpx;
+  z-index: 50;
+}
+.bb-indep-sms > div {
+  display: inline-block;
+}

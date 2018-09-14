@@ -113,3 +113,7 @@
 <template name="bb-web-view">
   <bb-web-view id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" ></bb-web-view>
 </template>
+
+<template name="bb-indep-sms">
+  <bb-indep-sms id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" ></bb-indep-sms>
+</template>

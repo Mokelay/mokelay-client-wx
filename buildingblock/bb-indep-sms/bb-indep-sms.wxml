@@ -1,0 +1,11 @@
+<!--buildingblock/bb-indep-sms/bb-indep-sms.wxml-->
+<view class="bb-indep-sms">
+  <bb-vant-field class="bb-vant-field" id="{{fieldUUid}}" option="{{fieldOption}}" bindchange="fieldChange"></bb-vant-field>
+  <bb-indep-button
+    class="bb bb-indep-button"
+    id="{{buttonUUid}}"
+    button="{{sendButton}}"
+    domStyle="{{sendButton.style}}"
+    bindclick="buttonSuccess"
+  ></bb-indep-button>
+</view>

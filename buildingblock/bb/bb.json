@@ -27,7 +27,8 @@
         "bb-indep-share": "../../buildingblock/bb-indep-share/bb-indep-share",
         "bb-vant-uploader": "../../buildingblock/bb-vant-uploader/bb-vant-uploader",
         "bb-vant-cell-location": "../../buildingblock/bb-vant-cell-location/bb-vant-cell-location",
-        "bb-web-view": "../../buildingblock/bb-web-view/bb-web-view"
+        "bb-web-view": "../../buildingblock/bb-web-view/bb-web-view",
+        "bb-indep-sms": "../../buildingblock/bb-indep-sms/bb-indep-sms"
         
     }
 }
