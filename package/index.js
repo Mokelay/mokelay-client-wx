@@ -46,7 +46,7 @@ module.exports = {
 	**/
 	loadRemotePage:function(pageAlias){
 		return new Promise(function(resolve, reject) {
-			util.post('/config/load-page-data', {alias: pageAlias},function(res){
+			util.post('/config/load-page-data', {alias: pageAlias}).then((res)=>{
 				var data = res.data['data'];
 				var page = data['page'];
 				resolve(page);
