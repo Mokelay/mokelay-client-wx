@@ -106,8 +106,9 @@ Component({
       return size;
     },
     createQrCode: function (url, canvasId, cavW, cavH) {
+      const t = this;
       //调用插件中的draw方法，绘制二维码图片
-      QR.api.draw(url, canvasId, cavW, cavH,this);
+      QR.api.draw(url, canvasId, t.data.realSize, t.data.realSize,this);
       setTimeout(() => { this.canvasToTempImage(); }, 1000);
     },
     //获取临时缓存照片路径，存入data中
