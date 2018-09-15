@@ -33,7 +33,7 @@ Component({
   attached:function(){
     let t=this;
     t.setData({
-      realText: t.properties.value || t.properties.text,
+      realText: t.templateText(t.properties.value || t.properties.text),
     });
     t.getData();
   },
@@ -47,8 +47,13 @@ Component({
       const t = this;
       t.data.external['linkage'] = data;
       if (data) {
-        t.data.realText = data;
+        t.data.realText = t.templateText(data);
       }
+    },
+    //tpl 文本值
+    templateText:function(val){
+      let t=this;
+      return app.globalData._TY_Tool.tpl(val, app.globalData._TY_Tool.buildTplParams(t));
     },
     //获取动态数据
     getData: function () {
@@ -58,7 +63,7 @@ Component({
           map.forEach((val, key) => {
             // t.data.realText = val.value;
             t.setData({
-              realText: val.value,
+              realText: t.templateText(val.value),
             });
           })
         }, function (code, msg) {

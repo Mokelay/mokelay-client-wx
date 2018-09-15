@@ -150,7 +150,7 @@ Component({
         this.scanQRCode();
       }
       let url = this.properties.option.url || "";
-      url = wx._TY_Tool.tpl(url, t);
+      url = wx._TY_Tool.tpl(url, wx._TY_Tool.buildTplParams(t));
       if (!url){
         return;
       }

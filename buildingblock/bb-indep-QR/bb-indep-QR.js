@@ -49,14 +49,14 @@ Component({
     const pages = getCurrentPages();
     let realUrl = pages[0].route;
     if (t.properties.url){
-      realUrl = wx._TY_Tool.tpl(t.properties.url, t);
+      realUrl = wx._TY_Tool.tpl(t.properties.url, wx._TY_Tool.buildTplParams(t));
     }
     // t.data.realUrl = realUrl;
     // t.data.realSize = t.properties.size || 200;
     let wxOptions = t.properties.wxOptions ? t.properties.wxOptions : t.data.realWxOptions;
     let realWxOptions = {
-      scene: wx._TY_Tool.tpl(wxOptions.scene, t),
-      page: wx._TY_Tool.tpl(wxOptions.page, t),
+      scene: wx._TY_Tool.tpl(wxOptions.scene, wx._TY_Tool.buildTplParams(t)),
+      page: wx._TY_Tool.tpl(wxOptions.page, wx._TY_Tool.buildTplParams(t)),
       is_hyaline: wxOptions.is_hyaline
     }
     t.setData({
