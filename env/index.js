@@ -3,7 +3,7 @@ module.exports = {
 	name: 'local',
 	apiHost: "https://www.mokelay.com",
 	h5Host: "",
-	ssoURL: "ty-login",
+  ssoURL: "xy_partner_wx_auth",
 	hosts: {
 		'default': "https://www.mokelay.com"
 	},
