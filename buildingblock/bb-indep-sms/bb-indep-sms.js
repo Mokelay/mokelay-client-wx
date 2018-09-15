@@ -58,8 +58,8 @@ Component({
         },
       }
     },
-    fieldUUid: wx._TY_Tool.uuid(),
-    buttonUUid: wx._TY_Tool.uuid()
+    fieldUUid: "",
+    buttonUUid: ""
   },
   attached: function () {
     let sendButton = {};
@@ -81,7 +81,9 @@ Component({
     this.setData({
       fieldOption: fieldOption,
       sendButton: sendButton,
-      sendButtonOptions: sendButtonOptions
+      sendButtonOptions: sendButtonOptions,
+      fieldUUid: wx._TY_Tool.uuid(),
+      buttonUUid: wx._TY_Tool.uuid()
     })
   },
   /**
