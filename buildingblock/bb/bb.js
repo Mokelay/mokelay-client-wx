@@ -77,13 +77,14 @@ Component({
           let _on = bb.interactives[i];
           if (_on.fromContentEvent == t.transferContentEventName(eventType)){
             //有这个事件的交互配置，执行交互
-            const uuid = _on.executeContentUUID;
-            let componentNode = app.globalData._TY_Tool.findBBByUuid(uuid);
-            let fun = componentNode ? componentNode[_on.executeContentMethodName]:null;
+            const executeType = _on['executeType'];//获取交互的类型
+            let fun = null;
+
+            //处理executeArgument 交互参数
             let params = _on.executeArgument;
-            try{
+            try {
               params = JSON.parse(params);
-            }catch(e){
+            } catch (e) {
               //如果不是json数据，返回一般字符串
             }
             const customArg = {
@@ -91,9 +92,33 @@ Component({
               arguments: params
             }
             const realParams = [args].concat(customArg, t, _on.fromContentEvent);
-            if(fun){
-              fun.apply(componentNode, realParams);
+
+            if (executeType == 'trigger_method'){
+              const uuid = _on.executeContentUUID;
+              let componentNode = app.globalData._TY_Tool.findBBByUuid(uuid);
+              fun = componentNode ? componentNode[_on.executeContentMethodName] : null;
+              //调用
+              if(fun){
+                fun.apply(componentNode, realParams);
+              }
+            } else if (executeType == 'custom_script') {
+              //自定义方法
+              const buzz = _on['executeScript'];
+              fun = app.globalData._TY_Tool.loadBuzz(buzz);
+              if (fun){
+                fun.apply(this, realParams);
+              }
+            } else if (executeType == 'container_method') {
+              //容器方法
+              const executeContentUUID = _on['executeContentUUID'];
+              const containerMethodName = _on['containerMethodName'];
+              fun = t[containerMethodName] || app.globalData._TY_Root[containerMethodName];
+              //调用
+              if (fun){
+                fun.apply(app.globalData._TY_Root, realParams);
+              }
             }
+
           }
         }
       }
