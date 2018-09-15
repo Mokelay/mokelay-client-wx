@@ -80,6 +80,9 @@ Component({
           });
         }else{
           //有session的情况 目前不用处理
+          wx.navigateTo({
+            url: 'index'
+          })
         }
       });
     },
@@ -141,10 +144,15 @@ Component({
         wx.login({
           success:function(res){
             let code = res.code;
-            app.globalData._TY_Tool.get(t.data.apiUrl,{code:code},function(response){
+            app.globalData._TY_Tool.get(t.data.apiUrl,{code:code}).then((response)=>{
               let data = response.data;
               if(data['ok']){
                 let _openId = data.data.openId;
+                let sessionId = data.data.si;
+                if(sessionId){
+                  //设置到全局变量中,后面每次请求都cookie都带上sessionId 
+                  wx._TY_s = sessionId;
+                }
                 t.setData({
                   openId: _openId
                 });
