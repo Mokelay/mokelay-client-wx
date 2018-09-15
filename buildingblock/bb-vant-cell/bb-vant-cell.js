@@ -144,11 +144,13 @@ Component({
       }
     },
     goUrl: function () {
+      const t = this;
       this.triggerEvent("click",this);
       if (this.properties.option.isScanCode) {
         this.scanQRCode();
       }
       let url = this.properties.option.url || "";
+      url = wx._TY_Tool.tpl(url, t);
       if (!url){
         return;
       }

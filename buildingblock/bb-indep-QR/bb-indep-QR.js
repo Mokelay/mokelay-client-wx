@@ -67,7 +67,6 @@ Component({
   },
   ready: function () {
     const t = this;
-    debugger
     var size = this.setCanvasSize();//动态设置画布大小
     this.setData({
       sizeStyle: `height:${size.w}px;width:${size.h}px;`
