@@ -119,5 +119,5 @@
 </template>
 
 <template name="bb-indep-sms">
-  <bb-indep-sms id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" ></bb-indep-sms>
+  <bb-indep-sms id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" src="{{src}}" fieldConfig="{{fieldConfig}}" buttonConfig="{{buttonConfig}}"></bb-indep-sms>
 </template>

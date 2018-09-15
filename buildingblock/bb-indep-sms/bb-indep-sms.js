@@ -59,7 +59,8 @@ Component({
       }
     },
     fieldUUid: "",
-    buttonUUid: ""
+    buttonUUid: "",
+    valueBase:""
   },
   attached: function () {
     let sendButton = {};
@@ -90,15 +91,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    fieldChange: function (val) {
+    fieldChange: function (e) {
       const t = this;
+      const val = e.detail;
       var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+      t.data.valueBase = val;
       t.triggerEvent("change", val);
       t.triggerEvent("input", val);
       if (myreg.test(val)) {
-        wx._TY_Tool.findBBByUuid(t.buttonUUid).enabledFn()
+        wx._TY_Tool.findBBByUuid(t.data.buttonUUid).enabledFn()
       } else {
-        wx._TY_Tool.findBBByUuid(t.buttonUUid).disabledFn()
+        wx._TY_Tool.findBBByUuid(t.data.buttonUUid).disabledFn()
       }
     },
     buttonSuccess: function (...args) {

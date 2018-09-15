@@ -152,6 +152,7 @@ Component({
           params = val.arguments;
         }
       });
+      t.disabledFn();
       params.text = params.text ? params.text:'重新发送';
       let num = params.time ? params.time : 60;
       let timeIndex = setInterval(()=>{
@@ -161,7 +162,7 @@ Component({
             clearInterval(timeIndex);  
           }
           let realButton = t.data.realButton;
-          realButton.text = t.properties.button.text;
+          realButton.selectText = params.text;
           t.setData({
             realButton: realButton
           });
@@ -169,7 +170,7 @@ Component({
         }else{
           const _text = params.text + "(" + num+")";
           let realButton = t.data.realButton;
-          realButton.text = _text;
+          realButton.selectText = _text;
           t.setData({
             realButton: realButton
           });

@@ -77,6 +77,8 @@ Component({
     },
     //输入事件
     input(e) {
+      this.data.value = e.detail.value;
+      this.data.valueBase = e.detail.value;
       this.triggerEvent('input', e.detail.value);
       this.triggerEvent('change', e.detail.value);
     },
@@ -99,6 +101,9 @@ Component({
     },
     blur:function(){
       
+    },
+    getValue:function(){
+      return this.data.value;
     }
   }
 })
