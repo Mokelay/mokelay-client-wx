@@ -143,6 +143,9 @@ Component({
      */
     countDown: function (...args){
       let t = this;
+      if (!t.data||!t.data.realButton){
+        return;
+      }
       let params = {};
       args.forEach((val, key) => {
         if (val.type == 'custom') {
