@@ -13,7 +13,7 @@ Component({
       type: String
     },
     url: {
-      type: Boolean
+      type: String
     },
     //大小
     size: {
@@ -51,26 +51,37 @@ Component({
     if (t.properties.url){
       realUrl = wx._TY_Tool.tpl(t.properties.url, t);
     }
-    t.data.realUrl = realUrl;
-    t.data.realSize = t.properties.size || 200;
-    t.data.realWxOptions = t.properties.wxOptions ? t.properties.wxOptions : t.data.realWxOptions;
+    // t.data.realUrl = realUrl;
+    // t.data.realSize = t.properties.size || 200;
+    let wxOptions = t.properties.wxOptions ? t.properties.wxOptions : t.data.realWxOptions;
+    let realWxOptions = {
+      scene: wx._TY_Tool.tpl(wxOptions.scene, t),
+      page: wx._TY_Tool.tpl(wxOptions.page, t),
+      is_hyaline: wxOptions.is_hyaline
+    }
+    t.setData({
+      realWxOptions: realWxOptions,
+      realUrl: realUrl,
+      realSize: t.properties.size || 200
+    })
   },
   ready: function () {
     const t = this;
+    debugger
+    var size = this.setCanvasSize();//动态设置画布大小
+    this.setData({
+      sizeStyle: `height:${size.w}px;width:${size.h}px;`
+    });
     if (t.properties.qrType == "wx") {
       const scene = encodeURIComponent(t.data.realWxOptions.scene);
       const page = encodeURIComponent(t.data.realWxOptions.page);
-      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline}`
+      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`
       t.setData({
         imagePath: url
       })
     }else{
       // 页面初始化 options为页面跳转所带来的参数
-      var size = this.setCanvasSize();//动态设置画布大小
       var initUrl = this.data.realUrl;
-      this.setData({
-        sizeStyle: `height:${size.w}px;width:${size.h}px;`
-      });
       this.createQrCode(initUrl, "mycanvas", size.w, size.h, this);
     }
   },

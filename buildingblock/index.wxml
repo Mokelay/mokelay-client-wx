@@ -91,7 +91,7 @@
 </template>
 
 <template name="bb-indep-QR">
-  <bb-indep-QR id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" url="{{url}}" size="{{size}}"></bb-indep-QR>
+  <bb-indep-QR id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" url="{{url}}" size="{{size}}" qrType="{{qrType}}" wxOptions="{{wxOptions}}"></bb-indep-QR>
 </template>
 
 <template name="bb-indep-share">
