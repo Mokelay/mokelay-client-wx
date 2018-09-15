@@ -151,7 +151,10 @@ Component({
                 let sessionId = data.data.si;
                 if(sessionId){
                   //设置到全局变量中,后面每次请求都cookie都带上sessionId 
-                  wx._TY_s = sessionId;
+                  wx.setStorage({
+                    key:"_TY_s",
+                    data: sessionId
+                  });
                 }
                 t.setData({
                   openId: _openId
