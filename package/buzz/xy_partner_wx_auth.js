@@ -1,5 +1,4 @@
 module.exports = function(...args){
-    debugger;
   const app = getApp();
 
   let user = args[0];
