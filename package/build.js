@@ -5,6 +5,13 @@ var fs = require('fs');
 var path = require('path');
 var appAlias = 'xy_partner';
 
+var buzzTemplateStart = `
+  module.exports = function (...args) {
+`;
+var buzzTemplateEnd = `
+  }
+`;
+
 //同步巴斯脚本
 var options = {
     host: 'www.mokelay.com',
@@ -33,7 +40,7 @@ var req = http.request(options, function (res) {
     		for(var i in buzzList){
     			var buzz = buzzList[i];
     			var alias = buzz['alias'];
-    			var code = buzz['code'];
+          var code = buzzTemplateStart + buzz['code'] + buzzTemplateEnd;
     			console.log("Write buzz:"+alias+".js");
 
     			var  p =path.join(__dirname,'buzz',alias+".js");
