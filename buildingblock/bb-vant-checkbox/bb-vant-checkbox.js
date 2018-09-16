@@ -86,6 +86,23 @@ Component({
     change(e) {
       this.triggerEvent("input", { value: e.detail.value });
       this.triggerEvent("change", {value:e.detail.value});
+      this.refreshData(e);
+    },
+    refreshData: function (e) {
+      let items = this.data.items;
+      this.data.items.forEach((ele, key) => {
+        ele.checked = false;
+      });
+      e.detail.value.forEach((val, inde) => {
+        this.data.items.forEach((ele, key) => {
+          if (ele.name == val) {
+            ele.checked = true;
+          }
+        });
+      });
+      this.setData({
+        items: items
+      })
     }
   }
 })
