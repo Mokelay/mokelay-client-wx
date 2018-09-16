@@ -1,3 +1,5 @@
+
+  module.exports = function (...args) {
 const app = getApp();
   var inviteCode = app.globalData._TY_Tool.findBBByUuid("9FB87610-11BB-4651-8930-2FEA81D16085").getValue();//邀请码
   var phone = app.globalData._TY_Tool.findBBByUuid("51EE6944-B076-4B84-906D-476EACE54275").data.valueBase;//手机号
@@ -42,3 +44,4 @@ const app = getApp();
       })
     }
   });
+  }
