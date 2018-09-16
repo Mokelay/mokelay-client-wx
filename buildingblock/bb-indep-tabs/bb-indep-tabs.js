@@ -96,21 +96,29 @@ Component({
     tabsData: [],
     bbContent: [],
     canRender: false,
-    p_activeName: ""
+    p_activeName: "",
+    _itemStyle:"",
+    _activeItemStyle:""
+
   },
   created:function(){
     let t = this;
     t.getTabHeaders();
   },
   attached: function () {
+    const t = this;
     const content = typeof (this.properties.content) === 'string' ? JSON.parse(this.properties.content) : this.properties.content;
     const p_activeName = wx._TY_Tool.tpl(this.properties.activeName, wx._TY_Tool.buildTplParams(this));
-
+    const _itemStyle = wx._TY_Tool.setSimpleStyle(t.properties.itemStyle);
+    const _activeItemStyle = wx._TY_Tool.setSimpleStyle(t.properties.activeItemStyle);
     this.setData({
       bbContent:content,
       p_activeName: p_activeName,
-      tabsData:this.properties.tabs
+      tabsData:this.properties.tabs,
+      _itemStyle: _itemStyle,
+      _activeItemStyle: _activeItemStyle
     })
+
   },
 
   /**
@@ -272,88 +280,6 @@ Component({
       }
       //分发tab点击事件
       t.triggerEvent('tab-click', tab, t);
-    },
-    renderTabData: function (createElement) {
-      const t = this;
-      const headerArr = [];
-      const paneArr = [];
-      if (t.data.tabsData && t.data.tabsData.length > 0) {
-        t.data.tabsData.forEach((tabData, key) => {
-          if (!tabData.show) {
-            return true;
-          }
-          const _itemStyle = _TY_Tool.setSimpleStyle(t.properties.itemStyle);
-          const _activeItemStyle = _TY_Tool.setSimpleStyle(t.properties.activeItemStyle);
-
-          let iconDom = '';
-          if (tabData.icon) {
-            //如果有icon
-            let iconStyle = {}
-            if (t.tabIconStyle) {
-              //如果有css样式配置
-              iconStyle = _TY_Tool.setSimpleStyle(t.properties.tabIconStyle);
-            }
-            iconDom = createElement('i', {
-              attrs: {
-                class: tabData.icon
-              },
-              style: iconStyle
-            }, []);
-          }
-
-          const label = createElement('div', {
-            class: "bb-tab-header-item " + (t.properties.p_activeName == tabData.name ? 'is-active' : ''),
-            attrs: {
-              'tab-name': 'tab_' + tabData.name
-            },
-            style: (t.p_activeName == tabData.name ? Object.assign(_itemStyle, _activeItemStyle) : _itemStyle),
-            on: {
-              click: function () {
-                t.tabClick(tabData, t);
-              }
-            },
-            ref: "tab_header_" + tabData.name
-          }, [iconDom, createElement('span', {
-            attrs: {
-              'tab-name': tabData.name
-            }
-          }, tabData.label)
-            ]);
-
-          headerArr.push(label);
-
-          const tabPaneItem = createElement('div', {
-            class: "bb-tab-panel " + (t.properties.p_activeName == tabData.name ? 'tab-show' : 'tab-hide'),
-            attrs: {
-              'tab-name': 'tab_' + tabData.name
-            },
-            ref: "tab_panel_" + tabData.name
-          }, _TY_Tool.bbRender(tabData.content, createElement, t));
-          paneArr.push(tabPaneItem);
-        });
-      }
-      const headerBox = createElement('div', {
-        class: ['bb-tab-header'],
-        style: Object.assign({
-          float: (t.properties.tabPosition === 'left' || t.properties.tabPosition === 'right') ? t.properties.tabPosition : 'none'
-        }, _TY_Tool.setSimpleStyle(t.headerStyle))
-      }, [createElement('div', {
-        class: ['bb-tab-header-scroll', 'clearfix']
-      }, [createElement('div', {
-        class: ['bb-tab-header-box']
-      }, headerArr)]
-      )
-        ]);
-
-      const panelBox = createElement('div', {
-        class: ['bb-tab-panel-box'],
-        style: Object.assign({}, _TY_Tool.setSimpleStyle(t.properties.panelStyle), {
-          display: (t.properties.p_activeName ? 'block' : 'none')
-        })
-      }, paneArr);
-      const tabBox = t.properties.tabPosition !== 'bottom' ? [headerBox, panelBox] : [panelBox, headerBox];
-
-      return tabBox;
     }
   }
 })
