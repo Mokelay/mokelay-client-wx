@@ -1,0 +1,43 @@
+<!--buildingblock/bb-vant-product-list/bb-vant-product-list.wxml-->
+    <view class="bb-vant-product-list" style="{{domStyle}}">
+        <view class="checkbox-group-list" wx:for="{{realFields}}" wx:for-index="index" wx:for-item="field" wx:key="{{index}}">
+              <label class="checkbox title-contril">
+                <view hidden="{{!field.titleData.checked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong" data-key="{{index}}" data-select="{{false}}" bindtap="selectAll"></view>
+                <view hidden="{{field.titleData.checked}}" class="unchecked van-checkbox__icon" data-key="{{index}}" data-select="{{true}}" bindtap="selectAll"></view>
+                <checkbox hidden="{{true}}" value="{{field.titleData.value}}" checked="{{field.titleData.checked}}"/>
+                <label class="van-checkbox__label">
+                  <span class="title">{{field.titleData.text}}</span>
+                  <span class="subTitle">{{field.titleData.subtitle}}</span>
+                </label>
+              </label>
+            <checkbox-group  bindchange="change"  data-key="{{index}}">
+              <label class="checkbox" wx:for="{{field.fields}}" wx:for-index="key" wx:for-item="item" wx:key="{{item.value}}" data-childrenKey="{{key}}">
+                <view hidden="{{!item.checked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong"></view>
+                <view hidden="{{item.checked}}" class="unchecked van-checkbox__icon"></view>
+                <checkbox hidden="{{true}}" value="{{item.value}}" checked="{{item.checked}}" /> 
+                <label class="van-checkbox__label">
+                  <bb-layout-seriation content="{{item.content}}"></bb-layout-seriation>
+                </label>
+              </label>
+            </checkbox-group>
+        </view>
+        <view class="submit-bar">
+            <view class="submit-bar-left">
+                <label class="checkbox">
+                  <view hidden="{{!allChecked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong" data-key="{{index}}" data-select="{{false}}" bindtap="selectAllGroup"></view>
+                <view hidden="{{allChecked}}" class="unchecked van-checkbox__icon" data-key="{{index}}" data-select="{{true}}" bindtap="selectAllGroup"></view>
+                  <checkbox hidden="{{true}}" value="all" checked="{{allChecked}}"/>
+                  <text class="select-button">全选</text>
+                </label>
+                <text class="price">合计: ¥{{totalPrice}}</text>
+            </view>
+            <bb-indep-button class="submit-button" button="{{realSubmitButton}}"></bb-indep-button>
+            <!-- <van-submit-bar
+            :price="totalPrice"
+            :button-text="submitButton.selectText"
+            bindsubmit="onSubmit"
+            >
+              
+            </van-submit-bar>   -->
+        </view>
+    </view>

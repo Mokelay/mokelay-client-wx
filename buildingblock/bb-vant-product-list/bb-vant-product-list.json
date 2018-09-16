@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bb-indep-button": "../../buildingblock/bb-indep-button/bb-indep-button",
+    "bb-layout-seriation": "../../buildingblock/bb-layout-seriation/bb-layout-seriation"
+  }
+}
