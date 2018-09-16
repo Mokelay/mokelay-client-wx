@@ -14,6 +14,10 @@ Component({
     //获取openId ds
     ds:{
       type:Object
+    },
+    //session校验接口
+    sessionCheckDs:{
+      type:Object
     }
   },
 
@@ -151,10 +155,7 @@ Component({
                 let sessionId = data.data.si;
                 if(sessionId){
                   //设置到全局变量中,后面每次请求都cookie都带上sessionId 
-                  wx.setStorage({
-                    key:"_TY_s",
-                    data: sessionId
-                  });
+                  wx.setStorageSync("_TY_s", sessionId);
                 }
                 t.setData({
                   openId: _openId
@@ -170,15 +171,39 @@ Component({
     },
     //校验微信session_key 是否过期,如果过去重新登录
     checkSession:function(){
+      let t=this;
       return new Promise((resolve,reject)=>{
-        wx.checkSession({
-          success:function(){
-            resolve(true);
-          },
-          fail:function(){
+        //不走微信自带的session校验，我们只需要校验我们自己的session就好了
+        if (t.data.sessionCheckDs){
+          app.globalData._TY_Tool.getDSData(t.data.sessionCheckDs, app.globalData._TY_Tool.buildTplParams(t), function (map) {
+            //说明有session
+            let data = map[0]['value'];
+            if(data){ 
+              //登录过
+              resolve(true);
+            }else{
+              //未登录
+              resolve(false);
+            }
+          }, function (code, msg){
             resolve(false);
-          }
-        });
+          });
+        }else{
+          wx.showToast({
+            title: "微信授权未配置业务session校验接口",
+            icon: 'none',
+            duration: 2000
+          })
+          reject();
+        }
+        // wx.checkSession({
+        //   success:function(){
+        //     resolve(true);
+        //   },
+        //   fail:function(){
+        //     resolve(false);
+        //   }
+        // });
       });
     }
   
