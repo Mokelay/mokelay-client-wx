@@ -1,5 +1,4 @@
-module.exports = function(...args){
-  const app = getApp();
+const app = getApp();
 
   let user = args[0];
   const openId = user.openId;
@@ -26,4 +25,3 @@ module.exports = function(...args){
       });
     }
   });
-}
