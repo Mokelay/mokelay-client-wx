@@ -1,4 +1,6 @@
 
+  module.exports = function (...args) {
+
   const app = getApp();
 
   let user = args[0];
@@ -29,3 +31,4 @@
       })
     }
   });
+  }
