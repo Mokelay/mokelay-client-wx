@@ -8,7 +8,7 @@
 
 <checkbox-group style="{{domStyle}}" bindchange="change">
   <label class="checkbox" wx:for="{{items}}" wx:key="{{item.value}}">
-    <view hidden="{{!item.checked}}" class="checked"></view>
+    <view hidden="{{!item.checked}}" class="checked iconfont ty-icon_chenggong"></view>
     <view hidden="{{item.checked}}" class="unchecked"></view>
     <checkbox hidden="{{true}}" value="{{item.value}}" checked="{{item.checked}}"/>{{item.text}}
   </label>

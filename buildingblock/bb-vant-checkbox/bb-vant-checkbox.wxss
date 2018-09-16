@@ -1,2 +1,32 @@
 /* buildingblock/bb-vant-checkbox/bb-vant-checkbox.wxss */
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.checked{
+  display: inline-block;
+  border-radius: 100%;
+  width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  border-color: #06bf04;
+  background-color: #06bf04;
+  top:5rpx;
+  position:relative;
+  line-height: 40rpx;
+}
+.unchecked{
+  display: inline-block;
+  border-radius: 100%;
+  font-size: 24rpx;
+  color: transparent;
+  text-align: center;
+  line-height: 40rpx;
+  border: 2rpx solid #aaa;
+  width: 40rpx;
+  height: 40rpx;
+  box-sizing: border-box;
+  top:5rpx;
+  position:relative;
+}
 
