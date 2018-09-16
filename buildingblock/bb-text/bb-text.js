@@ -19,7 +19,7 @@ Component({
     this.setData({
       content:this.data.value
     });
-    WxParse.wxParse('content', 'html', this.data.content, this, 0);
+    this.render();
   },
 
   /**
@@ -33,6 +33,20 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    load:function(){}
+    render:function(){
+      WxParse.wxParse('content', 'html', this.data.content, this, 0);
+    },
+    load:function(){},
+    getValue:function(){
+      return this.data.content;
+    },
+    setValue:function(val){
+      let t=this;
+      t.setData({
+        content:val,
+        value:val
+      });
+      t.render();
+    }
   }
 })
