@@ -14,7 +14,9 @@
   overflow: hidden;
   margin-bottom: -0.0357rem;
   position: relative;
-  flex: 1
+  flex: 1;
+  text-align: center;
+  background-color: #fff;
 }
 .bb-tab-header-scroll {
   overflow: auto;
@@ -53,13 +55,13 @@
 }
 /* position top */
 .bb-tab-position--top .bb-tab-header {
-  margin-bottom: 0.357rem;
+  margin-bottom: 0rpx;
 }
 .bb-tab-position--top .bb-tab-header:after {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 0.0714rem;
+  height: 5.355rpx;
 }
 .bb-tab-position--top .bb-tab-header-scroll::-webkit-scrollbar {
   display: none;
@@ -67,8 +69,8 @@
 .bb-tab-position--top .bb-tab-header-item.is-active {
   z-index: 20;
 }
-.bb-tab-position--top .bb-tab-header-item.is-active > span {
-  border-bottom: 0.0714rem solid #409eff;
+.bb-tab-position--top .bb-tab-header-item.is-active > text {
+  border-bottom: 5.355rpx solid #1AAD19;
   display: inline-block;
 }
 .bb-tab-position--top .bb-tab-header-item:first-child {
@@ -79,13 +81,13 @@
 }
 /* position bottom */
 .bb-tab-position--bottom .bb-tab-header {
-  margin-top: 0.357rem;
+  margin-top: 28.125rpx;
 }
 .bb-tab-position--bottom .bb-tab-header:after {
   left: 0;
   top: 0;
   width: 100%;
-  height: 0.0714rem;
+  height: 5.355rpx;
 }
 .bb-tab-position--bottom .bb-tab-header-scroll::-webkit-scrollbar {
   display: none;
@@ -94,7 +96,7 @@
   z-index: 20;
 }
 .bb-tab-position--bottom .bb-tab-header-item.is-active > span {
-  border-top: 0.0714rem solid #409eff;
+  border-top: 5.355rpx solid #409eff;
   display: inline-block;
 }
 .bb-tab-position--bottom .bb-tab-header-item:first-child {
@@ -108,21 +110,21 @@
   min-height: 7.14rem;
 }
 .bb-tab-position--left .bb-tab-header {
-  margin-right: 0.357rem;
+  margin-right: 28.125rpx;
 }
 .bb-tab-position--left .bb-tab-header:after {
   right: 0;
   top: 0;
   height: 100%;
-  width: 0.0714rem;
+  width: 5.355rpx;
 }
 .bb-tab-position--left .bb-tab-header-item {
   display: block;
   text-align: right;
-  border-right: 0.0714rem solid transparent;
+  border-right: 5.355rpx solid transparent;
 }
 .bb-tab-position--left .bb-tab-header-item.is-active {
-  border-right: 0.0714rem solid #409eff;
+  border-right: 5.355rpx solid #409eff;
   z-index: 20;
 }
 /* position right */
@@ -130,26 +132,26 @@
   min-height: 7.14rem;
 }
 .bb-tab-position--right .bb-tab-header {
-  margin-left: 0.357rem;
+  margin-left: 28.125rpx;
 }
 .bb-tab-position--right .bb-tab-header:after {
   left: 0;
   top: 0;
   height: 100%;
-  width: 0.0714rem;
+  width: 5.355rpx;
 }
 .bb-tab-position--right .bb-tab-header-item {
   display: block;
   text-align: left;
-  border-left: 0.0714rem solid transparent;
+  border-left: 5.355rpx solid transparent;
 }
 .bb-tab-position--right .bb-tab-header-item.is-active {
-  border-left: 0.0714rem solid #409eff;
+  border-left: 5.355rpx solid #409eff;
   z-index: 20;
 }
 /*FB 主题样式*/
 .bb-tab-theme--FB_card .bb-tab-header {
-  box-shadow: 0 0.0714rem 0.0714rem #ccc;
+  box-shadow: 0 5.355rpx 5.355rpx #ccc;
 }
 .bb-tab-theme--FB_card .bb-tab-header .bb-tab-header-box {
   text-align: center;
@@ -176,19 +178,19 @@
   padding: 0 0.714rem;
 }
 .bb-tab-theme--FB_card.bb-tab-position--left .bb-tab-header {
-  box-shadow: 0.0714rem 0 0.0714rem #ccc;
+  box-shadow: 5.355rpx 0 5.355rpx #ccc;
 }
 .bb-tab-theme--FB_card.bb-tab-position--left .bb-tab-header .bb-tab-header-item {
   margin: 0;
 }
 .bb-tab-theme--FB_card.bb-tab-position--right .bb-tab-header {
-  box-shadow: -0.0714rem 0 0.0714rem #cccccc;
+  box-shadow: -5.355rpx 0 5.355rpx #cccccc;
 }
 .bb-tab-theme--FB_card.bb-tab-position--right .bb-tab-header .bb-tab-header-item {
   margin: 0;
 }
 .bb-tab-theme--FB_card.bb-tab-position--bottom .bb-tab-header {
-  box-shadow: 0 -0.0714rem 0.0714rem #cccccc;
+  box-shadow: 0 -5.355rpx 5.355rpx #cccccc;
 }
 .bb-tab-theme--FB_card.bb-tab-position--bottom .bb-tab-header .bb-tab-header-item {
   margin: 0;
@@ -216,7 +218,7 @@
 }
 .bb-tab-theme--big_card .bb-tab-header-item.is-active {
   color: #8a5ebf;
-  border-top: 0.0714rem solid #8a5ebf;
+  border-top: 5.355rpx solid #8a5ebf;
 }
 .bb-tab-theme--big_card .bb-tab-header-item.is-active > span,
 .bb-tab-theme--big_card .bb-tab-header-item > span {
@@ -230,11 +232,11 @@
   margin: 0;
   text-align: right;
   border-left: 0;
-  border-right: 0.0714rem solid transparent;
+  border-right: 5.355rpx solid transparent;
 }
 .bb-tab-theme--big_card.bb-tab-position--left .bb-tab-header .bb-tab-header-item.is-active {
   border-top: 0;
-  border-right: 0.0714rem solid #8a5ebf;
+  border-right: 5.355rpx solid #8a5ebf;
 }
 .bb-tab-theme--big_card.bb-tab-position--left .bb-tab-header:after {
   width: 0.0357rem;
@@ -246,11 +248,11 @@
   margin: 0;
   text-align: left;
   border-left: 0;
-  border-right: 0.0714rem solid transparent;
+  border-right: 5.355rpx solid transparent;
 }
 .bb-tab-theme--big_card.bb-tab-position--right .bb-tab-header .bb-tab-header-item.is-active {
   border-top: 0;
-  border-left: 0.0714rem solid #8a5ebf;
+  border-left: 5.355rpx solid #8a5ebf;
 }
 .bb-tab-theme--big_card.bb-tab-position--right .bb-tab-header:after {
   width: 0.0357rem;
@@ -263,7 +265,7 @@
 }
 .bb-tab-theme--big_card.bb-tab-position--bottom .bb-tab-header .bb-tab-header-item.is-active {
   border-top: 0;
-  border-bottom: 0.0714rem solid #8a5ebf;
+  border-bottom: 5.355rpx solid #8a5ebf;
 }
 .bb-tab-theme--big_card.bb-tab-position--bottom .bb-tab-header:after {
   height: 0.0357rem;
