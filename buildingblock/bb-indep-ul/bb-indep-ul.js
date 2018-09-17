@@ -421,7 +421,8 @@ Component({
       if (t.data.itemClickConfig) {
         //如果配置了item的点击配置
         app.globalData._TY_Tool.resolveButton(t.data.itemClickConfig, app.globalData._TY_Tool.buildTplParams(t, {
-          rowData: item
+          rowData: row,
+          row: row
         }));
       }
       t.triggerEvent("itemClick",{item:row,bb:t});

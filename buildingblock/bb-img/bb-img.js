@@ -38,6 +38,15 @@ Component({
         wx._TY_Tool.resolveButton(t.properties.button, _TY_Tool.buildTplParams(t));
       }
       t.triggerEvent("click", t);
+    },
+    setValue:function(val){
+      const t=this;
+      t.setData({
+        src:val
+      });
+    },
+    getValue:function(){
+      return this.data.src;
     }
   }
 })

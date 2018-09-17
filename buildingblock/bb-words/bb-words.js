@@ -70,5 +70,14 @@ Component({
         });
       }
     },
+    getValue:function(){
+      return this.data.realText;
+    },
+    setValue:function(val){
+      const t=this;
+      t.setData({
+        realText:val
+      });
+    }
   }
 })

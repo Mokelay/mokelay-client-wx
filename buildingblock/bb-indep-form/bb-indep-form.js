@@ -178,7 +178,12 @@ Component({
         t.setData({
           isOldData:true,
           realContent:t.properties.content
-        })
+        });
+      }else{
+        t.setData({
+          isOldData: false,
+          realContent: t.properties.content
+        });
       }
     }
   }
