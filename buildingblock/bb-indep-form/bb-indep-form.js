@@ -102,6 +102,7 @@ Component({
   attached: function () {
     this.checkContentType(this.properties.content);
     this.getData();
+    t.setValue();
   },
   ready: function () {
   },
@@ -165,6 +166,7 @@ Component({
             t.setData({
               formData: _value
             });
+            t.setValue();
             t.triggerEvent("afterLoadData", t);
           });
         }, function (code, msg) {
@@ -185,6 +187,16 @@ Component({
           realContent: t.properties.content
         });
       }
+    },
+    setValue:function(){
+      const t = this;
+      t.properties.realContent.forEach((content,key)=>{
+        const attributeName = content["attributes"]["attributeName"] || "";
+        content["attributes"].value = t.data.formData[attributeName];
+      })
+      t.setData({
+        realContent: t.properties.content
+      });
     }
   }
 })
