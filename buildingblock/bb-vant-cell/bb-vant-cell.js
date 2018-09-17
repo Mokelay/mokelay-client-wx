@@ -171,10 +171,7 @@ Component({
       const t = this;
       wx._TY_Tool.scanQRCode((res) => {
         if (t.properties.option.scanBuzz) {
-          wx._TY_Tool.loadBuzz(t.properties.option.scanBuzz, function (code) {
-            t.util = util;
-            eval(code);
-          });
+          wx._TY_Tool.loadBuzz(t.properties.option.scanBuzz)({res:res});
         } else if (successFn) {
           successFn(res);
         }
