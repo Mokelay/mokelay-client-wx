@@ -1,4 +1,4 @@
 <!--buildingblock/bb-img/bb-img.wxml-->
-<image style="{{domStyle}}" src="{{src}}" bindtap="imgClick"></image>
+<image style="{{domStyle}}" src="{{realSrc}}" bindtap="imgClick"></image>
 <!-- <img src="{{src}}"/> -->
 <!-- 123 -->
