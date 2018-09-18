@@ -10,6 +10,9 @@ Component({
     domStyle:{
       type:String
     },
+    domStyle: {
+      type: String
+    },
     //文字内容，支持模板<%=params%>
     text: {
       type: [String, Number]

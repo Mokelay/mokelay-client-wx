@@ -3,7 +3,7 @@
   注意：有的组件需要将css样式传到内部渲染，比如bb-img，样式需要直接在image标签上渲染，此时bb-img组件需要加一个domStyle属性，并将bb生成domStyle传进去
  -->
 <template name="bb-img">
-  <bb-img src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" domStyle="{{domStyle}}"></bb-img>
+  <bb-img src="{{src}}" id="{{uuid}}" class="bb {{uuid}}" bind:tap="publicEventEmit" value="{{value}}" domStyle="{{domStyle}}"></bb-img>
 </template>
 
 <template name="bb-text">

@@ -102,7 +102,7 @@ Component({
   attached: function () {
     this.checkContentType(this.properties.content);
     this.getData();
-    t.setValue();
+    this.setValue();
   },
   ready: function () {
   },

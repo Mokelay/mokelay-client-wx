@@ -4,6 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    value:{
+      type:String
+    },
     src:{
       type:String,
       value:""
@@ -20,11 +23,15 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    realSrc:""
   },
 
   attached:function(){
-    
+    const src = this.properties.value || this.properties.src;
+    const realSrc = wx._TY_Tool.tpl(src, wx._TY_Tool.buildTplParams(this));
+    this.setData({
+      realSrc: realSrc
+    })
   },
 
   /**
@@ -41,12 +48,13 @@ Component({
     },
     setValue:function(val){
       const t=this;
+      const src = wx._TY_Tool.tpl(val, wx._TY_Tool.buildTplParams(this));
       t.setData({
-        src:val
+        realSrc:src
       });
     },
     getValue:function(){
-      return this.data.src;
+      return this.data.realSrc;
     }
   }
 })

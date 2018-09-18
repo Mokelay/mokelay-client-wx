@@ -100,13 +100,17 @@ Component({
    * 组件的初始数据
    */
   data: {
-    realOption:{}
+    realOption:{},
+    valueBase:""
   },
   created: function () {
   },
   attached: function () {
   },
   ready: function () {
+    this.setData({
+      valueBase: this.properties.value
+    })
   },
   /**
    * 组件的方法列表
