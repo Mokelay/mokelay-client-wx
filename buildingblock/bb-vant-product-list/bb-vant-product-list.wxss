@@ -97,6 +97,7 @@
   border:0;
   box-shadow:none;
   font-family: PingFang-SC-Medium;
+  line-height:104rpx;
   /* font-size: 34rpx;
   text-align: center; */
 }
@@ -112,7 +113,7 @@
   position:relative;
   margin:0 20rpx;
   line-height:40rpx;
-
+  font-size: 40rpx;
 }
 .unchecked{
   display: inline-block;
