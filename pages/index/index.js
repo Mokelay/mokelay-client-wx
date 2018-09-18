@@ -18,7 +18,7 @@ Page({
         * 完整的地址应该是 /page/index/index?test&id=123
         * eg: scene = test&id=123
         */
-      var scene = decodeURIComponent(options.scene)
+      var scene = app.globalData._TY_Tool.decode(options.scene);
       if (scene.indexOf("&")>=0){
         //有参数的页面，直接跳转到对应页面   index?pageAlias&id=123
         wx.navigateTo({
