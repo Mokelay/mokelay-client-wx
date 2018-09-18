@@ -6,6 +6,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    domStyle: {
+      type: String
+    },
     /*二维码类型
         default 默认 wx微信小程序二维码
     */
@@ -42,7 +45,8 @@ Component({
       //透明底色
       is_hyaline: false
     },
-    sizeStyle:""
+    sizeStyle:"",
+    backgroundStyle:""
   },
   attached: function () {
     const t = this;
@@ -74,10 +78,13 @@ Component({
     if (t.properties.qrType == "wx") {
       const scene = wx._TY_Tool.encode(t.data.realWxOptions.scene);
       const page = encodeURIComponent(t.data.realWxOptions.page);
-      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`
-      t.setData({
-        imagePath: url
-      })
+      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`;
+      const backgroundStyle = this.properties.domStyle + `background-image:url(${url});background-size:cover;`
+      this.setData({
+        imagePath: url,
+        domStyle: backgroundStyle
+        // canvasHidden:true
+      });
     }else{
       // 页面初始化 options为页面跳转所带来的参数
       var initUrl = this.data.realUrl;
@@ -129,8 +136,10 @@ Component({
         success: function (res) {
           var tempFilePath = res.tempFilePath;
           console.log(tempFilePath);
+          const backgroundStyle = this.properties.domStyle + `background-image:url(${tempFilePath});background-size:cover;`
           that.setData({
             imagePath: tempFilePath,
+            domStyle: backgroundStyle
             // canvasHidden:true
           });
         },

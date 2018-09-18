@@ -1,8 +1,8 @@
 <!--buildingblock/bb-indep-QR/bb-indep-QR.wxml-->
 <view class="bb-indep-QR">
-  <view class="container-box">
+  <view class="container-box" style="{{domStyle}}">
       <view class="img-box">
-          <image bindtap="previewImg" style="{{sizeStyle}}" mode="scaleToFill" src="{{imagePath}}"></image>
+          <!-- <image style="{{domStyle}}" bindtap="previewImg" style="{{sizeStyle}}" mode="scaleToFill" src="{{imagePath}}"></image> -->
       </view>
   </view>
   <view class="canvas-box">
