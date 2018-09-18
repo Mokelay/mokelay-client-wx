@@ -7,7 +7,7 @@
   </scroll-view>
 
 <!-- 没有数据的时候显示 为空时的组件 -->
-  <scroll-view wx:if="{{!list||list.length<=0}}">
+  <scroll-view wx:if="{{!list||list.length<=0}}" style="height:calc(100vh); {{domStyle}}">
     <bb wx:for="{{emptyContent}}" wx:for-index="index" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
   </scroll-view>
 
