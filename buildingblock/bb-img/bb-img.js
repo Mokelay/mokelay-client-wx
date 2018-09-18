@@ -27,7 +27,6 @@ Component({
   },
 
   attached:function(){
-    debugger
     const src = this.properties.value || this.properties.src;
     const realSrc = wx._TY_Tool.tpl(src, wx._TY_Tool.buildTplParams(this));
     this.setData({
@@ -50,7 +49,6 @@ Component({
     setValue:function(val){
       const t=this;
       const src = wx._TY_Tool.tpl(val, wx._TY_Tool.buildTplParams(this));
-      debugger
       t.setData({
         realSrc:src
       });
