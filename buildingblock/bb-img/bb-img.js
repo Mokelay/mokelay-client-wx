@@ -8,8 +8,7 @@ Component({
       type:String
     },
     src:{
-      type:String,
-      value:""
+      type:String
     },
     domStyle:{
       type:String
