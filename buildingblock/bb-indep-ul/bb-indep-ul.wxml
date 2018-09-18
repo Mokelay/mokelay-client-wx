@@ -1,6 +1,6 @@
 <!--buildingblock/bb-indep-ul/bb-indep-ul.wxml-->
 
- <scroll-view wx:if="{{theme!='swipe'}}" class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
+ <scroll-view wx:if="{{theme!='swipe' && list && list.length>0}}" class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
     <view wx:for="{{list}}" wx:for-index="_index" wx:key="{{_index}}" data-row="{{item}}" bindtap='itemClick' style="{{randerData[_index].style}}">
       <bb wx:for="{{randerData[_index].content}}" wx:for-index="index" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
     </view>
@@ -12,7 +12,7 @@
   </scroll-view>
 
 <!-- 针对swipe 主题渲染 -->
- <scroll-view wx:if="{{theme=='swipe'}}" class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
+ <scroll-view wx:if="{{theme=='swipe' && list && list.length>0}}" class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
 
 <view class="container">
   <view class="touch-item"  wx:for="{{list}}" wx:for-index="_index" wx:key="{{_index}}" data-index="{{_index}}"  bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
