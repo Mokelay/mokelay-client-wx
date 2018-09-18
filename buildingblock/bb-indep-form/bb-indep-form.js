@@ -194,7 +194,6 @@ Component({
         const attributeName = content["attributes"]["attributeName"] || "";
         content["attributes"].value = t.data.formData[attributeName];
       })
-      debugger
       t.setData({
         realContent: t.properties.content
       });
