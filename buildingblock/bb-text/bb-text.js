@@ -17,7 +17,7 @@ Component({
 
   ready:function(){
     this.setData({
-      content:this.data.value
+      content: this.valueTpl(this.data.value)
     });
     this.render();
   },
@@ -33,6 +33,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    valueTpl: function (val) {
+      const t = this;
+      return wx._TY_Tool.tpl(val, wx._TY_Tool.buildTplParams(t));
+    },
     render:function(){
       WxParse.wxParse('content', 'html', this.data.content, this, 0);
     },
@@ -43,8 +47,8 @@ Component({
     setValue:function(val){
       let t=this;
       t.setData({
-        content:val,
-        value:val
+        content: t.valueTpl(val),
+        value: t.valueTpl(val)
       });
       t.render();
     }
