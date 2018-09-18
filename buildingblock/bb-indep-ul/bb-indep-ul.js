@@ -354,6 +354,11 @@ Component({
           return true;
         }
         //数据解析到模板中去
+        Object.keys(item).forEach((val,key)=>{
+          if (typeof item[val] == "string" && item[val].indexOf("</") != -1){
+            item[val] = encodeURIComponent(item[val]);
+          } 
+          })
         let _content = app.globalData._TY_Tool.tpl(JSON.stringify(t.data.realContent), app.globalData._TY_Tool.buildTplParams(t, {
           rowData: item
         }));
