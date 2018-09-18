@@ -43,7 +43,7 @@
 </template>
 
 <template name="bb-indep-ul">
-  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" columns="{{columns}}" theme="{{theme}}" itemContent="{{itemContent}}" staticList="{{staticList}}" ds="{{ds}}" itemStyle="{{itemStyle}}" firstItemStyle="{{firstItemStyle}}" lastItemStyle="{{lastItemStyle}}" pageConfig="{{pageConfig}}" closePullLoading="{{closePullLoading}}" theme="{{theme}}" fixedHeight="{{fixedHeight}}" lazy="{{lazy}}" bind:itemClick="publicEventEmit" bind:deleteClick="publicEventEmit" itemClickConfig="{{itemClickConfig}}"></bb-indep-ul>
+  <bb-indep-ul id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" columns="{{columns}}" theme="{{theme}}" itemContent="{{itemContent}}" staticList="{{staticList}}" ds="{{ds}}" itemStyle="{{itemStyle}}" firstItemStyle="{{firstItemStyle}}" lastItemStyle="{{lastItemStyle}}" pageConfig="{{pageConfig}}" closePullLoading="{{closePullLoading}}" theme="{{theme}}" fixedHeight="{{fixedHeight}}" lazy="{{lazy}}" bind:itemClick="publicEventEmit" bind:deleteClick="publicEventEmit" itemClickConfig="{{itemClickConfig}}" emptyContent="{{emptyContent}}"></bb-indep-ul>
 </template>
 
 <template name="bb-vant-cell">

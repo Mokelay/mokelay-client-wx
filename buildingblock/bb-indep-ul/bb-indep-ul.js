@@ -87,6 +87,10 @@ Component({
              */
     itemClickConfig: {
       type: Object
+    },
+    //为空时显示的内容
+    emptyContent: {
+      type: Array
     }
   },
 /**

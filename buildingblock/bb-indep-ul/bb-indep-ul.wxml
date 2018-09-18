@@ -6,6 +6,11 @@
     </view>
   </scroll-view>
 
+<!-- 没有数据的时候显示 为空时的组件 -->
+  <scroll-view wx:if="{{!list||list.length<=0}}">
+    <bb wx:for="{{emptyContent}}" wx:for-index="index" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+  </scroll-view>
+
 <!-- 针对swipe 主题渲染 -->
  <scroll-view wx:if="{{theme=='swipe'}}" class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
 
