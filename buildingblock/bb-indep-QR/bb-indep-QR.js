@@ -72,7 +72,7 @@ Component({
       sizeStyle: `height:${size.w}px;width:${size.h}px;`
     });
     if (t.properties.qrType == "wx") {
-      const scene = encodeURIComponent(t.data.realWxOptions.scene);
+      const scene = wx._TY_Tool.encode(t.data.realWxOptions.scene);
       const page = encodeURIComponent(t.data.realWxOptions.page);
       const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`
       t.setData({
