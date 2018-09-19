@@ -48,45 +48,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    realFields: [{
-      titleData: {
-        text: "企业-1",
-        value: "all",
-        subtitle: "200",
-        checked: false,
-        price: 200
-      },
-      fields: [{
-        text: '选项1',
-        value: "a",
-        disabled: false,
-        price: 100
-      }, {
-        text: '选项2',
-        value: "b",
-        disabled: false,
-        price: 100
-      }]
-    }, {
-      titleData: {
-        text: "企业-2",
-        value: "all",
-        subtitle: "200",
-        checked: false,
-        price: 200
-      },
-      fields: [{
-        text: '选项3',
-        value: "c",
-        disabled: false,
-        price: 100
-      }, {
-        text: '选项4',
-        value: "d",
-        disabled: false,
-        price: 100
-      }]
-    }],
+    realFields:[],
     realSubmitButton:{
       selectText: "提现"
     },
@@ -103,7 +65,8 @@ Component({
     allChecked: false,
     fromChange: false,
     fromSelectAll: false,
-    totalPrice: 0
+    totalPrice: 0,
+    page:1
   },
   attached: function () {
     let t = this;
@@ -122,16 +85,19 @@ Component({
     //获取数据
     getData() {
       const t = this;
-      if (t.fieldsDs) {
+      if (t.properties.fieldsDs) {
+        wx.showLoading({
+          title: '加载中',
+        })
         wx._TY_Tool.getDSData(t.properties.fieldsDs, wx._TY_Tool.buildTplParams(t), function (data) {
           data.forEach((item) => {
+            wx.hideLoading();
             const { dataKey, value } = item;
-            t.setData({
-              realFields:value
-            })
+            t.data.realFields = t.data.realFields.concat(value);
             t.transferContentArr();
           });
         }, function (code, msg) {
+          wx.hideLoading();
         });
       }
     },
@@ -158,7 +124,8 @@ Component({
     },
     transferContentArr() {
       const t = this;
-      t.data.realFields.forEach((fieldP, index) => {
+      const realFields = [].concat(t.data.realFields);
+      realFields.forEach((fieldP, index) => {
         t.data.checkboxGroup[index] = t.data.checkboxGroup[index] ? t.data.checkboxGroup[index] : {
           groupChecked: [],
           fullResult: [],
@@ -190,7 +157,7 @@ Component({
         });
       });
       t.setData({
-        realFields: t.data.realFields
+        realFields: realFields
       })
     },
     selectAll(e) {
@@ -288,6 +255,15 @@ Component({
       t.setData({
         realFields: t.data.realFields
       })
-    }
+    },
+    //滚动到底部时触发
+    lower: function (event) {
+      debugger
+      let t = this;
+      if (!t.data.end && !t.data.loading) {
+        t.data.page = t.data.page + 1;
+        t.getData();
+      }
+    },
   }
 })

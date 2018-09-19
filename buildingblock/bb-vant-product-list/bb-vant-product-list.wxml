@@ -1,4 +1,5 @@
 <!--buildingblock/bb-vant-product-list/bb-vant-product-list.wxml-->
+   <scroll-view class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
     <view class="bb-vant-product-list" style="{{domStyle}}">
         <view class="checkbox-group-list" wx:for="{{realFields}}" wx:for-index="index" wx:for-item="field" wx:key="{{index}}">
               <label class="checkbox title-contril">
@@ -41,3 +42,4 @@
             </van-submit-bar>   -->
         </view>
     </view>
+  </scroll-view>
