@@ -41,6 +41,10 @@ Component({
       value:{
         disabled: false
       }
+    },
+    /*外部传入参数*/
+    externalParams:{
+      type:String
     }
   },
   /**
@@ -56,10 +60,10 @@ Component({
   attached:function(){
     this.setData({
       realOptions: this.properties.options,
-      realButton:this.properties.button
+      realButton:this.properties.button,
+      external: this.properties.externalParams
     });
   },
-
   /**
    * 组件的方法列表
    */
