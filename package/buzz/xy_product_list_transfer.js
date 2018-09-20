@@ -22,7 +22,8 @@ const newfields = [];
             text: device.name,
             value: device.serialNumber,
             disabled: false,
-            price: device.rebateAmount.toString()
+            subtitle: device.rebateAmount.toString(),
+            price: device.rebateAmount
           };
           price = price + device.rebateAmount;
           item = Object.assign(item,device);
@@ -30,7 +31,7 @@ const newfields = [];
         }
       });
       field.titleData.price = price;
-      field.titleData.subtitle = price + "￥";
+      field.titleData.subtitle = "￥" + price;
       newfields.push(field);
     });
     return newfields;

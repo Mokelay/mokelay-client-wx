@@ -97,7 +97,10 @@
   border:0;
   box-shadow:none;
   font-family: PingFang-SC-Medium;
-  line-height:104rpx;
+  line-height:102rpx;
+  left:2rpx;
+  top:2rpx;
+  position: relative;
   /* font-size: 34rpx;
   text-align: center; */
 }

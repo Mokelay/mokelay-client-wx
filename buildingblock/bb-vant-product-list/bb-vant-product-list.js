@@ -66,7 +66,8 @@ Component({
     fromChange: false,
     fromSelectAll: false,
     totalPrice: 0,
-    page:1
+    page:1,
+    valueBase:""
   },
   attached: function () {
     let t = this;
@@ -75,7 +76,10 @@ Component({
       t.data.content = t.properties.contentTemplate.length ? t.properties.contentTemplate : t.data.content;
     t.data.realSubmitButton = t.properties.submitButton ? t.properties.submitButton : t.data.realSubmitButton;
     t.data.realPriceKey = t.properties.priceKey ? t.properties.priceKey : t.data.realPriceKey;
-    this.getData();
+    t.setData({
+      realSubmitButton: t.data.realSubmitButton
+    });
+    t.getData();
     t.transferContentArr();
   },
   /**
@@ -119,8 +123,6 @@ Component({
       }
       this.setResult();
       this.totalPriceFn();
-      // this.selectAll(e);
-      this.data.valueBase = this.data.result;
     },
     transferContentArr() {
       const t = this;
@@ -215,7 +217,6 @@ Component({
     },
     onSubmit(e) {
       this.triggerEvent("commit", this.data.result);
-      wx._TY_Tool.resolveButton(this.properties.submitButton, wx._TY_Tool.buildTplParams(this));
     },
     setResult(){
       const t = this;
@@ -224,6 +225,7 @@ Component({
         result = result.concat(val.checkedArr);
       });
       if (result.length == t.data.allResult) {
+        debugger
         t.setData({
           allChecked: true
         })
@@ -233,8 +235,12 @@ Component({
         })
       }
       t.data.result = result;
+      //t.data.valueBase = result.join(",");
       t.refreshData(result);
-      this.triggerEvent("change", t.data.result);
+      this.setData({
+        valueBase: result.join(",")
+      });
+      this.triggerEvent("change", t.data.valueBase);
     },
     refreshData: function (result) {
       const t = this;
@@ -253,7 +259,8 @@ Component({
         })
       });
       t.setData({
-        realFields: t.data.realFields
+        realFields: t.data.realFields,
+        valueBase: t.data.valueBase
       })
     },
     //滚动到底部时触发
