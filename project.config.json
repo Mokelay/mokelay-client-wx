@@ -39,7 +39,7 @@
 				{
 					"id": 0,
 					"name": "带参数编译",
-					"pathName": "pages/index/index",
+					"pathName": "pages/index/home",
 					"query": "",
 					"scene": "1001"
 				}

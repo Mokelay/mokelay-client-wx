@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "bb": "../../buildingblock/bb/bb",
+    "bb-page": "../../buildingblock/bb-page/bb-page",
+    "bb-text": "../../buildingblock/bb-text/bb-text"
+  },
+  "compoent": [],
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

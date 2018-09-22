@@ -1,0 +1,124 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+
+@import "../../lib/iconfont/iconfont.wxss";
+
+
+view,
+scroll-view,
+swiper,
+text,
+progress,
+button,
+checkbox-group,
+form,
+input,
+label,
+picker,
+picker-view,
+radio-group,
+slider,
+switch,
+textarea,
+navigator,
+image,
+map,
+bb-layout-seriation,
+bb-hyperlink,
+bb-img,
+bb-indep-dialog,
+bb-indep-button,
+bb-indep-form,
+bb-indep-ul,
+bb-input,
+bb-page,
+bb-photo-single,
+bb-text,
+bb-uuid,
+bb-vant-cell,
+bb-vant-radio-group,
+bb-vant-switch,
+bb-words,
+bb-indep-textarea{
+  box-sizing: border-box;
+}
+/* *, *:before, *:after {
+  box-sizing: inherit;
+} */
+bb-words,
+bb-vant-field,
+bb-vant-cell-picker,
+bb-layout-seriation,
+bb-indep-button,
+bb-indep-dialog,
+bb-indep-form,
+bb-indep-ul,
+bb-page{
+  display:block;
+}
+
+bb-vant-switch{
+  display: inline-block;
+}
+
+page {
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+
+image {
+  height: auto;
+  max-width: 100%;
+}
+
+.clearfix:after{
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfix{
+  zoom:1;
+}
+
+.flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.flex_center{
+    align-items:center;
+}
+.flex_nowrap{
+      flex-wrap: nowrap;
+}
+.flex_col{
+  flex-direction:column;
+}
+.flex1{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: block;
+}
+.flex_wrap {
+    -webkit-box-flex: initial;
+    -webkit-flex: initial;
+    flex: initial;
+    display: block;
+}
+
+/*一行显示不换行 多出的部分省略号*/
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.pointer{
+  cursor:pointer;
+}
+

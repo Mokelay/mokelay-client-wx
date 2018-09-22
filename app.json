@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/index/home",
+    "pages/index/my",
+    "pages/index/news",
     "pages/index/index"
   ],
   "usingComponents": {},
@@ -12,6 +15,31 @@
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
+  },
+  "tabBar": {
+    "color":"#000000",
+    "backgroundColor":"#ffffff",
+    "selectedColor":"#09BB07",
+    "list": [
+      {
+        "text": "新闻",
+        "pagePath": "pages/index/news",
+        "iconPath":"lib/imgs/icon_biaodan.png",
+        "selectedIconPath":"lib/imgs/icon_biaodan_active.png"
+      },
+      {
+        "text": "首页",
+        "pagePath": "pages/index/home",
+        "iconPath": "lib/imgs/icon_home.png",
+        "selectedIconPath": "lib/imgs/icon_home_active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/index/my",
+        "iconPath": "lib/imgs/wo.png",
+        "selectedIconPath": "lib/imgs/wo_active.png"
+      }
+    ]
   },
   "debug": true
 }
