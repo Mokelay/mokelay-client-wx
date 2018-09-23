@@ -69,7 +69,7 @@
 .bb-tab-position--top .bb-tab-header-item.is-active {
   z-index: 20;
 }
-.bb-tab-position--top .bb-tab-header-item.is-active > text {
+.bb-tab-position--top .bb-tab-header-item.is-active {
   border-bottom: 5.355rpx solid #1AAD19;
   display: inline-block;
 }
