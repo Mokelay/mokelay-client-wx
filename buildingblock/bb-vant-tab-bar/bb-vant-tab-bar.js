@@ -151,6 +151,13 @@ Component({
     const activeIconStyle = activeStyle.iconStyle;
     const activeTextStyle = activeStyle.textStyle;
     let currentUrl = wx._TY_Tool.getCurrentUrl();
+    if (currentUrl=='/pages/index/index'){
+      let pages = getCurrentPages();
+      let currentPage = pages[pages.length-1];
+      if(currentPage.data.pageAlias){
+        currentUrl += "?alias=" + currentPage.data.pageAlias;
+      }
+    }
     newField.forEach((field,key)=>{
       field.iconStyle = wx._TY_Tool.setStyle(false,{layout: field.iconStyle});
       field.textStyle = wx._TY_Tool.setStyle(false, {layout: field.textStyle });

@@ -176,7 +176,7 @@ Component({
     },
     checkContentType:function(content){
       const t = this;
-      if (content[0].alias == "bb-layout-seriation" || content[0].alias.indexOf("vant") != -1){
+      if (content&&content[0]&&(content[0].alias == "bb-layout-seriation" || content[0].alias.indexOf("vant") != -1)){
         t.setData({
           isOldData:true,
           realContent:t.properties.content
