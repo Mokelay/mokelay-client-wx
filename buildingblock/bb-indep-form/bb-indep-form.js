@@ -102,7 +102,9 @@ Component({
   attached: function () {
     this.checkContentType(this.properties.content);
     this.getData();
-    this.setValue();
+    if (Object.keys(this.data.formData).length){
+      this.setValue();
+    }
   },
   ready: function () {
   },
@@ -190,12 +192,16 @@ Component({
     },
     setValue:function(){
       const t = this;
-      t.properties.realContent.forEach((content,key)=>{
+      const realContent = t.properties.realContent;
+      t.setData({
+        realContent: []
+      });
+      realContent.forEach((content,key)=>{
         const attributeName = content["attributes"]["attributeName"] || "";
         content["attributes"].value = t.data.formData[attributeName];
       })
       t.setData({
-        realContent: t.properties.content
+        realContent: realContent
       });
     }
   }

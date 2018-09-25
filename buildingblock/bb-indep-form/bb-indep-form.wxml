@@ -1,6 +1,6 @@
 <form class="bb_indep_form" bindsubmit="commit" bindreset="formReset">
   <view wx:if="{{!isOldData}}" class="form_item" wx:for="{{realContent}}" wx:key="{{item.uuid}}">
-    <view wx:if="{{item.attributes.hideLabel}}" class="section__title">{{item.aliasName}}</view>
+    <view wx:if="{{!item.attributes.hideLabel}}" class="section__title">{{item.aliasName}}</view>
     <bb alias="{{item.alias}}" class="bb {{item.uuid}} section__editor" bb="{{item}}" attributes="{{item.attributes}}" bindinput="triggerPublicEvent" bindchange="triggerPublicEvent" value="{{formData[item.attributes.aliasName]}}"></bb>
   </view>
   <view wx:if="{{isOldData}}" class="form_item_old" wx:for="{{realContent}}" wx:key="{{item.uuid}}">
