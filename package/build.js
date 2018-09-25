@@ -14,7 +14,7 @@ var buzzTemplateEnd = `
 
 //同步巴斯脚本
 var options = {
-    host: 'www.mokelay.com',
+    host: 'ty.saiyachina.com',
     port: 80,
     path: '/config/load-app-buzz?appAlias='+appAlias,
     method: 'GET',
@@ -61,7 +61,7 @@ req.end();
 
 //同步页面配置
 var options2 = {
-    host: 'www.mokelay.com',
+    host: 'ty.saiyachina.com',
     port: 80,
     path: '/config/load_app_page?appAlias='+appAlias,
     method: 'GET',
