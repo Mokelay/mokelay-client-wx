@@ -32,7 +32,7 @@
                 </label>
                 <text class="price">合计: ¥{{totalPrice}}</text>
             </view>
-            <bb-indep-button class="submit-button" button="{{realSubmitButton}}" bindclick="onSubmit" externalParams="{{valueBase}}"></bb-indep-button>
+            <bb-indep-button class="submit-button" button="{{realSubmitButton}}" bind:button-finish="onSubmit" externalParams="{{valueBase}}"></bb-indep-button>
             <!-- <van-submit-bar
             :price="totalPrice"
             :button-text="submitButton.selectText"
