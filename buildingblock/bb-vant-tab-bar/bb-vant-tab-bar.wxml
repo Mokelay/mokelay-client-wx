@@ -1,7 +1,7 @@
 <!--buildingblock/bb-vant-tab-bar/bb-vant-tab-bar.wxml-->
 <view class="bb-vant-tab-bar" style="color: {{tabBar.color}}; background: {{tarBar.backgroundColor}}; {{tabBar.position=='top'? 'top: 0' : 'bottom: 0'}}; {{tabBar.borderStyle? (tabBar.position=='top'? 'border-bottom: solid 1px '+tabBar.borderStyle + ';' : 'border-top: solid 1px '+tabBar.borderStyle + ';') : ''}}">    
   <block wx:for="{{realFields}}" wx:key="index">    
-    <navigator url="{{item.url}}" open-type="redirect" class="menu-item">
+    <navigator url="{{item.url}}" open-type="{{currentUrl==item.url?'':'redirect'}}" class="menu-item">
       <view class="iconfont {{item.icon}}" style="{{currentUrl == item.url?realActiveStyle.iconStyle:item.iconStyle}}"></view> 
       <text class="tabbar_text" style="{{currentUrl == item.url?realActiveStyle.textStyle:item.textStyle}}">{{item.text}}</text>    
     </navigator>    
