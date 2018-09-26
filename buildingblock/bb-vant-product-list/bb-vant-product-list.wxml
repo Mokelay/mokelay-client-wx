@@ -1,6 +1,6 @@
 <!--buildingblock/bb-vant-product-list/bb-vant-product-list.wxml-->
-   <scroll-view class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
-    <view class="bb-vant-product-list" style="{{domStyle}}">
+     <view class="bb-vant-product-list" style="{{domStyle}}">
+        <scroll-view class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
         <view class="checkbox-group-list" wx:for="{{realFields}}" wx:for-index="index" wx:for-item="field" wx:key="{{index}}">
               <label class="checkbox title-contril">
                 <view hidden="{{!field.titleData.checked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong" data-key="{{index}}" data-select="{{false}}" bindtap="selectAll"></view>
@@ -22,6 +22,7 @@
               </label>
             </checkbox-group>
         </view>
+        </scroll-view>
         <view class="submit-bar">
             <view class="submit-bar-left">
                 <label class="checkbox">
@@ -33,13 +34,6 @@
                 <text class="price">合计: ¥{{totalPrice}}</text>
             </view>
             <bb-indep-button class="submit-button" button="{{realSubmitButton}}" bindclick="onSubmit" externalParams="{{valueBase}}"></bb-indep-button>
-            <!-- <van-submit-bar
-            :price="totalPrice"
-            :button-text="submitButton.selectText"
-            bindsubmit="onSubmit"
-            >
-              
-            </van-submit-bar>   -->
         </view>
     </view>
-  </scroll-view>
+  
