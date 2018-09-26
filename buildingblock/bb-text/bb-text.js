@@ -15,7 +15,7 @@ Component({
   },
 
   attached:function(){
-    const value = decodeURIComponent(this.data.value);
+    const value =this.data.value;
     this.setData({
       content: this.valueTpl(value)
     });

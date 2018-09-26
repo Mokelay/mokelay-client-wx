@@ -32,7 +32,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    realUrl:"http://ty.saiyachina.com/",
+    realUrl:"",
     realSize:200,
     canvasHidden: false,
     maskHidden: true,
@@ -78,7 +78,7 @@ Component({
     if (t.properties.qrType == "wx") {
       const scene = wx._TY_Tool.encode(t.data.realWxOptions.scene);
       const page = encodeURIComponent(t.data.realWxOptions.page);
-      const url = `${app.globalData._TY_APIHost}/config/test_xiaobc_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`;
+      const url = `${app.globalData._TY_APIHost}/config/xy_partner_wx_mp_qr_code?scene=${scene}&page=${page}&hyaline=${t.data.realWxOptions.is_hyaline || false}`;
       const backgroundStyle = this.properties.domStyle + `background-image:url(${url});background-size:cover;`
       this.setData({
         imagePath: url,
