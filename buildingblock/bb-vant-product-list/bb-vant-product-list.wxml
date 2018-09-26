@@ -12,11 +12,11 @@
                 </label>
               </label>
             <checkbox-group  bindchange="change"  data-key="{{index}}">
-              <label class="checkbox" wx:for="{{field.fields}}" wx:for-index="key" wx:for-item="item" wx:key="{{item.value}}" data-childrenKey="{{key}}">
+              <label class="checkbox flex" wx:for="{{field.fields}}" wx:for-index="key" wx:for-item="item" wx:key="{{item.value}}" data-childrenKey="{{key}}">
                 <view hidden="{{!item.checked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong"></view>
                 <view hidden="{{item.checked}}" class="unchecked van-checkbox__icon"></view>
                 <checkbox hidden="{{true}}" value="{{item.value}}" checked="{{item.checked}}" /> 
-                <label class="van-checkbox__label">
+                <label class="van-checkbox__label flex1">
                   <bb-layout-seriation content="{{item.content}}"></bb-layout-seriation>
                 </label>
               </label>
