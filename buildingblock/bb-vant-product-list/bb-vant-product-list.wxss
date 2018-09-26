@@ -122,9 +122,9 @@
 .unchecked{
   display: inline-block;
   border-radius: 100%;
-  font-size: 24rpx;
+  font-size: 40rpx;
   color: transparent;
-  text-align: center;
+  /* text-align: center; */
   border: 2rpx solid #aaa;
   width: 40rpx;
   height: 40rpx;
@@ -133,4 +133,41 @@
   position:relative;
   margin:0 20rpx;
   line-height:40rpx;
+}
+
+.checkbox.flex{
+  align-items: center;
+}
+.checkbox.flex .checked,.checkbox.flex .unchecked{
+  margin-bottom: 0;
+}
+
+.flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.flex_center{
+    align-items:center;
+}
+.flex_nowrap{
+      flex-wrap: nowrap;
+}
+.flex_col{
+  flex-direction:column;
+}
+.flex1{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: block;
+}
+.flex_wrap {
+    -webkit-box-flex: initial;
+    -webkit-flex: initial;
+    flex: initial;
+    display: block;
 }
