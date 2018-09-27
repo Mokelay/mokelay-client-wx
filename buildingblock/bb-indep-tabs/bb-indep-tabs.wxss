@@ -70,7 +70,7 @@
   z-index: 20;
 }
 .bb-tab-position--top .bb-tab-header-item.is-active {
-  border-bottom:10rpx solid #1AAD19;
+  border-bottom:5rpx solid #1AAD19;
   display: inline-block;
 }
 .bb-tab-position--top .bb-tab-header-item:first-child {
