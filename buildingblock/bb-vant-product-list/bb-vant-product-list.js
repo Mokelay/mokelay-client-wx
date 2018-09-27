@@ -287,6 +287,7 @@ Component({
     },
     //滚动到底部时触发
     lower: function (event) {
+      debugger
       let t = this;
       if (!t.data.end && !t.data.loading) {
         t.data.page = t.data.page + 1;
