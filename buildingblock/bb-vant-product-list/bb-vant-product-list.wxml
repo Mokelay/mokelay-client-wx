@@ -1,6 +1,6 @@
 <!--buildingblock/bb-vant-product-list/bb-vant-product-list.wxml-->
      <view class="bb-vant-product-list" style="{{domStyle}}">
-        <scroll-view class="clearfix bb-indep-ul" scroll-y style="height:calc(100vh); {{domStyle}}" bindscrolltolower="lower">
+        <scroll-view class="clearfix bb-indep-ul" scroll-y style="height:calc(70vh); {{domStyle}}" bindscrolltolower="lower">
         <view class="checkbox-group-list" wx:for="{{realFields}}" wx:for-index="index" wx:for-item="field" wx:key="{{index}}">
               <label class="checkbox title-contril">
                 <view hidden="{{!field.titleData.checked}}" class="checked van-checkbox__icon iconfont ty-icon_chenggong" data-key="{{index}}" data-select="{{false}}" bindtap="selectAll"></view>
