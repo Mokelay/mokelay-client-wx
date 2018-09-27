@@ -15,7 +15,13 @@ Component({
   },
 
   attached:function(){
-    const value =this.data.value;
+    let value = this.data.value;
+    try{
+      value = decodeURIComponent(this.data.value);
+    }catch(e){
+      console.log(e);
+      value = this.data.value;
+    }
     this.setData({
       content: this.valueTpl(value)
     });
