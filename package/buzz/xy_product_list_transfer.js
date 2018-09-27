@@ -1,7 +1,9 @@
 
   module.exports = function (...args) {
+let result = {};
 const newfields = [];
     const shop_list = args[0].realDataMap.page_data.currentRecords;
+	result = args[0].realDataMap.page_data;
     const device_list = args[0].realDataMap.device_list.list;
     shop_list.forEach((shop,index)=>{
       let price = 0;
@@ -34,5 +36,6 @@ const newfields = [];
       field.titleData.subtitle = "￥" + price;
       newfields.push(field);
     });
-    return newfields;
+result.currentRecords = newfields;
+    return result;
   }

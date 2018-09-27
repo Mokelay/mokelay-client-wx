@@ -67,7 +67,9 @@ Component({
     fromSelectAll: false,
     totalPrice: 0,
     page:1,
-    valueBase:""
+    valueBase:"",
+    end: false,//是否加载结束
+    loading: false//是否加载中
   },
   attached: function () {
     let t = this;
@@ -97,7 +99,22 @@ Component({
           data.forEach((item) => {
             wx.hideLoading();
             const { dataKey, value } = item;
-            t.data.realFields = t.data.realFields.concat(value);
+            let _list = [];
+            if (value && value['currentRecords']) {
+              _list = value['currentRecords'];
+              const totalPage = value['totalPages'];
+              if (t.data.page >= totalPage) {
+                t.data.end = true;
+              } else {
+                t.data.end = false;
+              }
+            } else if (value && value['list']) {
+              _list = value['list'];
+            } else {
+              _list = value;
+            }
+            t.data.loading = false;
+            t.data.realFields = t.data.realFields.concat(_list);
             t.transferContentArr();
           });
         }, function (code, msg) {
@@ -231,7 +248,6 @@ Component({
         result = result.concat(val.checkedArr);
       });
       if (result.length == t.data.allResult) {
-        debugger
         t.setData({
           allChecked: true
         })
@@ -271,7 +287,6 @@ Component({
     },
     //滚动到底部时触发
     lower: function (event) {
-      debugger
       let t = this;
       if (!t.data.end && !t.data.loading) {
         t.data.page = t.data.page + 1;
