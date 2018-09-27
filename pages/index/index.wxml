@@ -1,1 +1,1 @@
-<bb-page class="bb" pageAlias="{{pageAlias}}"></bb-page>
+<bb-page wx:if="{{show}}" class="bb" pageAlias="{{pageAlias}}"></bb-page>

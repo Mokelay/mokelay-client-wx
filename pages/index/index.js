@@ -6,7 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    pageAlias:null
+    pageAlias:null,
+    show:true
   },
   onLoad: function (options) {
     var t = this;
@@ -56,6 +57,20 @@ Page({
   //上拉触底事件
   onReachBottom:function(){
     
+  },
+  onPullDownRefresh: function () {
+    const t = this;
+    wx.showNavigationBarLoading();
+    t.setData({
+      show:false
+    });setTimeout(()=>{
+      t.setData({
+        show: true
+      });
+      wx.hideNavigationBarLoading();
+      // 停止下拉动作  
+      wx.stopPullDownRefresh();
+    },500)
   },
   //转发  分享规则
   onShareAppMessage:function(args){
