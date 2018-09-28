@@ -122,3 +122,7 @@ image {
   cursor:pointer;
 }
 
+.iconfont{
+  overflow: hidden;
+}
+
