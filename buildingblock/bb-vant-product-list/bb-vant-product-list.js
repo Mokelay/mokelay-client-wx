@@ -233,13 +233,16 @@ Component({
       this.totalPriceFn();
     },
     onSubmit(e) {
-      debugger
+      const t = this;
       this.triggerEvent("commit", this.data.result);
       this.setData({
         page:1,
         realFields:[]
       })
-      this.getData();
+      setTimeout(()=>{
+        t.getData();
+      },1000)
+      
     },
     setResult(){
       const t = this;
