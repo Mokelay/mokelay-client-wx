@@ -101,7 +101,7 @@ Component({
   },
   attached: function () {
     this.checkContentType(this.properties.content);
-    this.getData();
+    this.getFormData();
     if (Object.keys(this.data.formData).length){
       this.setValue();
     }
@@ -144,7 +144,7 @@ Component({
       this.triggerEvent(e.detail.type, value);
     },
     //动态获取卡片内容
-    getData() {
+    getFormData() {
       const t = this;
       if (t.properties.formDataDs) {
         t.loading = true;
