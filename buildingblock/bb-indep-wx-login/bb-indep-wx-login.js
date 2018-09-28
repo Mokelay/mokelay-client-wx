@@ -84,7 +84,7 @@ Component({
           });
         }else{
           //有session的情况 目前不用处理
-          wx.navigateTo({
+          wx.redirectTo({
             url: 'index'
           })
         }

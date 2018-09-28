@@ -21,7 +21,7 @@ const app = getApp();
         wxOpenId: openId
       }).then((res)=>{
         //初始化session之后跳转到首页
-        wx.navigateTo({
+        wx.reLaunch({
           url: 'index',
         })
       });
