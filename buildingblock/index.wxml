@@ -51,7 +51,7 @@
 </template>
 
 <template name="bb-words">
-  <bb-words value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" text="{{text}}" textDs="{{textDs}}" domStyle="{{domStyle}}" style="{{domStyle}}"></bb-words>
+  <bb-words value="{{value}}" id="{{uuid}}" class="bb {{uuid}}" text="{{text}}" textDs="{{textDs}}" style="{{domStyle}}"></bb-words>
 </template>
 
 <template name="bb-photo-single">
