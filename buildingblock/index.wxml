@@ -123,5 +123,5 @@
 </template>
 
 <template name="bb-vant-product-list">
-  <bb-vant-product-list id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" fieldsData="{{fieldsData}}" fieldsDs="{{fieldsDs}}"  contentTemplate="{{contentTemplate}}" submitButton="{{submitButton}}" option="{{option}}"></bb-vant-product-list>
+  <bb-vant-product-list id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" fieldsData="{{fieldsData}}" fieldsDs="{{fieldsDs}}"  contentTemplate="{{contentTemplate}}" submitButton="{{submitButton}}" option="{{option}}" bind:commit="publicEventEmit"></bb-vant-product-list>
 </template>
