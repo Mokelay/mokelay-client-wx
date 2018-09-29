@@ -20,3 +20,7 @@
 .tabbar_text{
   font-size: 28rpx
 }
+
+.tab-bar-hover{
+  opacity:0.7;
+}
