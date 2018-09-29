@@ -47,7 +47,7 @@
 </template>
 
 <template name="bb-vant-cell">
-  <bb-vant-cell id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" value="{{value}}" option="{{option}}" content="{{content}}" contentDs="{{contentDs}}"></bb-vant-cell>
+  <bb-vant-cell id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" value="{{value}}" option="{{option}}" content="{{content}}" contentDs="{{contentDs}}"></bb-vant-cell>
 </template>
 
 <template name="bb-words">
