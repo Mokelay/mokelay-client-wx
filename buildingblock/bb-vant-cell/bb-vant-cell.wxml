@@ -1,5 +1,5 @@
 <!--buildingblock/bb-vant-cell/bb-vant-cell.wxml-->
-<view class="bb-vant-cell" bindtap="goUrl">
+<view class="bb-vant-cell" style="{{domStyle}}" bindtap="goUrl">
   <icon size="10" class="iconfont {{option.icon}}"></icon>
   <text class="cell-title">{{option.title}}</text>
   <text class="cell-value">{{value == undefined?"":value}}</text>

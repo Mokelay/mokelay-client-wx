@@ -8,6 +8,9 @@ Component({
     value: {
       type: [Number, String]
     },
+    domStyle:{
+      type:String
+    },
     /*模板默认值*/
     defaultValTpl: {
       type: [String, Number, Boolean]
