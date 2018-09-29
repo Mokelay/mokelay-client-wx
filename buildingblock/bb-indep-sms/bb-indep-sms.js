@@ -78,7 +78,7 @@ Component({
     }else{
       fieldOption = this.data.fieldOption
     }
-    sendButton.style = "background:rgb(26, 173, 25);color:#fff;width:240rpx;padding:0;"
+    sendButton.style = "background:rgb(26, 173, 25);color:#fff;width:240rpx;padding:7rpx 0;"
     this.setData({
       fieldOption: fieldOption,
       sendButton: sendButton,
