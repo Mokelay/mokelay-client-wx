@@ -303,8 +303,10 @@ Component({
                 }
               } else if (item['value'] && item['value']['list']) {
                 _list = item['value']['list'];
+                t.data.end = true;
               } else {
                 _list = item['value'];
+                t.data.end = true;
               }
             }
             if (t.data.page > 1) {
