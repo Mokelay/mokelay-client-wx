@@ -32,6 +32,7 @@ const app = getApp();
           if(url){
             //有地址
             app.globalData._TY_Share.imageUrl = url;
+            wx.getStorageSync("_TY_shareImg",url||'');
             wx._TY_Tool.post(app.globalData._TY_ContentPath + "/xy_partner_update_user_share_img_url", {
               wxOpenId: openId,
               shareImgUrl: url

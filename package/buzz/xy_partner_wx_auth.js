@@ -17,7 +17,9 @@ const app = getApp();
       })
     }else{
       //有值 调用初始化session 的接口
+      debugger;
       if(data.data.shareImgUrl){
+        wx.getStorageSync("_TY_shareImg",data.data.shareImgUrl||'');
         app.globalData._TY_Share.imageUrl=data.data.shareImgUrl||"";
       }
       wx._TY_Tool.post(app.globalData._TY_ContentPath + "/xy_partner_init",{
