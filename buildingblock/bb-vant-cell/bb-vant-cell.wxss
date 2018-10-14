@@ -13,6 +13,7 @@
   box-sizing: border-box;
   font-size: 32rpx;
   background-color: #fff;
+  overflow: hidden;
 }
 .bb-vant-cell .cell-title{
   min-width: 92rpx;
