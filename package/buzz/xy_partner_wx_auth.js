@@ -17,9 +17,13 @@ const app = getApp();
       })
     }else{
       //有值 调用初始化session 的接口
+      if(data.data.shareImgUrl){
+        app.globalData._TY_Share.imageUrl=data.data.shareImgUrl||"";
+      }
       wx._TY_Tool.post(app.globalData._TY_ContentPath + "/xy_partner_init",{
         wxOpenId: openId
       }).then((res)=>{
+        app.globalData._TY_inviteCode = res['data']['data']['invitationCode']||'';
         //初始化session之后跳转到首页
         wx.reLaunch({
           url: 'index',
