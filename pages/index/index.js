@@ -57,7 +57,7 @@ Page({
     app.globalData._TY_Share = {
       title: '',//分享标题
       path: '',//分享路径  必须是以/ 开头的路径
-      imageUrl: this.data.imagePath//分享图片 支持 PNG及JPG
+      imageUrl: wx.getStorageSync("_TY_shareImg")//分享图片 支持 PNG及JPG
     }
   },
   //上拉触底事件
