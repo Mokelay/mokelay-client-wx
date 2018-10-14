@@ -87,10 +87,10 @@ Page({
     let _this = this;
     var size = _this.setCanvasSize();
     var text = "123456789";
-    context.setFontSize(20);
+    context.setFontSize(30);
     context.setTextAlign("center");
-    context.setFillStyle("#000");
-    context.fillText(text, size.w / 2, size.h * 0.10);
+    context.setFillStyle("#fff");
+    context.fillText(text, size.w / 2, 80);
     context.stroke();
   },
   createNewImg: function () {
@@ -139,17 +139,23 @@ Page({
   createSharePic() {
     let _this = this,
       qrcode = _this.data.qrcode
-    wx.downloadFile({
-      url: "https://chisong-resource.oss-cn-shanghai.aliyuncs.com/chisong/other/QQ20180912-002804%402x.png",
-      success: function (res) {
-        if (res.statusCode === 200) {
-          _this.setData({
-            filePath: res.tempFilePath,
-          })
-          _this.createNewImg();
-        }
-      }
+    //从网上取图片  需要设置合法的downloadFile  域名
+    // wx.downloadFile({
+    //   url: "https://social-crm.oss-cn-qingdao.aliyuncs.com/8c2e7f893c9146c841044b18b26c7c70.png",
+    //   success: function (res) {
+    //     if (res.statusCode === 200) {
+    //       _this.setData({
+    //         filePath: res.tempFilePath,
+    //       })
+    //       _this.createNewImg();
+    //     }
+    //   }
+    // })
+    //从本地取图片
+    _this.setData({
+      filePath: "../../images/invite.jpg",
     })
+    _this.createNewImg();
   },
   setCanvasSize() {
     return {
@@ -171,13 +177,15 @@ Page({
       },
       success: function (res) {
         var response = JSON.parse(res.data);
-        console.log(res);
+        console.log("uploader:", res);
         let data = response.data;
+        console.log("uploader:", res);
         //服务器返回文件地址 file_url   序列化文件名：file_serialize_name
         const url = data.file_url;
         t.setData({
           imagePath: url,
         });
+
       },
       fail: function (res) {
         // wx.hideToast();
