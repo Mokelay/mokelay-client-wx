@@ -150,7 +150,7 @@ Page({
     //     }
     //   }
     // })
-  //从本地取图片
+    //从本地取图片
     _this.setData({
       filePath: "../../images/invite.jpg",
     })
@@ -176,7 +176,7 @@ Page({
       },
       success: function (res) {
         var response = JSON.parse(res.data);
-        console.log("uploader:",res);
+        console.log("uploader:", res);
         let data = response.data;
         console.log("uploader:", res);
         //服务器返回文件地址 file_url   序列化文件名：file_serialize_name
@@ -184,7 +184,6 @@ Page({
         t.setData({
           imagePath: url,
         });
-        
       },
       fail: function (res) {
         // wx.hideToast();
