@@ -22,14 +22,32 @@ const app = getApp();
   }).then((res) => {
     var data = res.data;
     if (data['ok']) {
+      app.globalData._TY_inviteCode = res['data']['data']['recommendCode']||'';
       //注册成功 初始化session
       wx._TY_Tool.post(app.globalData._TY_ContentPath + "/xy_partner_init", {
         wxOpenId: openId
       }).then((res) => {
-        //初始化session之后跳转到首页
-        wx.reLaunch({
-          url: 'index',
-        })
+        app.globalData._TY_Root.generateShareImg(function(url){
+          //url 是生成的图片地址
+          if(url){
+            //有地址
+            app.globalData._TY_Share.imageUrl = url;
+            wx.setStorageSync("_TY_shareImg",url||'');
+            wx._TY_Tool.post(app.globalData._TY_ContentPath + "/xy_partner_update_user_share_img_url", {
+              wxOpenId: openId,
+              shareImgUrl: url
+            }).then((res) => {
+                wx.reLaunch({
+                  url: 'index',
+                })
+            });
+          }else{
+          	//初始化session之后跳转到首页
+            wx.reLaunch({
+              url: 'index',
+            })
+          }
+        });
       });
       wx.showToast({
         title: "注册成功",

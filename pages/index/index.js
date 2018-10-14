@@ -47,7 +47,8 @@ Page({
     });
     //将当前组件对象放到全局变量中
     app.globalData._TY_Root = this;
-    this.createSharePic()
+
+    //  this.generateShareImg()
   },
   onShow:function(){
     //页面每次渲染都会触发
@@ -56,7 +57,7 @@ Page({
     app.globalData._TY_Share = {
       title: '',//分享标题
       path: '',//分享路径  必须是以/ 开头的路径
-      imageUrl: this.data.imagePath//分享图片 支持 PNG及JPG
+      imageUrl: wx.getStorageSync("_TY_shareImg")//分享图片 支持 PNG及JPG
     }
   },
   //上拉触底事件
@@ -73,30 +74,24 @@ Page({
         show: true
       });
       wx.hideNavigationBarLoading();
-      // 停止下拉动作  
+      // 停止下拉动作
       wx.stopPullDownRefresh();
     },500)
   },
   //转发  分享规则
   onShareAppMessage:function(args){
-    app.globalData._TY_Share.imageUrl = this.data.imagePath//分享图片 支持 PNG及JPG
+    //通过修改全局的分享对象  跳转到对应路径
     return app.globalData._TY_Share;
   },
-  settext: function (context) {
-    let _this = this;
-    var size = _this.setCanvasSize();
-    var text = "123456789";
-    context.setFontSize(30);
-    context.setTextAlign("center");
-    context.setFillStyle("#fff");
-    context.fillText(text, size.w / 2, 80);
-    context.stroke();
-  },
-  createNewImg: function () {
-    var _this = this;
-    var size = _this.setCanvasSize();
+  /**
+   * 创建分享图片  回调参数是分享图片的url
+   */
+  generateShareImg:function(callback){
+    let t=this;
+    const defaultImgPath = "../../images/invite.jpg";
+    var size = t.setCanvasSize();
     var context = wx.createCanvasContext('myCanvas');
-    var imageQrCode = _this.data.filePath;　　　　　　　//二维码
+    var imageQrCode = defaultImgPath;　　　　　　　//二维码
     context.drawImage(imageQrCode, 0, 0, size.w, size.h);
     this.settext(context);
     //绘制图片
@@ -117,44 +112,32 @@ Page({
         success: function (res) {
           var tempFilePath = res.tempFilePath;
           console.log("tempFilePath:", tempFilePath);
-          _this.uploaderImg(tempFilePath)
-          // _this.setData({
-          //   imagePath: tempFilePath,
-          // });
-          // var img = _this.data.imagePath;
-          // let urls = []
-          // urls.push(img, '二维码路径')   //二维码路径是为了用户也可以保存二维码，分享到朋友圈有合成的图片也有二维码（参考拉钩小程序分享）
-          // wx.previewImage({
-          //   current: img,  // 当前显示图片的http链接
-          //   urls: urls  // 需要预览的图片http链接列表
-          // })
+          t.uploaderImg(tempFilePath,function(url){
+            //回调 生成图片并且上传成功后的回调
+            if (callback){
+              callback(url);
+            }
+          })
         },
         fail: function (res) {
           console.log(res);
+          if (callback) {
+            callback(null);
+          }
         }
-      }, _this);
+      }, t);
     }, 1000);
+
   },
-  createSharePic() {
-    let _this = this,
-      qrcode = _this.data.qrcode
-    //从网上取图片  需要设置合法的downloadFile  域名
-    // wx.downloadFile({
-    //   url: "https://social-crm.oss-cn-qingdao.aliyuncs.com/8c2e7f893c9146c841044b18b26c7c70.png",
-    //   success: function (res) {
-    //     if (res.statusCode === 200) {
-    //       _this.setData({
-    //         filePath: res.tempFilePath,
-    //       })
-    //       _this.createNewImg();
-    //     }
-    //   }
-    // })
-    //从本地取图片
-    _this.setData({
-      filePath: "../../images/invite.jpg",
-    })
-    _this.createNewImg();
+  settext: function (context) {
+    let _this = this;
+    var size = _this.setCanvasSize();
+    var text = app.globalData._TY_inviteCode || "";
+    context.setFontSize(30);
+    context.setTextAlign("center");
+    context.setFillStyle("#fff");
+    context.fillText(text, size.w / 2, 80);
+    context.stroke();
   },
   setCanvasSize() {
     return {
@@ -162,7 +145,7 @@ Page({
       w: 400
     }
   },
-  uploaderImg(imagePath){
+  uploaderImg(imagePath,callback){
     const t = this;
     wx.uploadFile({
       url: app.globalData._TY_APIHost + "/config/xy_oss_upload",
@@ -181,11 +164,14 @@ Page({
         console.log("uploader:", res);
         //服务器返回文件地址 file_url   序列化文件名：file_serialize_name
         const url = data.file_url;
-        t.setData({
-          imagePath: url,
-        });
+        if (callback){
+          callback(url);
+        }
       },
       fail: function (res) {
+        if (callback) {
+          callback(null);
+        }
         // wx.hideToast();
       }
     });
