@@ -25,5 +25,4 @@
 .bb-vant-cell .isLink{
   display: inline-block;
   width: 30rpx;
-  margin-top: 8rpx;
 }
