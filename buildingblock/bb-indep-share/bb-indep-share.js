@@ -66,7 +66,7 @@ Component({
     app.globalData._TY_Share = {
       title: t.data.realTitle||'',//分享标题
       path: t.data.realLink||'',//分享路径  必须是以/ 开头的路径
-      imageUrl: t.data.realImgUrl||''//分享图片 支持 PNG及JPG
+      imageUrl: t.data.realImgUrl || app.globalData._TY_Share.imageUrl ||''//分享图片 支持 PNG及JPG
     }
   },
   /**
