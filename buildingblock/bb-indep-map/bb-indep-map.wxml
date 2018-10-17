@@ -5,6 +5,10 @@
       style="{{domStyle}}"
       latitude="{{latitude}}"
       longitude="{{longitude}}"
+      scale="{{scale}}"
+      showLocation="{{showLocation}}"
+      enableZoom="{{enableZoom}}"
+      enableScroll="{{enableScroll}}"
       markers="{{markers}}"
       show-location
     >
