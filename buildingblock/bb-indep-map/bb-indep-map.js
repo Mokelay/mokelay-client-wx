@@ -164,12 +164,6 @@ Component({
     },
     //回到当前那位置
     coverReset:function(){
-      this.mapCtx.getCenterLocation({
-        success: function (res) {
-          console.log(res.longitude)
-          console.log(res.latitude)
-        }
-      });
       this.mapCtx.moveToLocation();
     }
   }
