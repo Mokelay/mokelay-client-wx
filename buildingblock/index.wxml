@@ -127,5 +127,5 @@
 </template>
 
 <template name="bb-indep-map">
-  <bb-indep-map id="{{uuid}}" class="bb {{uuid}}" style="{{domStyle}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" showLocation="{{showLocation}}" enableZoom="{{enableZoom}}" enableScroll="{{enableScroll}}" markersDs="{{markersDs}}" markerProps="{{markerProps}}"></bb-indep-map>
+  <bb-indep-map id="{{uuid}}" class="bb {{uuid}}" domStyle="{{domStyle}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" showLocation="{{showLocation}}" enableZoom="{{enableZoom}}" enableScroll="{{enableScroll}}" markersDs="{{markersDs}}" markerProps="{{markerProps}}"></bb-indep-map>
 </template>

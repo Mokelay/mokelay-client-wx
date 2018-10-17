@@ -2,7 +2,7 @@
 <map
       id="myMap"
       class="bb-indep-map"
-      style="width: 100%; min-height: 300px;height:100%;"
+      style="{{domStyle}}"
       latitude="{{latitude}}"
       longitude="{{longitude}}"
       markers="{{markers}}"

@@ -4,6 +4,8 @@
 
 .bb-indep-map{
   position: relative;
+  width: 100%;
+  min-height:300px;
 }
 .coverReset{
   width:30px;

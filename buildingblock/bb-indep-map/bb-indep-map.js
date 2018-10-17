@@ -7,6 +7,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    domStyle:{
+      type:String
+    },
     //中心经度
     longitude:{
       type:Number
