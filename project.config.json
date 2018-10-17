@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.4",
+	"libVersion": "2.3.0",
 	"appid": "wx9f4c252fc910e928",
 	"projectname": "ty-client-wx",
 	"isGameTourist": false,

@@ -1,0 +1,15 @@
+<!--buildingblock/bb-indep-map/bb-indep-map.wxml-->
+<map
+      id="myMap"
+      class="bb-indep-map"
+      style="width: 100%; min-height: 300px;height:100%;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      show-location
+    >
+    <cover-view class="coverReset" bindtap='coverReset'>
+      <cover-view class='icon'></cover-view>
+      <!-- <cover-view class='iconfont ty-dlweizhi'></cover-view> -->
+    </cover-view>
+    </map>
