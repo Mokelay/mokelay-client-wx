@@ -18,7 +18,7 @@
   </view>
 
   <view class="uploaded-item" wx:if="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:key="{{item}}">
-    <image src="{{item}}" controls="controls" class="uploaded-child"></image>
+    <image src="{{item}}" controls="controls" class="uploaded-child" data-src="{{item}}" bindtap="previewImage"></image>
     <view class="iconfont ty-icon_cuowu" bindtap="remove" data-index="{{index}}"></view>
   </view>
 </view>

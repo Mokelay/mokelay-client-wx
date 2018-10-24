@@ -80,8 +80,16 @@ Component({
   methods: {
     render:function(){
       let t=this;
+      let list = [];
+      if (t.data.value){
+        if (typeof t.data.value == "string"){
+          list = t.data.value.split(",");
+        }else{
+          list = t.data.value
+        }
+      }
       t.setData({
-        list: t.data.value ? t.data.value.split(",") : [],
+        list: list
         // list:["http://xlx.saiyachina.com/config/ty_oss_download?bucketName=ty-storage&fileName=8ce8aec7da3d17a34acd505bda785495.jpg","http://xlx.saiyachina.com/config/ty_oss_download?bucketName=ty-storage&fileName=c9d72e7f0a9e2d05c747f8960f8c691f.jpg"]
       });
     },
@@ -134,14 +142,19 @@ Component({
                 let data = response.data;
                 //服务器返回文件地址 file_url   序列化文件名：file_serialize_name
                 const url = data.file_url;
-                let _val = t.data.value;
-                if (t.data.option.replace && t.data.option.max > 0 && t.data.value.length >= t.data.option.max) {//如果是替换的话
+                let _val = [];
+                if (t.data.value) {
+                  if (typeof t.data.value == "string") {
+                    _val = t.data.value.split(",");
+                  } else {
+                    _val = t.data.value
+                  }
+                }
+                const valueLength = _val.length;
+                if (t.data.option.replace && t.data.option.max > 0 && valueLength >= t.data.option.max) {//如果是替换的话
                   _val.splice(0, 1, url);//替换第一个位置的文件
                 } else {
-                  if (_val){
-                    _val +=",";
-                  }
-                  _val +=url;
+                  _val.push(url);
                 }
                 t.setData({
                   value: _val
@@ -167,7 +180,13 @@ Component({
           }
         }
       }); 
-
+    },
+    previewImage: function (e) {
+      const current = e.target.dataset.src;
+      wx.previewImage({
+        current: current, // 当前显示图片的http链接
+        urls: this.data.list // 需要预览的图片http链接列表
+      })
     }
   }
 })
