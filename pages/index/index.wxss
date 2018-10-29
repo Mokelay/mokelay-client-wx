@@ -41,6 +41,9 @@ bb-words,
 bb-indep-textarea{
   box-sizing: border-box;
 }
+view,bb-text{
+  overflow: hidden;
+}
 /* *, *:before, *:after {
   box-sizing: inherit;
 } */
@@ -125,4 +128,9 @@ image {
 .iconfont{
   overflow: hidden;
 }
+
+.ofh{
+  overflow:hidden;
+}
+
 
