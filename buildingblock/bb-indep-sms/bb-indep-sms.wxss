@@ -4,7 +4,7 @@
   position: relative;
 }
 .bb-indep-sms .bb-vant-field {
-  width: 100%;
+  width: calc(100vw - 130px);
   display: inline-block;
 }
 .bb-indep-sms .bb-indep-button {
