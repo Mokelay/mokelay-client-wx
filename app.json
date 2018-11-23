@@ -13,5 +13,8 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe6a1d92e6f43654b"
+  ]
 }
