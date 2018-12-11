@@ -1,0 +1,14 @@
+<!--水平排列-->
+<view class="bb-vant-steps-horizontal" wx:if="{{direction !='vertical'}}">
+	<view wx:for="{{stepsArr}}" wx:for-index="_index" wx:key="{{_index}}" data-row="{{stepContents}}" bindtap='itemClick'>
+		<view class="stepIndex">{{_index}}</view>
+		<bb wx:for="{{stepContents}}" wx:for-index="index" data-row="{{item}}" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+	</view>
+</view>
+<!--垂直排列-->
+<view class="bb-vant-steps-vertical" wx:if="{{direction =='vertical'}}">
+	<view wx:for="{{stepsArr}}" wx:for-index="_index" wx:key="{{_index}}" data-row="{{stepContents}}" bindtap='itemClick'>
+		<view class="stepIndex">{{_index}}</view>
+		<bb wx:for="{{stepContents}}" wx:for-index="index" data-row="{{item}}" wx:key="{{item.uuid}}" alias="{{item.alias}}" class="bb" bb="{{item}}" attributes="{{item.attributes}}"></bb>
+	</view>
+</view>
